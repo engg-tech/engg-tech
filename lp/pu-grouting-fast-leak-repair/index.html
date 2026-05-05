@@ -156,6 +156,32 @@ form button {
     📩 Get Free Quote
   </a>
 
+  <!-- WHATSAPP BLOCK -->
+<div style="
+  max-width:500px;
+  margin:2rem auto;
+  text-align:center;
+">
+  <a href="https://wa.me/6591294851"
+     target="_blank"
+     style="
+       display:flex;
+       justify-content:center;
+       align-items:center;
+       gap:10px;
+       background:#25D366;
+       color:#fff;
+       padding:14px;
+       border-radius:8px;
+       text-decoration:none;
+       font-weight:600;
+       animation: wa-notify-pulse 5s infinite;
+     ">
+     Chat with us instantly on WhatsApp
+  </a>
+</div>
+
+
 </div>
 
 <!-- PROBLEM -->
@@ -191,7 +217,7 @@ form button {
   <p><strong>Done within hours</strong></p>
 </div>
 
-<!-- YOUR WHATSAPP BLOCK -->
+<!-- WHATSAPP BLOCK -->
 <div style="
   max-width:500px;
   margin:2rem auto;
@@ -215,51 +241,6 @@ form button {
      Chat with us instantly on WhatsApp
   </a>
 </div>
-
-<script>
-function openWA(e){
-  e.preventDefault();
-  window.open("https://wa.me/6591294851?text=Hi%20I%20need%20PU%20grouting","_blank");
-}
-
-document.addEventListener("DOMContentLoaded", ()=>{
-  const form=document.getElementById("contact-form");
-  const q=document.getElementById("captcha-question");
-  const captcha=document.getElementById("captcha");
-  const status=document.getElementById("status");
-
-  const x=Math.floor(Math.random()*5)+1;
-  const y=Math.floor(Math.random()*5)+1;
-  const ans=x+y;
-
-  q.textContent=x+" + "+y;
-
-  form.addEventListener("submit",(e)=>{
-    e.preventDefault();
-
-    if(parseInt(captcha.value)!==ans){
-      status.innerHTML="⚠️ Incorrect answer";
-      return;
-    }
-
-    fetch("https://script.google.com/macros/s/AKfycbwkIbW2EzsoG54Adydc0UwnN34au15dm2vnn3Egfhrq69n8HiEdGUgIJQ0riPGLe5k/exec",{
-      method:"POST",
-      body:new URLSearchParams({
-        "entry.2005620554":document.getElementById("name").value,
-        "entry.1045781291":document.getElementById("email").value,
-        "entry.839337160":document.getElementById("message").value
-      })
-    })
-    .then(()=>{
-      status.innerHTML="✅ Message sent!";
-      form.reset();
-    })
-    .catch(()=>{
-      status.innerHTML="❌ Error. Please WhatsApp.";
-    });
-  });
-});
-</script>
 
 </body>
 </html>

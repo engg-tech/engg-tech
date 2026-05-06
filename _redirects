@@ -2,6 +2,8 @@
 # REMOVE /INDEX.HTML 
 # =========================
 /index.html https://engg-tech.com/ 301!
+/blog/index.html https://engg-tech.com/blog/ 301!
+/blog/*/index.html https://engg-tech.com/blog/:splat/ 301!
 /services/index.html https://engg-tech.com/services/ 301!
 
 # =========================
@@ -10,6 +12,11 @@
 /sg/services/index.html https://engg-tech.com/services/ 301!
 /sg/ https://engg-tech.com/ 301!
 /sg/* https://engg-tech.com/:splat 301!
+
+# =========================
+# FORCE TRAILING SLASH
+# =========================
+/blog/door-varnish https://engg-tech.com/blog/door-varnish/ 301!
 
 # =========================
 # FORCE HTTPS + NON-WWW

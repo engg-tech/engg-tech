@@ -21,31 +21,60 @@ gaScript.onload = () => {
  * GOOGLE ADSENSE
  **********************/
 
-// Load AdSense library
-const adsenseScript = document.createElement("script");
-adsenseScript.async = true;
-adsenseScript.src =
-  "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9719299059942736";
-adsenseScript.crossOrigin = "anonymous";
-document.head.appendChild(adsenseScript);
+// Get current page path
+const currentPath = window.location.pathname.toLowerCase();
 
-// Inject AdSense ad after script loads
-adsenseScript.onload = () => {
-  const adContainer = document.getElementById("site-ad");
-  if (!adContainer) return;
+// Pages where ads should NOT load
+const isExcludedPage =
 
-  adContainer.innerHTML = `
-    <ins class="adsbygoogle"
-         style="display:block; text-align:center;"
-         data-ad-client="ca-pub-9719299059942736"
-         data-ad-slot="YOUR_SLOT_ID"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-  `;
+  // Homepage only
+  currentPath === '/' ||
 
-  try {
-    (adsbygoogle = window.adsbygoogle || []).push({});
-  } catch (e) {
-    console.warn("AdSense push failed:", e);
-  }
-};
+  // Main pages + all subpages
+  currentPath.startsWith('/about-us/') ||
+  currentPath.startsWith('/services/') ||
+  currentPath.startsWith('/projects/') ||
+  currentPath === '/blog/' ||
+  currentPath.startsWith('/contact-us/') ||
+  currentPath.startsWith('/privacy-policy/');
+
+// Only load AdSense if NOT excluded
+if (!isExcludedPage) {
+
+  // Load AdSense library
+  const adsenseScript = document.createElement("script");
+
+  adsenseScript.async = true;
+
+  adsenseScript.src =
+    "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9719299059942736";
+
+  adsenseScript.crossOrigin = "anonymous";
+
+  document.head.appendChild(adsenseScript);
+
+  // Inject AdSense ad after script loads
+  adsenseScript.onload = () => {
+
+    const adContainer = document.getElementById("site-ad");
+
+    if (!adContainer) return;
+
+    adContainer.innerHTML = `
+      <ins class="adsbygoogle"
+           style="display:block; text-align:center;"
+           data-ad-client="ca-pub-9719299059942736"
+           data-ad-slot="YOUR_SLOT_ID"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+    `;
+
+    try {
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    } catch (e) {
+      console.warn("AdSense push failed:", e);
+    }
+
+  };
+
+}

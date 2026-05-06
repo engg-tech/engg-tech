@@ -64,7 +64,6 @@ if (!isExcludedPage) {
       <ins class="adsbygoogle"
            style="display:block; text-align:center;"
            data-ad-client="ca-pub-9719299059942736"
-           data-ad-slot="YOUR_SLOT_ID"
            data-ad-format="auto"
            data-full-width-responsive="true"></ins>
     `;

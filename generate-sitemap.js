@@ -7,6 +7,7 @@ const path = require("path");
 const SITE_URL = "https://engg-tech.com";
 const BASE_PATH = "";
 const BLOG_DIR = path.join(__dirname, "blog");
+const ARTICLES_DIR = path.join(__dirname, "articles");
 
 // today as YYYY-MM-DD
 const today = new Date().toISOString().split("T")[0];
@@ -37,7 +38,13 @@ urls.push(
   urlBlock(`${SITE_URL}/services/pu-grouting-singapore/`, "0.9", "monthly"),
   urlBlock(`${SITE_URL}/services/epoxy-grouting-singapore/`, "0.9", "monthly"),
   urlBlock(`${SITE_URL}/projects/`, "0.8", "monthly"),
+
+  // BLOG
   urlBlock(`${SITE_URL}/blog/`, "0.7", "weekly"),
+
+  // ARTICLES
+  urlBlock(`${SITE_URL}/articles/`, "0.6", "weekly"),
+
   urlBlock(`${SITE_URL}/contact-us/`, "0.6", "monthly"),
   urlBlock(`${SITE_URL}/privacy-policy/`, "0.3", "yearly"),
 );
@@ -49,6 +56,21 @@ if (fs.existsSync(BLOG_DIR)) {
       const slug = file.replace(".html", "");
       urls.push(
         urlBlock(`${SITE_URL}/blog/${slug}`, "0.6", "monthly")
+      );
+    }
+  });
+}
+
+// ===============================
+// ARTICLE POSTS
+// ===============================
+if (fs.existsSync(ARTICLES_DIR)) {
+  fs.readdirSync(ARTICLES_DIR).forEach(file => {
+    if (file.endsWith(".html") && file !== "index.html") {
+      const slug = file.replace(".html", "");
+
+      urls.push(
+        urlBlock(`${SITE_URL}/articles/${slug}`, "0.5", "monthly")
       );
     }
   });

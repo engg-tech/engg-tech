@@ -28,6 +28,12 @@ jobs:
         run: node generate-blog-index.js
 
       # -------------------------------
+      # Generate Articles Index
+      # -------------------------------
+      - name: Generate Articles Index
+        run: node generate-articles-index.js
+
+      # -------------------------------
       # Generate Sitemap
       # -------------------------------
       - name: Generate Sitemap

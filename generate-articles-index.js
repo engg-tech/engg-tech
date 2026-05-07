@@ -4,18 +4,18 @@ const path = require("path");
 // ===============================
 // CONFIG
 // ===============================
-const ARTICLES_DIR = path.join(__dirname, "articles");
-const INDEX_FILE = path.join(ARTICLES_DIR, "index.html");
+const BLOG_DIR = path.join(__dirname, "blog");
+const INDEX_FILE = path.join(BLOG_DIR, "index.html");
 
 // ===============================
 // SAFETY CHECKS
 // ===============================
-if (!fs.existsSync(ARTICLES_DIR)) {
-  throw new Error("articles folder not found");
+if (!fs.existsSync(BLOG_DIR)) {
+  throw new Error("blog folder not found");
 }
 
 if (!fs.existsSync(INDEX_FILE)) {
-  throw new Error("articles/index.html not found");
+  throw new Error("blog/index.html not found");
 }
 
 // ===============================
@@ -24,31 +24,30 @@ if (!fs.existsSync(INDEX_FILE)) {
 const html = fs.readFileSync(INDEX_FILE, "utf8");
 
 // ===============================
-// READ ARTICLE FILES
+// READ BLOG POSTS
 // ===============================
-const articles = fs.readdirSync(ARTICLES_DIR)
+const posts = fs.readdirSync(BLOG_DIR)
   .filter(file => file.endsWith(".html") && file !== "index.html")
   .sort();
 
 // ===============================
-// BUILD ARTICLE LIST
+// BUILD LIST
 // ===============================
-const list = articles.map(file => {
+const list = posts.map(file => {
   const slug = file.replace(".html", "");
-
   const title = slug
     .replace(/-/g, " ")
     .replace(/\b\w/g, c => c.toUpperCase());
 
-  return `  <li><a href="/articles/${slug}">${title}</a></li>`;
+  return `  <li><a href="/blog/${slug}">${title}</a></li>`;
 }).join("\n");
 
 // ===============================
 // REPLACE LIST BLOCK
 // ===============================
 const updated = html.replace(
-  /<!-- ARTICLES-LIST-START -->[\s\S]*?<!-- ARTICLES-LIST-END -->/,
-  `<!-- ARTICLES-LIST-START -->\n<ul class="articles-list">\n${list}\n</ul>\n<!-- ARTICLES-LIST-END -->`
+  /<!-- BLOG-LIST-START -->[\s\S]*?<!-- BLOG-LIST-END -->/,
+  `<!-- BLOG-LIST-START -->\n<ul class="blog-list">\n${list}\n</ul>\n<!-- BLOG-LIST-END -->`
 );
 
 // ===============================
@@ -56,7 +55,4 @@ const updated = html.replace(
 // ===============================
 fs.writeFileSync(INDEX_FILE, updated, "utf8");
 
-// ===============================
-// DONE
-// ===============================
-console.log("✅ Articles index updated: /articles/index.html");
+console.log("✅ Blog index updated: /blog/index.html");

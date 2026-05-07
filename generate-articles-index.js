@@ -24,24 +24,31 @@ if (!fs.existsSync(INDEX_FILE)) {
 const html = fs.readFileSync(INDEX_FILE, "utf8");
 
 // ===============================
-// READ ARTICLE POSTS
+// READ ARTICLE FOLDERS
 // ===============================
-const posts = fs.readdirSync(ARTICLES_DIR)
-  .filter(file => file.endsWith(".html") && file !== "index.html")
+const posts = fs.readdirSync(ARTICLES_DIR, { withFileTypes: true })
+
+  .filter(dir =>
+    dir.isDirectory() &&
+    fs.existsSync(
+      path.join(ARTICLES_DIR, dir.name, "index.html")
+    )
+  )
+
+  .map(dir => dir.name)
+
   .sort();
 
 // ===============================
 // BUILD LIST
 // ===============================
-const list = posts.map(file => {
-
-  const slug = file.replace(".html", "");
+const list = posts.map(slug => {
 
   const title = slug
     .replace(/-/g, " ")
     .replace(/\b\w/g, c => c.toUpperCase());
 
-  return `  <li><a href="/articles/${slug}">${title}</a></li>`;
+  return `  <li><a href="/articles/${slug}/">${title}</a></li>`;
 
 }).join("\n");
 
@@ -65,4 +72,4 @@ ${list}
 // ===============================
 fs.writeFileSync(INDEX_FILE, updated, "utf8");
 
-console.log("✅ Articles index updated: /articles/index.html");
+console.log("✅ Articles index updated");

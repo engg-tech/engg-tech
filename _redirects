@@ -17,9 +17,6 @@
 /sg/ https://engg-tech.com/ 301!
 /sg/* https://engg-tech.com/:splat 301!
 
-# ARTICLES
-/articles/:slug https://engg-tech.com/articles/:slug/ 301!
-
 # =========================
 # FORCE TRAILING SLASH
 # =========================

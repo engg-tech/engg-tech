@@ -6,12 +6,19 @@
 /blog/*/index.html https://engg-tech.com/blog/:splat/ 301!
 /services/index.html https://engg-tech.com/services/ 301!
 
+# ARTICLES
+/articles/index.html https://engg-tech.com/articles/ 301!
+/articles/*/index.html https://engg-tech.com/articles/:splat/ 301!
+
 # =========================
 # FIX OLD /SG PATHS
 # =========================
 /sg/services/index.html https://engg-tech.com/services/ 301!
 /sg/ https://engg-tech.com/ 301!
 /sg/* https://engg-tech.com/:splat 301!
+
+# ARTICLES
+/articles/:slug https://engg-tech.com/articles/:slug/ 301!
 
 # =========================
 # FORCE TRAILING SLASH

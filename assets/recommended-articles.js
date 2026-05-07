@@ -1,19 +1,19 @@
 document.addEventListener("DOMContentLoaded",()=>{
 
   /* =======================================
-     Blog pages only (NO COUNTRY)
-     Valid: /blog/*
+     Articles pages only
+     Valid: /articles/*
   ======================================== */
 
   const path = window.location.pathname;
 
-  if (!path.startsWith("/blog/")) return;
+  if (!path.startsWith("/articles/")) return;
 
   /* ---------------------------------------
-     1. Blog base URL
+     1. Articles base URL
   ---------------------------------------- */
-  const blogBase = `/blog/`;
-  const blogLinkMatch = blogBase;
+  const articlesBase = `/articles/`;
+  const articleLinkMatch = articlesBase;
 
   /* ---------------------------------------
      2. Inject CSS dynamically
@@ -44,13 +44,18 @@ document.addEventListener("DOMContentLoaded",()=>{
       display:block;
       transition:color 0.2s ease;
     }
-    .reco-post-link:hover{color:#ff6a00;}
-    .faq-item{margin-bottom:1rem;}
+    .reco-post-link:hover{
+      color:#ff6a00;
+    }
+    .faq-item{
+      margin-bottom:1rem;
+    }
     .faq-item strong{
       display:block;
       margin-bottom:0.3rem;
     }
   `;
+
   const styleTag = document.createElement("style");
   styleTag.textContent = css;
   document.head.appendChild(styleTag);
@@ -60,7 +65,7 @@ document.addEventListener("DOMContentLoaded",()=>{
   ---------------------------------------- */
   const recommendedHTML = `
     <section class="recommended-posts-section">
-      <h2>Recommended Posts</h2>
+      <h2>Recommended Articles</h2>
       <div id="recommendedContainer" class="recommended-posts-container"></div>
     </section>
   `;
@@ -71,36 +76,53 @@ document.addEventListener("DOMContentLoaded",()=>{
   const placeholder = document.getElementById("recommended-posts");
 
   if (placeholder) {
+
     placeholder.insertAdjacentHTML("beforeend", recommendedHTML);
+
   } else {
+
     const footer = document.querySelector("#site-footer");
+
     if (footer) {
       footer.insertAdjacentHTML("beforebegin", recommendedHTML);
     } else {
       document.body.insertAdjacentHTML("beforeend", recommendedHTML);
     }
+
   }
 
   /* ---------------------------------------
-     5. Fetch blog index & generate posts
+     5. Fetch articles index & generate posts
   ---------------------------------------- */
   (async function(){
+
     try{
-      const res = await fetch(blogBase, { credentials: "same-origin" });
+
+      const res = await fetch(articlesBase, {
+        credentials: "same-origin"
+      });
+
       const html = await res.text();
+
       const doc = new DOMParser().parseFromString(html, "text/html");
 
-      const posts = [...doc.querySelectorAll(`a[href*='${blogLinkMatch}']`)]
+      const posts = [...doc.querySelectorAll(`a[href*='${articleLinkMatch}']`)]
+
         .map(a => ({
           title: a.textContent.trim(),
           url: a.href.replace(/\/$/, "")
         }))
-        .filter(p => !p.url.endsWith(blogBase.replace(/\/$/, "")));
+
+        .filter(p =>
+          !p.url.endsWith(articlesBase.replace(/\/$/, ""))
+        );
 
       const currentURL = window.location.href.replace(/\/$/, "");
 
       const unique = posts
+
         .filter(p => p.url !== currentURL)
+
         .filter((v, i, self) =>
           i === self.findIndex(t => t.url === v.url)
         );
@@ -110,18 +132,24 @@ document.addEventListener("DOMContentLoaded",()=>{
         .slice(0, 3);
 
       const box = document.getElementById("recommendedContainer");
+
       if (!box) return;
 
       selected.forEach(post => {
+
         box.insertAdjacentHTML(
           "beforeend",
-          `<a href="${post.url}" class="reco-post-link">${post.title}</a>`
+          `<a href="${post.url}/" class="reco-post-link">${post.title}</a>`
         );
+
       });
 
     } catch(err){
-      console.error("Recommended Posts Error:", err);
+
+      console.error("Recommended Articles Error:", err);
+
     }
+
   })();
 
 });

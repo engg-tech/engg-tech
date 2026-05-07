@@ -24,30 +24,47 @@ if (!fs.existsSync(INDEX_FILE)) {
 const html = fs.readFileSync(INDEX_FILE, "utf8");
 
 // ===============================
-// READ BLOG POSTS
+// READ BLOG FOLDERS
 // ===============================
-const posts = fs.readdirSync(BLOG_DIR)
-  .filter(file => file.endsWith(".html") && file !== "index.html")
+const posts = fs.readdirSync(BLOG_DIR, { withFileTypes: true })
+
+  .filter(dir =>
+    dir.isDirectory() &&
+    fs.existsSync(
+      path.join(BLOG_DIR, dir.name, "index.html")
+    )
+  )
+
+  .map(dir => dir.name)
+
   .sort();
 
 // ===============================
 // BUILD LIST
 // ===============================
-const list = posts.map(file => {
-  const slug = file.replace(".html", "");
+const list = posts.map(slug => {
+
   const title = slug
     .replace(/-/g, " ")
     .replace(/\b\w/g, c => c.toUpperCase());
 
-  return `  <li><a href="/blog/${slug}">${title}</a></li>`;
+  return `  <li><a href="/blog/${slug}/">${title}</a></li>`;
+
 }).join("\n");
 
 // ===============================
 // REPLACE LIST BLOCK
 // ===============================
 const updated = html.replace(
+
   /<!-- BLOG-LIST-START -->[\s\S]*?<!-- BLOG-LIST-END -->/,
-  `<!-- BLOG-LIST-START -->\n<ul class="blog-list">\n${list}\n</ul>\n<!-- BLOG-LIST-END -->`
+
+  `<!-- BLOG-LIST-START -->
+<ul class="blog-list">
+${list}
+</ul>
+<!-- BLOG-LIST-END -->`
+
 );
 
 // ===============================
@@ -55,4 +72,4 @@ const updated = html.replace(
 // ===============================
 fs.writeFileSync(INDEX_FILE, updated, "utf8");
 
-console.log("✅ Blog index updated: /blog/index.html");
+console.log("✅ Blog index updated");

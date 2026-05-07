@@ -9,6 +9,7 @@
 # ARTICLES
 /articles/index.html https://engg-tech.com/articles/ 301!
 /articles/*/index.html https://engg-tech.com/articles/:splat/ 301!
+/articles/*.html https://engg-tech.com/articles/:splat 301!
 
 # =========================
 # FIX OLD /SG PATHS

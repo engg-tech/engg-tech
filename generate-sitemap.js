@@ -10,7 +10,9 @@ const BLOG_DIR = path.join(__dirname, "blog");
 const ARTICLES_DIR = path.join(__dirname, "articles");
 
 // today as YYYY-MM-DD
-const today = new Date().toISOString().split("T")[0];
+const today = new Date().toLocaleDateString("en-CA", {
+  timeZone: "Asia/Singapore"
+});
 
 // ===============================
 // HELPERS

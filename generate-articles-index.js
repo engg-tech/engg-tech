@@ -24,17 +24,16 @@ if (!fs.existsSync(INDEX_FILE)) {
 const html = fs.readFileSync(INDEX_FILE, "utf8");
 
 // ===============================
-// READ ARTICLE POSTS
+// READ ARTICLE FILES
 // ===============================
-const posts = fs.readdirSync(ARTICLES_DIR)
+const articles = fs.readdirSync(ARTICLES_DIR)
   .filter(file => file.endsWith(".html") && file !== "index.html")
   .sort();
 
 // ===============================
-// BUILD LIST
+// BUILD ARTICLE LIST
 // ===============================
-const list = posts.map(file => {
-
+const list = articles.map(file => {
   const slug = file.replace(".html", "");
 
   const title = slug
@@ -42,22 +41,14 @@ const list = posts.map(file => {
     .replace(/\b\w/g, c => c.toUpperCase());
 
   return `  <li><a href="/articles/${slug}">${title}</a></li>`;
-
 }).join("\n");
 
 // ===============================
 // REPLACE LIST BLOCK
 // ===============================
 const updated = html.replace(
-
-  /<!-- ARTICLE-LIST-START -->[\s\S]*?<!-- ARTICLE-LIST-END -->/,
-
-  `<!-- ARTICLE-LIST-START -->
-<ul class="blog-list">
-${list}
-</ul>
-<!-- ARTICLE-LIST-END -->`
-
+  /<!-- ARTICLES-LIST-START -->[\s\S]*?<!-- ARTICLES-LIST-END -->/,
+  `<!-- ARTICLES-LIST-START -->\n<ul class="articles-list">\n${list}\n</ul>\n<!-- ARTICLES-LIST-END -->`
 );
 
 // ===============================
@@ -65,4 +56,7 @@ ${list}
 // ===============================
 fs.writeFileSync(INDEX_FILE, updated, "utf8");
 
+// ===============================
+// DONE
+// ===============================
 console.log("✅ Articles index updated: /articles/index.html");

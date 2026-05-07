@@ -5,7 +5,7 @@ const path = require("path");
 // CONFIG
 // ===============================
 const SITE_URL = "https://engg-tech.com";
-const BASE_PATH = "";
+
 const BLOG_DIR = path.join(__dirname, "blog");
 const ARTICLES_DIR = path.join(__dirname, "articles");
 
@@ -16,6 +16,7 @@ const today = new Date().toISOString().split("T")[0];
 // HELPERS
 // ===============================
 function urlBlock(loc, priority, changefreq) {
+
   return `
   <url>
     <loc>${loc}</loc>
@@ -23,6 +24,7 @@ function urlBlock(loc, priority, changefreq) {
     <changefreq>${changefreq}</changefreq>
     <priority>${priority}</priority>
   </url>`;
+
 }
 
 // ===============================
@@ -30,13 +32,21 @@ function urlBlock(loc, priority, changefreq) {
 // ===============================
 let urls = [];
 
-// === STATIC PAGES ===
+// ===============================
+// STATIC PAGES
+// ===============================
 urls.push(
+
   urlBlock(`${SITE_URL}/`, "1.0", "weekly"),
+
   urlBlock(`${SITE_URL}/about/`, "0.8", "monthly"),
+
   urlBlock(`${SITE_URL}/services/`, "0.9", "weekly"),
+
   urlBlock(`${SITE_URL}/services/pu-grouting-singapore/`, "0.9", "monthly"),
+
   urlBlock(`${SITE_URL}/services/epoxy-grouting-singapore/`, "0.9", "monthly"),
+
   urlBlock(`${SITE_URL}/projects/`, "0.8", "monthly"),
 
   // BLOG
@@ -46,34 +56,77 @@ urls.push(
   urlBlock(`${SITE_URL}/articles/`, "0.6", "weekly"),
 
   urlBlock(`${SITE_URL}/contact-us/`, "0.6", "monthly"),
-  urlBlock(`${SITE_URL}/privacy-policy/`, "0.3", "yearly"),
+
+  urlBlock(`${SITE_URL}/privacy-policy/`, "0.3", "yearly")
+
 );
 
-// === BLOG POSTS ===
+// ===============================
+// BLOG POSTS
+// ===============================
 if (fs.existsSync(BLOG_DIR)) {
-  fs.readdirSync(BLOG_DIR).forEach(file => {
-    if (file.endsWith(".html") && file !== "index.html") {
-      const slug = file.replace(".html", "");
-      urls.push(
-        urlBlock(`${SITE_URL}/blog/${slug}`, "0.6", "monthly")
-      );
-    }
+
+  const blogPosts = fs.readdirSync(BLOG_DIR, {
+    withFileTypes: true
+  })
+
+  .filter(dir =>
+    dir.isDirectory() &&
+    fs.existsSync(
+      path.join(BLOG_DIR, dir.name, "index.html")
+    )
+  )
+
+  .map(dir => dir.name)
+
+  .sort();
+
+  blogPosts.forEach(slug => {
+
+    urls.push(
+      urlBlock(
+        `${SITE_URL}/blog/${slug}/`,
+        "0.6",
+        "monthly"
+      )
+    );
+
   });
+
 }
 
 // ===============================
 // ARTICLE POSTS
 // ===============================
 if (fs.existsSync(ARTICLES_DIR)) {
-  fs.readdirSync(ARTICLES_DIR).forEach(file => {
-    if (file.endsWith(".html") && file !== "index.html") {
-      const slug = file.replace(".html", "");
 
-      urls.push(
-        urlBlock(`${SITE_URL}/articles/${slug}`, "0.5", "monthly")
-      );
-    }
+  const articlePosts = fs.readdirSync(ARTICLES_DIR, {
+    withFileTypes: true
+  })
+
+  .filter(dir =>
+    dir.isDirectory() &&
+    fs.existsSync(
+      path.join(ARTICLES_DIR, dir.name, "index.html")
+    )
+  )
+
+  .map(dir => dir.name)
+
+  .sort();
+
+  articlePosts.forEach(slug => {
+
+    urls.push(
+      urlBlock(
+        `${SITE_URL}/articles/${slug}/`,
+        "0.5",
+        "monthly"
+      )
+    );
+
   });
+
 }
 
 // ===============================
@@ -85,6 +138,13 @@ ${urls.join("")}
 </urlset>
 `;
 
-fs.writeFileSync(path.join(__dirname, "sitemap.xml"), sitemap, "utf8");
+// ===============================
+// WRITE FILE
+// ===============================
+fs.writeFileSync(
+  path.join(__dirname, "sitemap.xml"),
+  sitemap,
+  "utf8"
+);
 
 console.log("✅ Sitemap generated: /sitemap.xml");

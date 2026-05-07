@@ -18,11 +18,6 @@
 /sg/* https://engg-tech.com/:splat 301!
 
 # =========================
-# FORCE TRAILING SLASH
-# =========================
-/blog/door-varnish https://engg-tech.com/blog/door-varnish/ 301!
-
-# =========================
 # FORCE HTTPS + NON-WWW
 # =========================
 http://www.engg-tech.com/* https://engg-tech.com/:splat 301!

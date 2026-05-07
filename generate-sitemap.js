@@ -9,25 +9,20 @@ const SITE_URL = "https://engg-tech.com";
 const BLOG_DIR = path.join(__dirname, "blog");
 const ARTICLES_DIR = path.join(__dirname, "articles");
 
+// today as YYYY-MM-DD
+const today = new Date().toLocaleDateString("en-CA", {
+  timeZone: "Asia/Singapore"
+});
+
 // ===============================
 // HELPERS
 // ===============================
-function getLastModified(filePath) {
-
-  const stats = fs.statSync(filePath);
-
-  return new Date(stats.mtime).toLocaleDateString("en-CA", {
-    timeZone: "Asia/Singapore"
-  });
-
-}
-
-function urlBlock(loc, lastmod, priority, changefreq) {
+function urlBlock(loc, priority, changefreq) {
 
   return `
   <url>
     <loc>${loc}</loc>
-    <lastmod>${lastmod}</lastmod>
+    <lastmod>${today}</lastmod>
     <changefreq>${changefreq}</changefreq>
     <priority>${priority}</priority>
   </url>`;
@@ -44,77 +39,27 @@ let urls = [];
 // ===============================
 urls.push(
 
-  urlBlock(
-    `${SITE_URL}/`,
-    getLastModified(path.join(__dirname, "index.html")),
-    "1.0",
-    "weekly"
-  ),
+  urlBlock(`${SITE_URL}/`, "1.0", "weekly"),
 
-  urlBlock(
-    `${SITE_URL}/about/`,
-    getLastModified(path.join(__dirname, "about-us.html")),
-    "0.8",
-    "monthly"
-  ),
+  urlBlock(`${SITE_URL}/about/`, "0.8", "monthly"),
 
-  urlBlock(
-    `${SITE_URL}/services/`,
-    getLastModified(path.join(__dirname, "services.html")),
-    "0.9",
-    "weekly"
-  ),
+  urlBlock(`${SITE_URL}/services/`, "0.9", "weekly"),
 
-  urlBlock(
-    `${SITE_URL}/services/pu-grouting-singapore/`,
-    getLastModified(path.join(__dirname, "services.html")),
-    "0.9",
-    "monthly"
-  ),
+  urlBlock(`${SITE_URL}/services/pu-grouting-singapore/`, "0.9", "monthly"),
 
-  urlBlock(
-    `${SITE_URL}/services/epoxy-grouting-singapore/`,
-    getLastModified(path.join(__dirname, "services.html")),
-    "0.9",
-    "monthly"
-  ),
+  urlBlock(`${SITE_URL}/services/epoxy-grouting-singapore/`, "0.9", "monthly"),
 
-  urlBlock(
-    `${SITE_URL}/projects/`,
-    getLastModified(path.join(__dirname, "projects.html")),
-    "0.8",
-    "monthly"
-  ),
+  urlBlock(`${SITE_URL}/projects/`, "0.8", "monthly"),
 
   // BLOG
-  urlBlock(
-    `${SITE_URL}/blog/`,
-    getLastModified(path.join(BLOG_DIR, "index.html")),
-    "0.7",
-    "weekly"
-  ),
+  urlBlock(`${SITE_URL}/blog/`, "0.7", "weekly"),
 
   // ARTICLES
-  urlBlock(
-    `${SITE_URL}/articles/`,
-    getLastModified(path.join(ARTICLES_DIR, "index.html")),
-    "0.6",
-    "weekly"
-  ),
+  urlBlock(`${SITE_URL}/articles/`, "0.6", "weekly"),
 
-  urlBlock(
-    `${SITE_URL}/contact-us/`,
-    getLastModified(path.join(__dirname, "contact-us.html")),
-    "0.6",
-    "monthly"
-  ),
+  urlBlock(`${SITE_URL}/contact-us/`, "0.6", "monthly"),
 
-  urlBlock(
-    `${SITE_URL}/privacy-policy/`,
-    getLastModified(path.join(__dirname, "privacy-policy.html")),
-    "0.3",
-    "yearly"
-  )
+  urlBlock(`${SITE_URL}/privacy-policy/`, "0.3", "yearly")
 
 );
 
@@ -143,9 +88,6 @@ if (fs.existsSync(BLOG_DIR)) {
     urls.push(
       urlBlock(
         `${SITE_URL}/blog/${slug}/`,
-        getLastModified(
-          path.join(BLOG_DIR, slug, "index.html")
-        ),
         "0.6",
         "monthly"
       )
@@ -180,9 +122,6 @@ if (fs.existsSync(ARTICLES_DIR)) {
     urls.push(
       urlBlock(
         `${SITE_URL}/articles/${slug}/`,
-        getLastModified(
-          path.join(ARTICLES_DIR, slug, "index.html")
-        ),
         "0.5",
         "monthly"
       )
@@ -210,4 +149,4 @@ fs.writeFileSync(
   "utf8"
 );
 
-console.log("✅ Sitemap generated: /sitemap.xml");
+console.log("✅ Sitemap generated: /sitemap.xml");  

@@ -19,14 +19,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     <!-- Explore Blog -->
     <div class="footer-column">
-      <h2 class="footer-heading">Explore Our Blog</h2>
+      <h2 class="footer-heading">Explore Our Resources</h2>
       <p>
-        Practical fire safety tips, M&E guides, renovation insights, and industry knowledge
-        written for Singapore homes and businesses.
+        Practical fire safety tips, waterproofing guides, renovation insights, and industry knowledge for Singapore homes and businesses.
       </p>
       <p>
         <a class="footer-blog-link"
-           href="https://engg-tech.com/blog/"
+           href="https://engg-tech.com/articles/"
            title="Engg-Tech Singapore fire protection and M&E blog">
           Read Our Latest Articles →
         </a>

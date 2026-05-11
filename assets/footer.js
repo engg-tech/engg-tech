@@ -162,7 +162,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <style>
 @keyframes wa-pulse {
-  0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.5); }
+  0% { box-shadow: 0 0 0 0 rgba(10,37,64,0.5); }
   70% { box-shadow: 0 0 0 16px rgba(37,211,102,0); }
   100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
 }

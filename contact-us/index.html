@@ -333,7 +333,12 @@ document.addEventListener("DOMContentLoaded", () => {
       localStorage.setItem(COOLDOWN_KEY, cooldownUntil);
 
       startCooldownTimer();
-window.location.href = "https://wa.me/6591294851?text=Hi%20Engg-Tech%20I%20just%20submitted%20the%20contact%20form.";
+window.location.href = "https://wa.me/6591294851?text=" + encodeURIComponent(
+  "Hi Engg-Tech, I just submitted the contact form.\n\n" +
+  "Name: " + formData.get("name") + "\n" +
+  "Email: " + formData.get("email") + "\n" +
+  "Message: " + formData.get("message")
+);
     })
 
     .catch(err => {

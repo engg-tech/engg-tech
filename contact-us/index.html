@@ -95,20 +95,19 @@
   <section>
     <main role="main">
       <h1 style="font-size: 2rem;">
-  <span id="contactGreeting"></span>
+  <span id="contactGreeting">Hello!</span>
   Contact Engg-Tech – Fire Protection & M&E Contractor Singapore
 </h1>
 
 <script>
-document.addEventListener("DOMContentLoaded", function () {
+window.addEventListener("load", function () {
 
-  const greetingElement = document.getElementById("contactGreeting");
+  var greetingElement = document.getElementById("contactGreeting");
 
   if (!greetingElement) return;
 
-  const hour = new Date().getHours();
-
-  let greeting = "Hello!";
+  var hour = new Date().getHours();
+  var greeting = "Hello!";
 
   if (hour < 12) {
     greeting = "Good morning!";
@@ -118,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
     greeting = "Good evening!";
   }
 
-  greetingElement.textContent = greeting + " ";
+  greetingElement.innerHTML = greeting + "&nbsp;";
 });
 </script>
 

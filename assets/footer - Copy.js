@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
     top: 20%;
     transform: translateY(-50%);
     right: 20px;
-    background: #0A2540;
+    background: #25D366;
     color: #fff;
     padding: 14px 20px;
     border-radius: 14px;
@@ -146,7 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
     right: 20px;
     width: 60px;
     height: 60px;
-    background: #0A2540;
+    background: #25D366;
     border-radius: 50%;
     align-items: center;
     justify-content: center;

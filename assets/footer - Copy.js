@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });">
 
   <!-- WhatsApp Button -->
-<a 
+  <a 
   href="https://wa.me/6591294851"
   target="_blank"
   rel="noopener"
@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
     top: 20%;
     transform: translateY(-50%);
     right: 20px;
-    background: #0A2540;
+    background: #25D366;
     color: #fff;
     padding: 14px 20px;
     border-radius: 14px;
@@ -146,7 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
     right: 20px;
     width: 60px;
     height: 60px;
-    background: #0A2540;
+    background: #25D366;
     border-radius: 50%;
     align-items: center;
     justify-content: center;
@@ -162,15 +162,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <style>
 @keyframes wa-pulse {
-  0% { box-shadow: 0 0 0 0 rgba(10,37,64,0.5); }
-  70% { box-shadow: 0 0 0 16px rgba(10,37,64,0); }
-  100% { box-shadow: 0 0 0 0 rgba(10,37,64,0); }
+  0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.5); }
+  70% { box-shadow: 0 0 0 16px rgba(37,211,102,0); }
+  100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
 }
 
 /* ✅ Combined Notification + Pulse */
 @keyframes wa-notify-pulse {
-  0% { transform: translateY(-50%) scale(1); box-shadow: 0 0 0 0 rgba(10,37,64,0.5); }
-  70% { box-shadow: 0 0 0 16px rgba(10,37,64,0); }
+  0% { transform: translateY(-50%) scale(1); box-shadow: 0 0 0 0 rgba(37,211,102,0.5); }
+  70% { box-shadow: 0 0 0 16px rgba(37,211,102,0); }
   85%, 100% { transform: translateY(-50%) scale(1); }
   88% { transform: translateY(-50%) scale(1.1); }
   90% { transform: translateY(-50%) translateX(-5px); }

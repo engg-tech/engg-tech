@@ -121,6 +121,8 @@ document.addEventListener("DOMContentLoaded", () => {
     box-shadow: 0 6px 18px rgba(0,0,0,0.2);
     z-index: 9999;
     animation: wa-notify-pulse 5s infinite;
+backface-visibility: hidden;
+-webkit-font-smoothing: antialiased;
     white-space: nowrap;
     text-decoration: none !important;
   "
@@ -153,6 +155,8 @@ document.addEventListener("DOMContentLoaded", () => {
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     z-index: 9999;
     animation: wa-notify-pulse 5s infinite;
+backface-visibility: hidden;
+-webkit-font-smoothing: antialiased;
   "
 >
   <svg viewBox="0 0 32 32" width="28" height="28" fill="#fff">
@@ -172,7 +176,7 @@ document.addEventListener("DOMContentLoaded", () => {
   0% { transform: translateY(-50%) scale(1); box-shadow: 0 0 0 0 rgba(10,37,64,0.5); }
   70% { box-shadow: 0 0 0 16px rgba(10,37,64,0); }
   85%, 100% { transform: translateY(-50%) scale(1); }
-  88% { transform: translateY(-50%) scale(1.1); }
+  88% { transform: translateY(-50%) scale(1.05); }
   90% { transform: translateY(-50%) translateX(-5px); }
   92% { transform: translateY(-50%) translateX(5px); }
   94% { transform: translateY(-50%) translateX(-3px); }

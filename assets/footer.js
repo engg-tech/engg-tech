@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
     top: 20%;
     transform: translateY(-50%);
     right: 20px;
-    background: #0A2540;
+    background: #25D366;
     color: #fff;
     padding: 14px 20px;
     border-radius: 14px;
@@ -121,8 +121,6 @@ document.addEventListener("DOMContentLoaded", () => {
     box-shadow: 0 6px 18px rgba(0,0,0,0.2);
     z-index: 9999;
     animation: wa-notify-pulse 5s infinite;
-backface-visibility: hidden;
--webkit-font-smoothing: antialiased;
     white-space: nowrap;
     text-decoration: none !important;
   "
@@ -148,15 +146,13 @@ backface-visibility: hidden;
     right: 20px;
     width: 60px;
     height: 60px;
-    background: #0A2540;
+    background: #25D366;
     border-radius: 50%;
     align-items: center;
     justify-content: center;
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     z-index: 9999;
     animation: wa-notify-pulse 5s infinite;
-backface-visibility: hidden;
--webkit-font-smoothing: antialiased;
   "
 >
   <svg viewBox="0 0 32 32" width="28" height="28" fill="#fff">
@@ -166,17 +162,17 @@ backface-visibility: hidden;
 
 <style>
 @keyframes wa-pulse {
-  0% { box-shadow: 0 0 0 0 rgba(10,37,64,0.5); }
-  70% { box-shadow: 0 0 0 16px rgba(10,37,64,0); }
-  100% { box-shadow: 0 0 0 0 rgba(10,37,64,0); }
+  0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.5); }
+  70% { box-shadow: 0 0 0 16px rgba(37,211,102,0); }
+  100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
 }
 
 /* ✅ Combined Notification + Pulse */
 @keyframes wa-notify-pulse {
-  0% { transform: translateY(-50%) scale(1); box-shadow: 0 0 0 0 rgba(10,37,64,0.5); }
-  70% { box-shadow: 0 0 0 16px rgba(10,37,64,0); }
+  0% { transform: translateY(-50%) scale(1); box-shadow: 0 0 0 0 rgba(37,211,102,0.5); }
+  70% { box-shadow: 0 0 0 16px rgba(37,211,102,0); }
   85%, 100% { transform: translateY(-50%) scale(1); }
-  88% { transform: translateY(-50%); }
+  88% { transform: translateY(-50%) scale(1.1); }
   90% { transform: translateY(-50%) translateX(-5px); }
   92% { transform: translateY(-50%) translateX(5px); }
   94% { transform: translateY(-50%) translateX(-3px); }

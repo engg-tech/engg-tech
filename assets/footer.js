@@ -169,7 +169,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 /* ✅ Combined Notification + Pulse */
 @keyframes wa-notify-pulse {
-  0% { transform: translateY(-50%) scale(1); box-shadow: 0 0 0 0 rgba(37,211,102,0.5); }
+  0% { transform: translateY(-50%) scale(1); box-shadow: 0 0 0 0 rgba(10,37,64,0.5); }
   70% { box-shadow: 0 0 0 16px rgba(37,211,102,0); }
   85%, 100% { transform: translateY(-50%) scale(1); }
   88% { transform: translateY(-50%) scale(1.1); }

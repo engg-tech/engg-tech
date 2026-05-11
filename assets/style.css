@@ -80,7 +80,7 @@ body {
 @media (max-width: 768px) {
   .navbar-nav ul {
     flex-direction: column;
-    background: #0A2540;
+    background-color: rgba(10, 37, 64, 0.9);
     position: absolute;
     top: 64px;
     left: 0;

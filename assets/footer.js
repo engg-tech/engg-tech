@@ -176,7 +176,7 @@ backface-visibility: hidden;
   0% { transform: translateY(-50%) scale(1); box-shadow: 0 0 0 0 rgba(10,37,64,0.5); }
   70% { box-shadow: 0 0 0 16px rgba(10,37,64,0); }
   85%, 100% { transform: translateY(-50%) scale(1); }
-  88% { transform: translateY(-50%) scale(1.05); }
+  88% { transform: translateY(-50%); }
   90% { transform: translateY(-50%) translateX(-5px); }
   92% { transform: translateY(-50%) translateX(5px); }
   94% { transform: translateY(-50%) translateX(-3px); }

@@ -155,13 +155,25 @@ Learn more about our <a href="https://engg-tech.com/services/">services</a> or v
 </style>
 <!-- WhatsApp END -->
 
-      <div id="contactFormPopup"
-           style="width:90%; max-width:500px; margin:0.5rem auto; background:#fff; box-shadow:0 4px 20px rgba(0,0,0,0.2); font-family:sans-serif; display:flex; flex-direction:column; touch-action:none; box-sizing:border-box;">
+<!-- 💬 Direct Visible Live Chat -->
+<noscript>
+  <p style="text-align:center; font-size:0.95rem; padding:1rem;">
+    Contact our support team at
+    <a href="mailto:info@engg-tech.com" style="color:#007bff;">info@engg-tech.com</a>
+    if chat is unavailable.
+  </p>
+</noscript>
 
-        <div id="contactFormDragger" style="width:100%; box-sizing:border-box;">
+<!-- 💬 Chat Box -->
+<div id="liveChatPopup" role="dialog" aria-label="Live chat support popup" style="display:flex; position:fixed; z-index:10000; top:0; left:0; width:100%; height:100%; background:transparent; align-items:center; justify-content:center;">
+  
+  <div id="chatBox" style="background:#fff; padding:20px; border-radius:0px; max-width:400px; width:90%; font-family:sans-serif; position:relative;">
 
-          <div style="padding:14px 18px; background:#fff; color:#000; font-weight:bold; font-size:1rem; line-height:1.5; text-align:center;">
-            CONTACT US<br>
+    <h3 id="greeting" style="margin-top:0; color:#d11a2a; text-align:center;">
+  Hello!
+</h3>
+
+    <div style="padding:14px 18px; background:#fff; color:#000; font-weight:bold; font-size:1rem; line-height:1.5; text-align:center;">
             <span style="font-weight:normal; font-size:0.95rem;">
               Need urgent assistance? Email us directly at
               <a href="mailto:info@engg-tech.com" style="color:#000; text-decoration:underline;">info@engg-tech.com</a>
@@ -169,107 +181,302 @@ Learn more about our <a href="https://engg-tech.com/services/">services</a> or v
             <p id="form-status" role="status" aria-live="polite" style="text-align:center; font-weight:bold; margin-top:0.75rem; margin-bottom:0;"></p>
           </div>
 
-          <form id="contact-form" style="padding:1.5rem; background:#fff; box-sizing:border-box;">
-            <input type="text" name="honeypot" style="display:none;" tabindex="-1" autocomplete="off" />
+    <input type="text" id="chatHoneypot" style="display:none;" autocomplete="off">
 
-            <label for="name" style="position:absolute; left:-9999px;">Your Name</label>
-            <input id="name" type="text" name="name" placeholder="Your Name" required
-                   style="width:100%; padding:16px; margin-bottom:16px; font-size:1rem; border:1.5px solid #ccc; background:#F9FAFB; border-radius:4px; box-sizing:border-box;" />
+    <input
+      type="text"
+      id="chatName"
+      placeholder="Your Name"
+      style="width:100%; padding:8px; margin-bottom:8px; border:1px solid #ccc; border-radius:6px;"
+    >
 
-            <label for="email" style="position:absolute; left:-9999px;">Your Email</label>
-            <input id="email" type="email" name="email" placeholder="Your Email" required
-                   style="width:100%; padding:16px; margin-bottom:16px; font-size:1rem; border:1.5px solid #ccc; background:#F9FAFB; border-radius:4px; box-sizing:border-box;" />
+    <input
+      type="email"
+      id="chatEmail"
+      placeholder="Your Email"
+      style="width:100%; padding:8px; margin-bottom:8px; border:1px solid #ccc; border-radius:6px;"
+    >
 
-            <label for="message" style="position:absolute; left:-9999px;">Your Message</label>
-            <textarea id="message" name="message" placeholder="Your Message" rows="5" required
-                      style="width:100%; padding:16px; margin-bottom:16px; font-size:1rem; border:1.5px solid #ccc; background:#F9FAFB; border-radius:4px; resize:vertical; box-sizing:border-box;"></textarea>
+    <textarea
+      id="chatMessage"
+      placeholder="Your Enquiry"
+      style="width:100%; height:80px; padding:8px; border:1px solid #ccc; border-radius:6px; resize:none;"
+    ></textarea>
 
-            <div style="margin-bottom:16px;">
-              <label id="captcha-label" for="captcha">What is <span id="captcha-question">2 + 5</span>?</label>
-              <input type="number" id="captcha" name="captcha" placeholder="Write your answer" required aria-labelledby="captcha-label"
-                     style="width:100%; padding:16px; font-size:1rem; border:1.5px solid #ccc; background:#F9FAFB; border-radius:4px; box-sizing:border-box;" />
-            </div>
+    <div style="margin-top:10px;">
+      <label for="chatCaptcha">
+        What is <span id="chatCaptchaQ">1 + 1</span>?
+      </label>
 
-            <input type="hidden" name="captchaX" value="">
-            <input type="hidden" name="captchaY" value="">
-            <input type="hidden" name="captchaAnswer" value="">
+      <input
+  type="number"
+  id="chatCaptcha"
+  placeholder="Write your answer"
+  required
+  style="width:100%; padding:8px; margin-top:4px; border:1px solid #ccc; border-radius:6px;">
 
-            <button id="send-button" type="submit"
-                    style="width:100%; background:#000000; color:#ffffff; font-size:1.1rem; font-weight:bold; padding:16px; border:none; border-radius:4px; cursor:pointer; transition:background 0.3s; box-sizing:border-box;"
-                    onmouseover="this.style.background='#CE2029'" onmouseout="this.style.background='#000000'">
-              Send Message
-            </button>
-          </form>
-        </div>
-      </div>
-    </main>
-  </section>
+    </div>
+
+    <button
+  id="chatSendBtn"
+  onclick="sendChatMessage()"
+  style="margin-top:10px; background:#FF6A00; color:#fff; border:none; padding:10px 20px; border-radius:6px; font-size:1rem; cursor:pointer; width:100%; transition:background 0.3s ease;"
+  onmouseover="this.style.background='#0A2540'"
+  onmouseout="this.style.background='#FF6A00'"
+>
+  Send Message
+</button>
+
+    <div id="cooldownMsg" style="margin-top:10px; font-size:0.9rem; color:#c00; display:none;"></div>
+
+    <div id="chatResponse" style="margin-top:20px; font-size:0.95rem; color:#333;"></div>
+
+  </div>
 </div>
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("contact-form");
-  const captchaSpan = document.getElementById("captcha-question");
-  const captchaInput = document.getElementById("captcha");
-  const status = document.getElementById("form-status");
-  const sendButton = document.getElementById("send-button");
+<!-- 💬 Script -->
+<script data-exec>
+let correctAnswer, x, y, chatFormStart = Date.now();
 
-  const formStart = Date.now();
-  const x = Math.floor(Math.random() * 5) + 1;
-  const y = Math.floor(Math.random() * 5) + 1;
-  const correctAnswer = x + y;
-  if (captchaSpan) {
-    captchaSpan.textContent = `${x} + ${y}`;
+const cooldownKey = "enggtech_chat_last_submit";
+
+(function initCaptcha() {
+
+  x = Math.floor(Math.random() * 6) + 1;
+  y = Math.floor(Math.random() * 6) + 1;
+
+  correctAnswer = x + y;
+
+  document.getElementById("chatCaptchaQ").textContent = `${x} + ${y}`;
+
+})();
+
+function formatTime(ms) {
+
+  const minutes = Math.floor(ms / 60000);
+  const seconds = Math.floor((ms % 60000) / 1000);
+
+  return `${minutes}m ${seconds}s`;
+
+}
+
+function checkCooldown() {
+
+  const last = localStorage.getItem(cooldownKey);
+  const now = Date.now();
+
+  const btn = document.getElementById("chatSendBtn");
+  const msg = document.getElementById("cooldownMsg");
+
+  if (last && now - parseInt(last) < 3600000) {
+
+    const remaining = 3600000 - (now - parseInt(last));
+
+    btn.style.display = "none";
+
+    msg.style.display = "block";
+
+    msg.textContent =
+      "⏳ Next submission available in " + formatTime(remaining);
+
+    const timer = setInterval(() => {
+
+      const remainingNow =
+        3600000 - (Date.now() - parseInt(last));
+
+      if (remainingNow <= 0) {
+
+        clearInterval(timer);
+
+        msg.style.display = "none";
+
+        btn.style.display = "inline-block";
+
+      } else {
+
+        msg.textContent =
+          "⏳ Next submission available in " + formatTime(remainingNow);
+
+      }
+
+    }, 1000);
+
   }
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
+}
 
-    const honeypot = form.querySelector('input[name="honeypot"]');
-    const now = Date.now();
-    const delay = now - formStart;
-    const userAnswer = parseInt(captchaInput.value, 10);
+checkCooldown();
 
-    if (honeypot.value) {
-      status.textContent = "⚠️ Spam detected.";
-      status.style.color = "red";
-      return;
+function sendChatMessage() {
+
+  const name =
+    document.getElementById("chatName").value.trim();
+
+  const email =
+    document.getElementById("chatEmail").value.trim();
+
+  const message =
+    document.getElementById("chatMessage").value.trim();
+
+  const honeypot =
+    document.getElementById("chatHoneypot").value.trim();
+
+  const answer =
+    parseInt(document.getElementById("chatCaptcha").value);
+
+  const responseDiv =
+    document.getElementById("chatResponse");
+
+  const sendBtn =
+    document.getElementById("chatSendBtn");
+
+  if (honeypot !== "") {
+
+    responseDiv.innerHTML =
+      "<span style='color:red;'>⚠️ Spam detected. Submission blocked.</span>";
+
+    return;
+
+  }
+
+  const delayCheck = Date.now() - chatFormStart;
+
+  if (delayCheck < 3000) {
+
+    responseDiv.innerHTML =
+      "<span style='color:orange;'>⏱️ Please wait a moment before sending your message.</span>";
+
+    return;
+
+  }
+
+  if (answer !== correctAnswer) {
+
+    responseDiv.innerHTML =
+      "<span style='color:orange;'>❌ Incorrect answer. Please try again.</span>";
+
+    return;
+
+  }
+
+  if (!name || !email || !message) {
+
+    responseDiv.innerHTML =
+      "<span style='color:red;'>Please fill in all fields before sending.</span>";
+
+    return;
+
+  }
+
+  const emailPattern =
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (!emailPattern.test(email)) {
+
+    responseDiv.innerHTML =
+      "<span style='color:red;'>❌ Please enter a valid email address.</span>";
+
+    return;
+
+  }
+
+  sendBtn.style.display = "none";
+
+  const formData = new FormData();
+
+  formData.append("name", name);
+  formData.append("email", email);
+  formData.append("message", message);
+  formData.append("honeypot", honeypot);
+  formData.append("captchaX", x);
+  formData.append("captchaY", y);
+  formData.append("captchaAnswer", answer);
+
+  localStorage.setItem(
+    cooldownKey,
+    Date.now().toString()
+  );
+
+  const num = "6591294851";
+
+  const waMessage = encodeURIComponent(
+    `Hello Engg-Tech,\n\nName: ${name}\nEmail: ${email}\nMessage: ${message}`
+  );
+
+  responseDiv.innerHTML = `
+    <p>✅ Opening WhatsApp...</p>
+    <p>
+      If it doesn't open,
+      <a href="https://wa.me/${num}?text=${waMessage}" target="_blank">
+        <strong>click here</strong>
+      </a>
+    </p>
+  `;
+
+  if (/Android|iPhone|iPad/i.test(navigator.userAgent)) {
+
+    window.location.href =
+      `https://wa.me/${num}?text=${waMessage}`;
+
+  } else {
+
+    const win = window.open(
+      `https://wa.me/${num}?text=${waMessage}`,
+      "_blank"
+    );
+
+    if (!win || win.closed || typeof win.closed === 'undefined') {
+
+      window.location.href =
+        `https://wa.me/${num}?text=${waMessage}`;
+
     }
-    if (delay < 3000) {
-      status.textContent = "⚠️ Submission too fast. Try again.";
-      status.style.color = "orange";
-      return;
-    }
-    if (userAnswer !== correctAnswer) {
-      status.textContent = "⚠️ Incorrect math answer.";
-      status.style.color = "orange";
-      return;
-    }
 
-    form.querySelector('input[name="captchaX"]').value = x;
-    form.querySelector('input[name="captchaY"]').value = y;
-    form.querySelector('input[name="captchaAnswer"]').value = userAnswer;
+  }
 
-    const formData = new FormData(form);
+  checkCooldown();
 
-    fetch("https://script.google.com/macros/s/AKfycbwkIbW2EzsoG54Adydc0UwnN34au15dm2vnn3Egfhrq69n8HiEdGUgIJQ0riPGLe5k/exec", {
+  fetch(
+    "https://script.google.com/macros/s/AKfycbwkIbW2EzsoG54Adydc0UwnN34au15dm2vnn3Egfhrq69n8HiEdGUgIJQ0riPGLe5k/exec",
+    {
       method: "POST",
       body: formData
-    })
-    .then(() => {
-      status.textContent = "✅ Message sent successfully!";
-      status.style.color = "green";
-      sendButton.style.display = "none";
-      form.reset();
-    })
-    .catch(err => {
-      status.textContent = "❌ Error sending message.";
-      status.style.color = "red";
-      console.error("Error:", err);
-    });
-  });
-});
+    }
+  );
+
+}
+
+(function() {
+
+  const h = new Date().getHours();
+
+  let g = "Hello";
+
+  if (h < 12) {
+    g = "Good morning";
+  } else if (h < 18) {
+    g = "Good afternoon";
+  } else {
+    g = "Good evening";
+  }
+
+  document.getElementById("greeting").textContent =
+    g + "!";
+
+})();
 </script>
+
+<style>
+@media (max-width: 480px) {
+
+  #chatBox {
+    width: 92% !important;
+    padding: 18px !important;
+  }
+
+}
+</style>      
+
 <!-- Content section END -->
 
 <!-- Global Ads & Analytics -->

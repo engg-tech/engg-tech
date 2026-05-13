@@ -4,17 +4,29 @@
 
 // Load Google Analytics library
 const gaScript = document.createElement("script");
+
 gaScript.async = true;
-gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-F3P37PXXYN";
+
+gaScript.src =
+  "https://www.googletagmanager.com/gtag/js?id=G-F3P37PXXYN";
+
 document.head.appendChild(gaScript);
 
 // Initialize Analytics after load
 gaScript.onload = () => {
+
   window.dataLayer = window.dataLayer || [];
+
   function gtag(){ dataLayer.push(arguments); }
 
   gtag('js', new Date());
+
+  // Google Analytics
   gtag('config', 'G-F3P37PXXYN');
+
+  // Google Ads
+  gtag('config', 'AW-18141886702');
+
 };
 
 /**********************

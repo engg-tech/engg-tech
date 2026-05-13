@@ -12,12 +12,15 @@ gaScript.src =
 
 document.head.appendChild(gaScript);
 
+// Global dataLayer + gtag
+window.dataLayer = window.dataLayer || [];
+
+function gtag() {
+  dataLayer.push(arguments);
+}
+
 // Initialize Analytics after load
 gaScript.onload = () => {
-
-  window.dataLayer = window.dataLayer || [];
-
-  function gtag(){ dataLayer.push(arguments); }
 
   gtag('js', new Date());
 

@@ -99,22 +99,13 @@ if (!isExcludedPage) {
  ********************************/
 function gtag_report_conversion(url) {
 
-  var callback = function () {
-
-    if (typeof(url) != 'undefined') {
-      window.location = url;
-    }
-
-  };
-
   gtag('event', 'conversion', {
-
-    'send_to': 'AW-18141886702/doDbCKvPhqwcEO7x3MpD',
-
-    'event_callback': callback
-
+    'send_to': 'AW-18141886702/doDbCKvPhqwcEO7x3MpD'
   });
 
-  return false;
+  // Delay opening slightly so conversion can fire
+  setTimeout(function () {
+    window.open(url, '_blank');
+  }, 500);
 
 }

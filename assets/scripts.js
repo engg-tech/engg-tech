@@ -48,6 +48,7 @@ const isExcludedPage =
   currentPath.startsWith('/projects/') ||
   currentPath === '/blog/' ||
   currentPath.startsWith('/contact-us/') ||
+  currentPath.startsWith('/lp/') ||
   currentPath.startsWith('/privacy-policy/');
 
 // Only load AdSense if NOT excluded

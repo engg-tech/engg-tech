@@ -50,6 +50,7 @@ const isExcludedPage =
   currentPath.startsWith('/services/') ||
   currentPath.startsWith('/projects/') ||
   currentPath === '/blog/' ||
+  currentPath === '/articles/' ||
   currentPath.startsWith('/contact-us/') ||
   currentPath.startsWith('/lp/') ||
   currentPath.startsWith('/privacy-policy/');

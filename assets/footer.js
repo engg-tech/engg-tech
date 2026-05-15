@@ -10,8 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <h2 class="footer-heading">Stay Connected</h2>
       <p>Follow us for company updates, fire safety tips, and the latest projects in Singapore.</p>
       <p>
-  <a href="https://linkedin.com/company/enggtechofficial" target="_blank" rel="noopener noreferrer">LinkedIn</a> |
-  <a href="https://facebook.com/enggtech" target="_blank" rel="noopener noreferrer">Facebook</a>
+  <a href="https://linkedin.com/company/enggtechofficial" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       </p>
     </div>
 

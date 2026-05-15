@@ -11,9 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <p>Follow us for company updates, fire safety tips, and the latest projects in Singapore.</p>
       <p>
   <a href="https://linkedin.com/company/enggtechofficial" target="_blank" rel="noopener noreferrer">LinkedIn</a> |
-  <a href="https://facebook.com/enggtech" target="_blank" rel="noopener noreferrer">Facebook</a> |
-  <a href="https://instagram.com/enggtechofficial" target="_blank" rel="noopener noreferrer">Instagram</a> |
-  <a href="https://youtube.com/@enggtechofficial" target="_blank" rel="noopener noreferrer">YouTube</a>
+  <a href="https://facebook.com/enggtech" target="_blank" rel="noopener noreferrer">Facebook</a>
       </p>
     </div>
 

@@ -6,9 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const navHTML = `
 <nav class="navbar-custom" aria-label="Main Navigation">
   <div class="navbar-container">
-    <a href="https://engg-tech.com/" class="navbar-brand nav-link">
-      ENGG-TECH.COM
-    </a>
+    <a href="mailto:info@engg-tech.com" class="navbar-brand nav-link">
+  info@engg-tech.com
+</a>
 
     <span class="menu-toggle"
           aria-controls="navbarMenu"

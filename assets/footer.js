@@ -7,12 +7,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     <!-- Stay Connected -->
     <div class="footer-column">
-      <h2 class="footer-heading">Stay Connected</h2>
-      <p>Follow us for company updates, fire safety tips, and the latest projects in Singapore.</p>
-      <p>
-  <a href="https://linkedin.com/company/enggtechofficial" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      </p>
-    </div>
+  <h2 class="footer-heading">About Engg-Tech</h2>
+
+  <p>
+    Engg-Tech provides trusted fire protection, waterproofing, renovation, and M&E solutions for residential and commercial projects in Singapore.
+  </p>
+
+  <p>
+    <a href="https://engg-tech.com/about-us/">
+      Learn More About Us →
+    </a>
+  </p>
+</div>
 
     <!-- Explore Blog -->
     <div class="footer-column">

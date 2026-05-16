@@ -6,14 +6,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const navHTML = `
 <nav class="navbar-custom" aria-label="Main Navigation">
   <div class="navbar-container">
-    <a href="mailto:info@engg-tech.com"
+    
+  <span style="pointer-events:none;">
+  Email:
+</span>
+
+<a href="mailto:info@engg-tech.com"
    class="navbar-brand nav-link"
    style="text-transform:none;">
-   
-   <span style="pointer-events:none; text-decoration:none; color:inherit;">
-      Email:
-   </span>
-   
    info@engg-tech.com
 </a>
 

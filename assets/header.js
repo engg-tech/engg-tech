@@ -7,9 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <nav class="navbar-custom" aria-label="Main Navigation">
   <div class="navbar-container">
     
-  <span style="text-transform:none; pointer-events:none; cursor:default; display:inline;">Email: 
-
-<a href="mailto:info@engg-tech.com" class="navbar-brand nav-link" style="text-transform:none; display:inline;">info@engg-tech.com</a></span>
+  <a href="mailto:info@engg-tech.com" class="navbar-brand nav-link" style="text-transform:none;"> Email: info@engg-tech.com </a>
 
     <span class="menu-toggle"
           aria-controls="navbarMenu"

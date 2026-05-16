@@ -7,10 +7,18 @@ document.addEventListener("DOMContentLoaded", () => {
 <nav class="navbar-custom" aria-label="Main Navigation">
   <div class="navbar-container">
     <a href="mailto:info@engg-tech.com"
-   class="navbar-brand nav-link"
+   class="navbar-brand nav-link email-link"
    style="text-transform:none;">
-  Email: info@engg-tech.com
+   <span class="no-hover">Email:</span> info@engg-tech.com
 </a>
+
+<style>
+.email-link .no-hover{
+  pointer-events: none;
+  text-decoration: none !important;
+  color: inherit !important;
+}
+</style>
 
     <span class="menu-toggle"
           aria-controls="navbarMenu"

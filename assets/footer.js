@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   <p>
     <a href="https://engg-tech.com/about-us/">
-      Learn More About Us →
+      Follow Us
     </a>
   </p>
 

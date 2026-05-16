@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     <a href="mailto:info@engg-tech.com"
    class="navbar-brand nav-link"
    style="text-transform:none;">
-  info@engg-tech.com
+  Email: info@engg-tech.com
 </a>
 
     <span class="menu-toggle"

@@ -7,7 +7,10 @@ document.addEventListener("DOMContentLoaded", () => {
 <nav class="navbar-custom" aria-label="Main Navigation">
   <div class="navbar-container">
     
-  <span style="text-transform:none; color:#ffffff; font-weight:600; font-size:1rem; pointer-events:none; cursor:default;">Email: </span><a href="mailto:info@engg-tech.com" class="nav-link" style="text-transform:none;">info@engg-tech.com</a>
+  <div style="display:flex; align-items:center; gap:4px;">
+    <span style="text-transform:none; color:#ffffff; font-weight:600; font-size:1rem; pointer-events:none; cursor:default;">Email:</span>
+    <a href="mailto:info@engg-tech.com" class="nav-link" style="text-transform:none;">info@engg-tech.com</a>
+  </div>
 
     <span class="menu-toggle"
           aria-controls="navbarMenu"

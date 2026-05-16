@@ -13,11 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     Engg-Tech provides trusted fire protection, waterproofing, renovation, and M&E solutions for residential and commercial projects in Singapore.
   </p>
 
-  <p>
-    <a href="https://engg-tech.com/about-us/">
-      Follow Us
-    </a>
-  </p>
+  <p>Follow Us</p>
 
 <!-- Facebook -->
 <a href="https://www.facebook.com/enggtech" target="_blank"

@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
   <!-- Instagram -->
   <span style="display:inline-flex;">
     <a href="https://www.instagram.com/enggtechofficial/" target="_blank"
-       style="display:inline-flex; align-items:center; justify-content:center;
+       style="display:inline-flex;
               width:36px; height:36px; border-radius:50%;
               background:transparent; text-decoration:none;
               transition:opacity 0.2s;"

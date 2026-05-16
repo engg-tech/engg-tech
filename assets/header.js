@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <nav class="navbar-custom" aria-label="Main Navigation">
   <div class="navbar-container">
     
-  <span class="navbar-brand">Email: info@engg-tech.com</span>
+  <span class="navbar-brand">✉ info@engg-tech.com</span>
 
     <span class="menu-toggle"
           aria-controls="navbarMenu"

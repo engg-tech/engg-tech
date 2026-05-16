@@ -7,10 +7,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     <!-- Stay Connected -->
     <div class="footer-column">
-  <h2 class="footer-heading">About Us</h2>
+  <h2 class="footer-heading">Follow Us</h2>
 
   <p>
-    Engg-Tech provides trusted fire protection, waterproofing, renovation, and M&E solutions for residential and commercial projects in Singapore.
+    Stay updated with our trusted fire protection, waterproofing, and M&E solutions across Singapore.
   </p>
 
 <!-- Facebook -->

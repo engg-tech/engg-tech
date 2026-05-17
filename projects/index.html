@@ -168,6 +168,9 @@
       <!-- Legend tags as clickable filters -->
       <div class="portfolio-legend" id="portfolio-legend"></div>
 
+      <!-- Search -->
+      <input type="text" id="portfolio-search" placeholder="Search projects…" oninput="portfolioRender()" aria-label="Search projects" style="width:100%;font-size:14px;border:1.5px solid #0A2540;border-radius:8px;padding:8px 14px;outline:none;color:#0A2540;font-family:inherit;background:#fff;margin-bottom:1rem;box-sizing:border-box;">
+
       <!-- Table -->
       <table class="portfolio-table" aria-label="Completed fire protection projects">
         <thead>
@@ -251,7 +254,11 @@
 
   window.portfolioRender=function(){
     const filtered=projects.filter(p=>{
-      return activeFilter==='All'||p.services.includes(activeFilter);
+      const q=(document.getElementById('portfolio-search').value||'').toLowerCase();
+      const matchQ=!q||p.name.toLowerCase().includes(q)||
+        p.services.some(s=>s.toLowerCase().includes(q))||
+        p.services.some(s=>SVC_META[s]&&SVC_META[s].label.toLowerCase().includes(q));
+      return matchQ&&(activeFilter==='All'||p.services.includes(activeFilter));
     });
 
     const tbody=document.getElementById('portfolio-tbody');

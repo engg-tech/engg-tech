@@ -34,7 +34,37 @@ document.addEventListener("DOMContentLoaded", () => {
       <ul id="navbarMenu" role="list">
         <li><a class="nav-link" href="https://engg-tech.com/">Home</a></li>
         <li><a class="nav-link" href="https://engg-tech.com/about-us/">About</a></li>
-        <li><a class="nav-link" href="https://engg-tech.com/services/">Services</a></li>
+
+        <li class="has-submenu">
+          <a class="nav-link" href="https://engg-tech.com/services/">Services</a>
+          <ul class="submenu" role="list">
+
+            <li class="has-submenu">
+              <a href="https://engg-tech.com/services/waterproofing/">Waterproofing ›</a>
+              <ul class="submenu" role="list">
+                <li><a href="https://engg-tech.com/services/epoxy-grouting-singapore/">Epoxy Grout</a></li>
+                <li><a href="https://engg-tech.com/services/pu-grouting-singapore/">PU Grout</a></li>
+              </ul>
+            </li>
+
+            <!-- TO ADD MORE ITEMS UNDER SERVICES:
+
+            Plain link (no sub-items):
+            <li><a href="/services/your-service/">Your Service</a></li>
+
+            With flyout sub-items:
+            <li class="has-submenu">
+              <a href="/services/your-service/">Your Service ›</a>
+              <ul class="submenu" role="list">
+                <li><a href="/services/your-service/sub-1/">Sub Item 1</a></li>
+                <li><a href="/services/your-service/sub-2/">Sub Item 2</a></li>
+              </ul>
+            </li>
+            -->
+
+          </ul>
+        </li>
+
         <li><a class="nav-link" href="https://engg-tech.com/projects/">Projects</a></li>
         <li><a class="nav-link" href="https://engg-tech.com/blog/">Blog</a></li>
         <li><a class="nav-link" href="https://engg-tech.com/contact-us/">Contact</a></li>

@@ -194,6 +194,100 @@ body {
 
 
 /* =======================================================
+   Dropdown Submenus — Generic & Recursive
+   -------------------------------------------------------
+   HOW TO ADD MORE SUBMENUS IN THE FUTURE:
+   Just use class="has-submenu" on any <li> in header.js
+   and nest a <ul class="submenu"> inside it.
+   Works at any depth — no CSS changes ever needed.
+======================================================= */
+
+/* Any <li> that has a nested dropdown */
+.has-submenu {
+  position: relative;
+}
+
+/* The dropdown panel — hidden by default */
+.has-submenu > .submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--color-white);
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+  min-width: 210px;
+  padding: 0.4rem 0;
+  list-style: none;
+  z-index: 1000;
+  margin: 0;
+}
+
+/* Nested submenus fly out to the right */
+.has-submenu .has-submenu > .submenu {
+  top: 0;
+  left: 100%;
+}
+
+/* Show on hover or keyboard focus */
+.has-submenu:hover > .submenu,
+.has-submenu:focus-within > .submenu {
+  display: block;
+}
+
+/* Links inside any submenu level */
+.submenu a {
+  display: block;
+  padding: 0.5rem 1.1rem;
+  color: var(--color-navy);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.submenu a:hover {
+  color: var(--color-orange);
+  background: #fff5ef;
+}
+
+.submenu a:focus-visible {
+  outline: 2px solid var(--color-orange);
+  outline-offset: -2px;
+}
+
+/* Divider between submenu groups (optional — add <li class="submenu-divider"> in header.js) */
+.submenu-divider {
+  height: 1px;
+  background: rgba(0,0,0,0.08);
+  margin: 0.3rem 0;
+  list-style: none;
+}
+
+/* Mobile — stack all submenus vertically, no flyout */
+@media (max-width: 768px) {
+  .has-submenu > .submenu,
+  .has-submenu .has-submenu > .submenu {
+    position: static;
+    box-shadow: none;
+    border: none;
+    border-left: 2px solid var(--color-orange);
+    border-radius: 0;
+    min-width: unset;
+    padding: 0.25rem 0 0.25rem 0.75rem;
+    display: block;
+  }
+
+  .submenu a {
+    font-size: 1rem;
+    padding: 0.4rem 0.75rem;
+  }
+}
+
+
+/* =======================================================
    Blog Page Two Column Layout
 ======================================================= */
 @media (min-width: 769px) {

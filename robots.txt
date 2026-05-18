@@ -1,6 +1,10 @@
-# ✅ Allow all major search engines 
+# ✅ Allow all major search engines
 User-agent: Googlebot
-Disallow: /assets/footer.html
+Disallow: /assets/footer.js
+Disallow: /assets/header.js
+Disallow: /assets/scripts.js
+Disallow: /assets/recommended-articles.js
+Disallow: /assets/recommended-posts.js
 
 User-agent: Bingbot
 Disallow:

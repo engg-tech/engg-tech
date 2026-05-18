@@ -210,8 +210,16 @@ body {
    Blog Index List
 ======================================================= */
 .blog-list {
+  padding-left: 1.5rem;
+}
+
+ul.blog-list {
   list-style: none;
   padding-left: 0;
+}
+
+ol.blog-list {
+  list-style: decimal;
 }
 
 .blog-list li {

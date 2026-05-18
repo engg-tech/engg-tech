@@ -60,9 +60,9 @@ const updated = html.replace(
   /<!-- BLOG-LIST-START -->[\s\S]*?<!-- BLOG-LIST-END -->/,
 
   `<!-- BLOG-LIST-START -->
-<ul class="blog-list">
+<ol class="blog-list">
 ${list}
-</ul>
+</ol>
 <!-- BLOG-LIST-END -->`
 
 );

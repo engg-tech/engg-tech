@@ -1,7 +1,8 @@
 /* =======================================================
    Engg-Tech Styles
    Improved: CSS variables, consistent breakpoints,
-   accessibility, specificity cleanup, better font stack
+   accessibility, specificity cleanup, better font stack,
+   box-sizing, line-height, reduced-motion, scroll-behavior
 ======================================================= */
 
 /* ---------------------------------------
@@ -13,7 +14,7 @@
   --color-orange:       #ff6a00;
   --color-white:        #ffffff;
   --color-white-muted:  rgba(255, 255, 255, 0.67);
-  --color-text-dark:    #000000;
+  --color-text-dark:    #1a1a1a;
 
   --navbar-height:      64px;
 
@@ -29,10 +30,36 @@
 /* ---------------------------------------
    Base Styles
 ---------------------------------------- */
+
+/* Global box-sizing reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Smooth anchor scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: var(--font-base);
   padding-top: var(--navbar-height);
+  line-height: 1.5;
+  color: var(--color-text-dark);
+}
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 
@@ -195,6 +222,7 @@ body {
 
 .blog-list a:hover {
   color: var(--color-orange);
+  text-underline-offset: 3px;
 }
 
 .blog-list a:focus-visible {
@@ -211,9 +239,6 @@ body {
   background-color: var(--color-navy);
   color: var(--color-white);
   padding: 3rem 1.5rem 2rem;
-  box-sizing: border-box;
-  font-family: var(--font-base);
-  font-size: 1rem;
 }
 
 .enggtech-footer a {
@@ -224,6 +249,7 @@ body {
 
 .enggtech-footer a:hover {
   text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .enggtech-footer a:focus-visible {

@@ -1,13 +1,21 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   /* ---------------------------------------
-     NAVIGATION HTML
+     NAVIGATION HTML — two row layout
   ---------------------------------------- */
   const navHTML = `
+<div class="topbar">
+  <div class="topbar-container">
+    <a href="mailto:info@engg-tech.com" class="topbar-email">info@engg-tech.com</a>
+  </div>
+</div>
+
 <nav class="navbar-custom" aria-label="Main Navigation">
   <div class="navbar-container">
 
-    <span class="navbar-brand">info@engg-tech.com</span>
+    <a class="navbar-brand" href="https://engg-tech.com/" aria-label="Engg-Tech Home">
+      <img src="/assets/favicon/logo-180.png" alt="Engg-Tech Pte. Ltd. logo" width="48" height="48" fetchpriority="high" style="display:block;">
+    </a>
 
     <button class="menu-toggle"
             aria-controls="navbarMenu"
@@ -58,9 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    if (
-      (href.startsWith("/blog") && path.startsWith("/blog"))
-    ) {
+    if (href.startsWith("/blog") && path.startsWith("/blog")) {
       a.classList.add("active");
       return;
     }

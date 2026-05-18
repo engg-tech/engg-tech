@@ -127,6 +127,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     menu.querySelectorAll(".nav-link").forEach(link => {
       link.addEventListener("click", () => {
+        // Don't close menu if it's a has-submenu parent on mobile
+        if (link.closest(".has-submenu") && window.innerWidth <= 768) return;
         menu.classList.remove("show");
         toggle.setAttribute("aria-expanded", "false");
       });
@@ -139,5 +141,23 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+  /* ---------------------------------------
+     MOBILE SUBMENU — TAP TO EXPAND
+  ---------------------------------------- */
+  document.querySelectorAll(".has-submenu > .nav-link, .has-submenu > a").forEach(link => {
+    link.addEventListener("click", (e) => {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        const parentLi = link.parentElement;
+        const isOpen = parentLi.classList.contains("open");
+        // Close any open siblings first
+        parentLi.parentElement.querySelectorAll(".has-submenu.open").forEach(el => {
+          if (el !== parentLi) el.classList.remove("open");
+        });
+        parentLi.classList.toggle("open", !isOpen);
+      }
+    });
+  });
 
 });

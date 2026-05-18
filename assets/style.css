@@ -207,8 +207,8 @@ li:not(.has-submenu) > .nav-link.active:not(.navbar-brand)::after {
   position: relative;
 }
 
-/* Arrow on the top-level nav link (e.g. "Services ▾") */
-.navbar-nav > ul > .has-submenu > .nav-link::after {
+/* Arrow on nav links that have a submenu — desktop */
+.has-submenu > .nav-link::after {
   content: '';
   display: inline-block;
   margin-left: 5px;
@@ -219,8 +219,8 @@ li:not(.has-submenu) > .nav-link.active:not(.navbar-brand)::after {
   transition: transform 0.2s ease, border-top-color 0.2s ease;
 }
 
-.navbar-nav > ul > .has-submenu:hover > .nav-link::after,
-.navbar-nav > ul > .has-submenu:focus-within > .nav-link::after {
+.has-submenu:hover > .nav-link::after,
+.has-submenu:focus-within > .nav-link::after {
   transform: rotate(180deg);
   border-top-color: var(--color-orange);
 }
@@ -248,10 +248,12 @@ li:not(.has-submenu) > .nav-link.active:not(.navbar-brand)::after {
   left: 100%;
 }
 
-/* Show on hover or keyboard focus */
-.has-submenu:hover > .submenu,
-.has-submenu:focus-within > .submenu {
-  display: block;
+/* Desktop — show on hover or keyboard focus */
+@media (min-width: 769px) {
+  .has-submenu:hover > .submenu,
+  .has-submenu:focus-within > .submenu {
+    display: block;
+  }
 }
 
 /* Links inside any submenu level */
@@ -284,7 +286,7 @@ li:not(.has-submenu) > .nav-link.active:not(.navbar-brand)::after {
   list-style: none;
 }
 
-/* Mobile — stack all submenus vertically, no flyout */
+/* Mobile — hidden by default, tap to expand via JS (.open class) */
 @media (max-width: 768px) {
   .has-submenu > .submenu,
   .has-submenu .has-submenu > .submenu {
@@ -295,7 +297,20 @@ li:not(.has-submenu) > .nav-link.active:not(.navbar-brand)::after {
     border-radius: 0;
     min-width: unset;
     padding: 0.25rem 0 0.25rem 0.75rem;
+    display: none;
+  }
+
+  .has-submenu.open > .submenu {
     display: block;
+  }
+
+  .has-submenu > .nav-link::after {
+    border-top-color: var(--color-navy);
+  }
+
+  .has-submenu.open > .nav-link::after {
+    transform: rotate(180deg);
+    border-top-color: var(--color-orange);
   }
 
   .submenu a {

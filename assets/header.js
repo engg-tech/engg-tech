@@ -3,6 +3,14 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ---------------------------------------
      NAVIGATION HTML — two row layout
   ---------------------------------------- */
+  const isHomepage = window.location.pathname === "/" || window.location.pathname === "/index.html";
+
+  const brandHTML = isHomepage
+    ? `<a class="navbar-brand" href="https://engg-tech.com/">Engg-Tech</a>`
+    : `<a class="navbar-brand" href="https://engg-tech.com/" aria-label="Engg-Tech Home">
+        <img src="/assets/favicon/logo-180.png" alt="Engg-Tech Pte. Ltd. logo" width="48" height="48" fetchpriority="high" style="display:block;">
+      </a>`;
+
   const navHTML = `
 <div class="topbar">
   <div class="topbar-container">
@@ -13,9 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <nav class="navbar-custom" aria-label="Main Navigation">
   <div class="navbar-container">
 
-    <a class="navbar-brand" href="https://engg-tech.com/" aria-label="Engg-Tech Home">
-      <img src="/assets/favicon/logo-180.png" alt="Engg-Tech Pte. Ltd. logo" width="48" height="48" fetchpriority="high" style="display:block;">
-    </a>
+    ${brandHTML}
 
     <button class="menu-toggle"
             aria-controls="navbarMenu"

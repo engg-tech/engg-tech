@@ -522,3 +522,57 @@ ol.blog-list {
 .page-links a:hover {
   color: var(--color-orange);
 }
+
+
+/* =======================================================
+   Projects Portfolio Page
+======================================================= */
+.portfolio-wrap { padding: 1.5rem 0; }
+
+.portfolio-legend { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.25rem; }
+.legend-tag { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; padding: 5px 12px; border-radius: 20px; font-weight: 500; border: 1.5px solid; cursor: pointer; transition: all .15s; user-select: none; }
+.legend-tag:hover { opacity: .8; }
+.legend-tag.is-active { outline: 2px solid #FF6A00; font-weight: 700; }
+.legend-tag-SPK { background: #e8f0fa; color: #0A2540; border-color: #b8cce8; }
+.legend-tag-FA  { background: #fff1e8; color: #cc4400; border-color: #ffcca0; }
+.legend-tag-DR  { background: #e8f5f0; color: #0a5240; border-color: #a0d4c0; }
+.legend-tag-HR  { background: #fdf4e8; color: #7a4a00; border-color: #f0c878; }
+.legend-tag-FH  { background: #f0eafa; color: #3a1a7a; border-color: #c8a8f0; }
+.legend-tag-ALL { background: #0A2540; color: #fff; border-color: #0A2540; }
+.legend-tag-ALL.is-active { background: #FF6A00; border-color: #FF6A00; color: #fff; }
+
+.portfolio-table { width: 100%; border-collapse: collapse; font-size: 14px; table-layout: fixed; margin-top: 0; }
+.portfolio-table thead { background: #0A2540; }
+.portfolio-table thead th { padding: 10px 12px; color: #fff; font-weight: 500; text-align: left; font-size: 12px; text-transform: uppercase; letter-spacing: .05em; }
+.portfolio-table th:nth-child(1) { width: 40%; }
+.portfolio-table th:nth-child(2) { width: 44%; }
+.portfolio-table th:nth-child(3) { width: 16%; }
+.portfolio-table td { padding: 10px 12px; border-bottom: 0.5px solid #d0dae6; vertical-align: middle; color: #0A2540; border-left: none; }
+.portfolio-table tr:last-child td { border-bottom: none; }
+.portfolio-table tbody tr { border-left: 4px solid transparent; transition: all .2s ease; }
+.portfolio-table tbody tr:hover { background: #fff8f4 !important; border-left: 4px solid #FF6A00; box-shadow: 0 2px 6px rgba(0,0,0,.08); transform: translateY(-1px); cursor: pointer; }
+
+.svc-tag { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin: 2px 2px 2px 0; white-space: nowrap; font-weight: 500; border: 1px solid; }
+.tag-SPK { background: #e8f0fa; color: #0A2540; border-color: #b8cce8; }
+.tag-FA  { background: #fff1e8; color: #cc4400; border-color: #ffcca0; }
+.tag-DR  { background: #e8f5f0; color: #0a5240; border-color: #a0d4c0; }
+.tag-HR  { background: #fdf4e8; color: #7a4a00; border-color: #f0c878; }
+.tag-FH  { background: #f0eafa; color: #3a1a7a; border-color: #c8a8f0; }
+
+.badge-done { display: inline-block; font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 600; background: #FF6A00; color: #fff; }
+
+@keyframes pulseBg { 0% { background: #FF6A00; } 50% { background: #0A2540; } 100% { background: #FF6A00; } }
+.portfolio-table tbody tr:hover td:last-child .badge-done { color: #fff; animation: pulseBg .8s ease-in-out infinite; }
+
+.portfolio-empty { padding: 2rem; text-align: center; color: #6b8aaa; font-size: 14px; display: none; }
+
+@media (max-width: 600px) {
+  .portfolio-table, .portfolio-table thead, .portfolio-table tbody,
+  .portfolio-table th, .portfolio-table td, .portfolio-table tr { display: block; }
+  .portfolio-table thead { display: none; }
+  .portfolio-table td { position: relative; padding-left: 50%; border-bottom: 0.5px solid #d0dae6; }
+  .portfolio-table td::before { position: absolute; left: 1rem; font-weight: 600; color: #0A2540; font-size: 11px; text-transform: uppercase; opacity: .6; }
+  .portfolio-table td:nth-of-type(1)::before { content: "Project"; }
+  .portfolio-table td:nth-of-type(2)::before { content: "Services"; }
+  .portfolio-table td:nth-of-type(3)::before { content: "Status"; }
+}

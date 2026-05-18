@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const { execSync } = require("child_process");
 
 // ===============================
 // CONFIG
@@ -9,126 +10,87 @@ const SITE_URL = "https://engg-tech.com";
 const BLOG_DIR = path.join(__dirname, "blog");
 const ARTICLES_DIR = path.join(__dirname, "articles");
 
-// today as YYYY-MM-DD
-const today = new Date().toLocaleDateString("en-CA", {
-  timeZone: "Asia/Singapore"
-});
+const today = new Date().toLocaleDateString("en-CA", { timeZone: "Asia/Singapore" });
 
 // ===============================
 // HELPERS
 // ===============================
-function urlBlock(loc, priority, changefreq) {
+function getGitLastMod(filePath) {
+  try {
+    const relative = path.relative(__dirname, filePath);
+    const result = execSync(
+      `git log -1 --format=%ci -- "${relative}"`,
+      { encoding: "utf8" }
+    ).trim();
+    if (!result) return today;
+    return result.slice(0, 10); // YYYY-MM-DD
+  } catch (e) {
+    return today;
+  }
+}
 
+function urlBlock(loc, priority, changefreq, lastmod) {
   return `
   <url>
     <loc>${loc}</loc>
-    <lastmod>${today}</lastmod>
+    <lastmod>${lastmod}</lastmod>
     <changefreq>${changefreq}</changefreq>
     <priority>${priority}</priority>
   </url>`;
-
 }
-
-// ===============================
-// URL COLLECTION
-// ===============================
-let urls = [];
 
 // ===============================
 // STATIC PAGES
 // ===============================
-urls.push(
+let urls = [];
 
-  urlBlock(`${SITE_URL}/`, "1.0", "weekly"),
+const staticPages = [
+  { url: "/",                                    file: "index.html",                                    priority: "1.0", freq: "weekly"  },
+  { url: "/about-us/",                           file: "about-us/index.html",                           priority: "0.8", freq: "monthly" },
+  { url: "/services/",                           file: "services/index.html",                           priority: "0.9", freq: "weekly"  },
+  { url: "/services/pu-grouting-singapore/",     file: "services/pu-grouting-singapore/index.html",     priority: "0.9", freq: "monthly" },
+  { url: "/services/epoxy-grouting-singapore/",  file: "services/epoxy-grouting-singapore/index.html",  priority: "0.9", freq: "monthly" },
+  { url: "/projects/",                           file: "projects/index.html",                           priority: "0.8", freq: "monthly" },
+  { url: "/blog/",                               file: "blog/index.html",                               priority: "0.7", freq: "weekly"  },
+  { url: "/articles/",                           file: "articles/index.html",                           priority: "0.6", freq: "weekly"  },
+  { url: "/contact-us/",                         file: "contact-us/index.html",                         priority: "0.6", freq: "monthly" },
+  { url: "/privacy-policy/",                     file: "privacy-policy/index.html",                     priority: "0.3", freq: "yearly"  },
+];
 
-  urlBlock(`${SITE_URL}/about/`, "0.8", "monthly"),
-
-  urlBlock(`${SITE_URL}/services/`, "0.9", "weekly"),
-
-  urlBlock(`${SITE_URL}/services/pu-grouting-singapore/`, "0.9", "monthly"),
-
-  urlBlock(`${SITE_URL}/services/epoxy-grouting-singapore/`, "0.9", "monthly"),
-
-  urlBlock(`${SITE_URL}/projects/`, "0.8", "monthly"),
-
-  // BLOG
-  urlBlock(`${SITE_URL}/blog/`, "0.7", "weekly"),
-
-  // ARTICLES
-  urlBlock(`${SITE_URL}/articles/`, "0.6", "weekly"),
-
-  urlBlock(`${SITE_URL}/contact-us/`, "0.6", "monthly"),
-
-  urlBlock(`${SITE_URL}/privacy-policy/`, "0.3", "yearly")
-
-);
+staticPages.forEach(({ url, file, priority, freq }) => {
+  const filePath = path.join(__dirname, file);
+  const lastmod = getGitLastMod(filePath);
+  urls.push(urlBlock(`${SITE_URL}${url}`, priority, freq, lastmod));
+});
 
 // ===============================
 // BLOG POSTS
 // ===============================
 if (fs.existsSync(BLOG_DIR)) {
-
-  const blogPosts = fs.readdirSync(BLOG_DIR, {
-    withFileTypes: true
-  })
-
-  .filter(dir =>
-    dir.isDirectory() &&
-    fs.existsSync(
-      path.join(BLOG_DIR, dir.name, "index.html")
-    )
-  )
-
-  .map(dir => dir.name)
-
-  .sort();
-
-  blogPosts.forEach(slug => {
-
-    urls.push(
-      urlBlock(
-        `${SITE_URL}/blog/${slug}/`,
-        "0.6",
-        "monthly"
-      )
-    );
-
-  });
-
+  fs.readdirSync(BLOG_DIR, { withFileTypes: true })
+    .filter(dir => dir.isDirectory() && fs.existsSync(path.join(BLOG_DIR, dir.name, "index.html")))
+    .map(dir => dir.name)
+    .sort()
+    .forEach(slug => {
+      const filePath = path.join(BLOG_DIR, slug, "index.html");
+      const lastmod = getGitLastMod(filePath);
+      urls.push(urlBlock(`${SITE_URL}/blog/${slug}/`, "0.6", "monthly", lastmod));
+    });
 }
 
 // ===============================
 // ARTICLE POSTS
 // ===============================
 if (fs.existsSync(ARTICLES_DIR)) {
-
-  const articlePosts = fs.readdirSync(ARTICLES_DIR, {
-    withFileTypes: true
-  })
-
-  .filter(dir =>
-    dir.isDirectory() &&
-    fs.existsSync(
-      path.join(ARTICLES_DIR, dir.name, "index.html")
-    )
-  )
-
-  .map(dir => dir.name)
-
-  .sort();
-
-  articlePosts.forEach(slug => {
-
-    urls.push(
-      urlBlock(
-        `${SITE_URL}/articles/${slug}/`,
-        "0.5",
-        "monthly"
-      )
-    );
-
-  });
-
+  fs.readdirSync(ARTICLES_DIR, { withFileTypes: true })
+    .filter(dir => dir.isDirectory() && fs.existsSync(path.join(ARTICLES_DIR, dir.name, "index.html")))
+    .map(dir => dir.name)
+    .sort()
+    .forEach(slug => {
+      const filePath = path.join(ARTICLES_DIR, slug, "index.html");
+      const lastmod = getGitLastMod(filePath);
+      urls.push(urlBlock(`${SITE_URL}/articles/${slug}/`, "0.5", "monthly", lastmod));
+    });
 }
 
 // ===============================
@@ -140,13 +102,5 @@ ${urls.join("")}
 </urlset>
 `;
 
-// ===============================
-// WRITE FILE
-// ===============================
-fs.writeFileSync(
-  path.join(__dirname, "sitemap.xml"),
-  sitemap,
-  "utf8"
-);
-
-console.log("✅ Sitemap generated: /sitemap.xml");  
+fs.writeFileSync(path.join(__dirname, "sitemap.xml"), sitemap, "utf8");
+console.log("✅ Sitemap generated: /sitemap.xml");

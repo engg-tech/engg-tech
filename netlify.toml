@@ -13,21 +13,30 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
 
+# JS + CSS — always check for fresh version on every request
 [[headers]]
   for = "/assets/*.css"
   [headers.values]
-    Cache-Control = "public, max-age=86400"
+    Cache-Control = "no-cache, must-revalidate"
 
 [[headers]]
   for = "/assets/*.js"
   [headers.values]
-    Cache-Control = "public, max-age=86400"
+    Cache-Control = "no-cache, must-revalidate"
 
+# Favicons — safe to cache for 7 days (never change)
 [[headers]]
   for = "/assets/favicon/*"
   [headers.values]
     Cache-Control = "public, max-age=604800"
 
+# Images — safe to cache for 7 days (rarely change)
+[[headers]]
+  for = "/assets/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+# HTML — always fresh
 [[headers]]
   for = "/*.html"
   [headers.values]

@@ -1,144 +1,12 @@
-<!DOCTYPE html>
-<html dir="ltr" lang="en-SG">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="View completed fire protection projects by Engg-Tech in Singapore, including fire alarm and sprinkler installations." />
-  <meta name="keywords" content="fire protection projects Singapore, fire sprinkler completed works, SCDF compliance, M&E projects, Engg-Tech portfolio, completed fire alarm installations" />
-  <meta name="author" content="Engg-Tech Pte. Ltd." />
-  <title>Project Portfolio | Engg-Tech Pte. Ltd.</title>
-  <link rel="canonical" href="https://engg-tech.com/projects/"/>
+---
+layout: layouts/base.html
+title: "Projects | Fire Protection & Waterproofing Works | Engg-Tech SG"
+description: "View completed fire protection, waterproofing and M&E projects by Engg-Tech Pte. Ltd. across Singapore."
+canonical: "https://engg-tech.com/projects/"
+ogTitle: "Projects | Engg-Tech Singapore Fire Protection & Waterproofing"
+ogDescription: "Completed fire protection, waterproofing and M&E projects by Engg-Tech across Singapore."
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://engg-tech.com/projects/">
-  <meta property="og:title" content="Fire Protection Projects Singapore | Engg-Tech Portfolio">
-  <meta property="og:description" content="View completed fire alarm and sprinkler projects by Engg-Tech in Singapore. Proven track record in fire protection and M&E works.">
-  <meta property="og:image" content="https://engg-tech.com/assets/engg-tech-open-graph-banner.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:locale" content="en_SG">
-  <meta property="og:site_name" content="Engg-Tech Singapore">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/logo-32.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon/logo-192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon/logo-512.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/logo-180.png">
-  <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
-  <meta name="theme-color" content="#ffffff">
-
-  <!-- Preload CSS -->
-  <link rel="stylesheet" href="/assets/style.css">
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "CollectionPage",
-        "@id": "https://engg-tech.com/projects/#webpage",
-        "url": "https://engg-tech.com/projects/",
-        "name": "Project Portfolio | Engg-Tech Pte. Ltd.",
-        "description": "View completed fire protection projects by Engg-Tech in Singapore, including fire alarm and sprinkler installations.",
-        "inLanguage": "en-SG",
-        "isPartOf": { "@id": "https://engg-tech.com/#website" },
-        "about": { "@id": "https://engg-tech.com/#business" }
-      },
-      {
-        "@type": "ItemList",
-        "@id": "https://engg-tech.com/projects/#projects",
-        "name": "Completed Fire Protection Projects",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "item": {
-              "@type": "CreativeWork",
-              "name": "Fire Alarm Installation Project Singapore"
-            }
-          }
-        ]
-      },
-      {
-        "@type": "HomeAndConstructionBusiness",
-        "@id": "https://engg-tech.com/#business",
-        "name": "Engg-Tech Pte. Ltd.",
-        "url": "https://engg-tech.com/",
-        "logo": "https://engg-tech.com/assets/favicon/logo-512.png"
-      },
-      {
-        "@type": "WebSite",
-        "@id": "https://engg-tech.com/#website",
-        "url": "https://engg-tech.com/",
-        "name": "Engg-Tech Singapore"
-      }
-    ]
-  }
-  </script>
-
-  <style>
-    /* ── Portfolio table styles ── */
-    *,*::before,*::after{box-sizing:border-box}
-
-    .portfolio-wrap{padding:1.5rem 0}
-
-    /* Legend filter tags */
-    .portfolio-legend{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1.25rem}
-    .legend-tag{display:inline-flex;align-items:center;gap:5px;font-size:12px;padding:5px 12px;border-radius:20px;font-weight:500;border:1.5px solid;cursor:pointer;transition:all .15s;user-select:none}
-    .legend-tag:hover{opacity:.8}
-    .legend-tag.is-active{outline:2px solid #FF6A00;font-weight:700}
-    .legend-tag-SPK{background:#e8f0fa;color:#0A2540;border-color:#b8cce8}
-    .legend-tag-FA {background:#fff1e8;color:#cc4400;border-color:#ffcca0}
-    .legend-tag-DR {background:#e8f5f0;color:#0a5240;border-color:#a0d4c0}
-    .legend-tag-HR {background:#fdf4e8;color:#7a4a00;border-color:#f0c878}
-    .legend-tag-FH {background:#f0eafa;color:#3a1a7a;border-color:#c8a8f0}
-    .legend-tag-ALL{background:#0A2540;color:#fff;border-color:#0A2540}
-    .legend-tag-ALL.is-active{background:#FF6A00;border-color:#FF6A00;color:#fff}
-
-    /* Table */
-    .portfolio-table{width:100%;border-collapse:collapse;font-size:14px;table-layout:fixed;margin-top:0}
-    .portfolio-table thead{background:#0A2540}
-    .portfolio-table thead th{padding:10px 12px;color:#fff;font-weight:500;text-align:left;font-size:12px;text-transform:uppercase;letter-spacing:.05em}
-    .portfolio-table th:nth-child(1){width:40%}
-    .portfolio-table th:nth-child(2){width:44%}
-    .portfolio-table th:nth-child(3){width:16%}
-    .portfolio-table td{padding:10px 12px;border-bottom:0.5px solid #d0dae6;vertical-align:middle;color:#0A2540;border-left:none}
-    .portfolio-table tr:last-child td{border-bottom:none}
-    .portfolio-table tbody tr{border-left:4px solid transparent;transition:all .2s ease}
-    .portfolio-table tbody tr:hover{background:#fff8f4 !important;border-left:4px solid #FF6A00;box-shadow:0 2px 6px rgba(0,0,0,.08);transform:translateY(-1px);cursor:pointer}
-
-    /* Tags */
-    .svc-tag{display:inline-flex;align-items:center;gap:4px;font-size:11px;padding:2px 8px;border-radius:4px;margin:2px 2px 2px 0;white-space:nowrap;font-weight:500;border:1px solid}
-    .tag-SPK{background:#e8f0fa;color:#0A2540;border-color:#b8cce8}
-    .tag-FA {background:#fff1e8;color:#cc4400;border-color:#ffcca0}
-    .tag-DR {background:#e8f5f0;color:#0a5240;border-color:#a0d4c0}
-    .tag-HR {background:#fdf4e8;color:#7a4a00;border-color:#f0c878}
-    .tag-FH {background:#f0eafa;color:#3a1a7a;border-color:#c8a8f0}
-
-    /* Status badge */
-    .badge-done{display:inline-block;font-size:11px;padding:3px 10px;border-radius:20px;font-weight:600;background:#FF6A00;color:#fff}
-
-    /* Pulse on hover */
-    @keyframes pulseBg{0%{background:#FF6A00}50%{background:#0A2540}100%{background:#FF6A00}}
-    .portfolio-table tbody tr:hover td:last-child .badge-done{color:#fff;animation:pulseBg .8s ease-in-out infinite}
-
-    .portfolio-empty{padding:2rem;text-align:center;color:#6b8aaa;font-size:14px;display:none}
-
-    /* Mobile */
-    @media(max-width:600px){
-      .portfolio-table,.portfolio-table thead,.portfolio-table tbody,.portfolio-table th,.portfolio-table td,.portfolio-table tr{display:block}
-      .portfolio-table thead{display:none}
-      .portfolio-table td{position:relative;padding-left:50%;border-bottom:0.5px solid #d0dae6}
-      .portfolio-table td::before{position:absolute;left:1rem;font-weight:600;color:#0A2540;font-size:11px;text-transform:uppercase;opacity:.6}
-      .portfolio-table td:nth-of-type(1)::before{content:"Project"}
-      .portfolio-table td:nth-of-type(2)::before{content:"Services"}
-      .portfolio-table td:nth-of-type(3)::before{content:"Status"}
-    }
-  </style>
-</head>
-
-<body id="page-top">
+---
 
 <noscript>
   <div role="alert" style="background-color:#f4623a;color:#ffffff;padding:1rem;text-align:center;font-weight:600;font-size:1rem;">
@@ -147,9 +15,6 @@
 </noscript>
 
 <!-- Engg-Tech Navbar -->
-<div id="site-nav"></div>
-<script src="/assets/header.js"></script>
-
 <!-- Content -->
 <div style="padding-left:1.5rem;padding-right:1.5rem;box-sizing:border-box;">
   <section>
@@ -190,13 +55,7 @@
 </div>
 
 <!-- Global Ads & Analytics -->
-<div id="site-ad"></div>
-<script src="/assets/scripts.js"></script>
-
 <!-- FOOTER -->
-<div id="site-footer"></div>
-<script src="/assets/footer.js"></script>
-
 <script>
 (function(){
   const SVC_META={
@@ -282,6 +141,3 @@
   portfolioRender();
 })();
 </script>
-
-</body>
-</html>

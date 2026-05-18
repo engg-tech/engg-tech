@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-SG">
+<head>
+
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+<!-- SEO -->
+<meta name="robots" content="{{ robots if robots else 'index, follow' }}"/>
+{% if description %}<meta name="description" content="{{ description }}"/>{% endif %}
+<meta name="author" content="Engg-Tech Pte. Ltd."/>
+
+<!-- Title -->
+<title>{{ title }}</title>
+
+<!-- Canonical -->
+<link rel="canonical" href="{{ canonical if canonical else 'https://engg-tech.com/' }}"/>
+
+<!-- Open Graph -->
+<meta property="og:type" content="{{ ogType if ogType else 'website' }}">
+<meta property="og:url" content="{{ canonical if canonical else 'https://engg-tech.com/' }}">
+<meta property="og:title" content="{{ ogTitle if ogTitle else title }}">
+<meta property="og:description" content="{{ ogDescription if ogDescription else description }}">
+<meta property="og:image" content="{{ ogImage if ogImage else 'https://engg-tech.com/assets/engg-tech-open-graph-banner.jpg' }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_SG">
+<meta property="og:site_name" content="Engg-Tech Singapore">
+
+<!-- Hreflang -->
+<link rel="alternate" hreflang="en-SG" href="{{ canonical if canonical else 'https://engg-tech.com/' }}"/>
+<link rel="alternate" hreflang="x-default" href="{{ canonical if canonical else 'https://engg-tech.com/' }}"/>
+
+<!-- Theme -->
+<meta name="theme-color" content="#ffffff"/>
+<meta name="color-scheme" content="light"/>
+<meta name="format-detection" content="telephone=no"/>
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/logo-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon/logo-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon/logo-512.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/logo-180.png">
+<link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+
+<!-- Web App Manifest -->
+<link rel="manifest" href="/manifest.json">
+
+<!-- CSS — single source of truth -->
+<link rel="stylesheet" href="/assets/style.css"/>
+
+<!-- Sitemap -->
+<link rel="sitemap" type="application/xml" href="https://engg-tech.com/sitemap.xml"/>
+
+{% if schema %}
+<script type="application/ld+json">{{ schema | safe }}</script>
+{% endif %}
+
+</head>
+
+<body id="page-top">
+
+<!-- Skip to main content — accessibility -->
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<main id="main-content">
+
+<!-- NAVIGATION — centralised -->
+<div id="site-nav"></div>
+
+<!-- PAGE CONTENT -->
+{{ content | safe }}
+
+</main>
+
+<!-- ADS / ANALYTICS -->
+<div id="site-ad"></div>
+
+<!-- FOOTER — centralised -->
+<div id="site-footer"></div>
+
+<!-- SCRIPTS — centralised -->
+<script src="/assets/scripts.js"></script>
+
+</body>
+</html>

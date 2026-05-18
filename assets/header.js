@@ -59,8 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (
-      (href.startsWith("/blog") && path.startsWith("/blog")) ||
-      (href.startsWith("/blog") && path.startsWith("/articles"))
+      (href.startsWith("/blog") && path.startsWith("/blog"))
     ) {
       a.classList.add("active");
       return;

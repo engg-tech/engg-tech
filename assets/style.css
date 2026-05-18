@@ -125,8 +125,8 @@ body {
   border-radius: var(--radius-sm);
 }
 
-/* Active link highlight box */
-.nav-link.active:not(.navbar-brand)::after {
+/* Active link highlight box — excludes has-submenu parents to avoid arrow conflict */
+li:not(.has-submenu) > .nav-link.active:not(.navbar-brand)::after {
   content: '';
   position: absolute;
   top: -6px;
@@ -205,6 +205,24 @@ body {
 /* Any <li> that has a nested dropdown */
 .has-submenu {
   position: relative;
+}
+
+/* Arrow on the top-level nav link (e.g. "Services ▾") */
+.navbar-nav > ul > .has-submenu > .nav-link::after {
+  content: '';
+  display: inline-block;
+  margin-left: 5px;
+  vertical-align: middle;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid var(--color-navy);
+  transition: transform 0.2s ease, border-top-color 0.2s ease;
+}
+
+.navbar-nav > ul > .has-submenu:hover > .nav-link::after,
+.navbar-nav > ul > .has-submenu:focus-within > .nav-link::after {
+  transform: rotate(180deg);
+  border-top-color: var(--color-orange);
 }
 
 /* The dropdown panel — hidden by default */

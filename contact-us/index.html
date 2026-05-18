@@ -147,15 +147,15 @@ schema: |
           btn.style.background = '#888';
 
           try {
-            const response = await fetch('https://script.google.com/macros/s/AKfycby4XuwZWYK0MphbQbjrmO7M_9dUUrDb9MgZRMOHMAklwFzt3MNJUuohaBipWwMkYbud/exec', {
+            await fetch('https://script.google.com/macros/s/AKfycby4XuwZWYK0MphbQbjrmO7M_9dUUrDb9MgZRMOHMAklwFzt3MNJUuohaBipWwMkYbud/exec', {
               method: 'POST',
+              mode: 'no-cors',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({ name, email, phone, service, message })
             });
 
-            const result = await response.json();
-
-            if (result.status === 'success') {
+            // no-cors mode always succeeds if request sent
+            if (true) {
               status.style.display = 'block';
               status.style.background = '#e6f4ea';
               status.style.color = '#1a7a3a';

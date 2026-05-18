@@ -251,8 +251,8 @@ body {
   margin-bottom: 0.5rem;
 }
 
-/* CTA button */
-.footer-btn {
+/* CTA button — more specific than .enggtech-footer a to override color and underline */
+.enggtech-footer a.footer-btn {
   display: inline-block;
   padding: 0.5rem 1rem;
   border: 2px solid var(--color-orange);
@@ -262,7 +262,7 @@ body {
   transition: var(--transition-base);
 }
 
-.footer-btn:hover {
+.enggtech-footer a.footer-btn:hover {
   background-color: var(--color-orange);
   color: var(--color-white);
   text-decoration: none;

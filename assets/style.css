@@ -71,8 +71,8 @@ body {
 ======================================================= */
 
 .navbar-custom {
-  background-color: var(--color-navy-alpha);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  background-color: var(--color-white);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   position: fixed;
   top: var(--topbar-height);
   width: 100%;
@@ -105,7 +105,7 @@ body {
 }
 
 .nav-link {
-  color: var(--color-white);
+  color: var(--color-navy);
   text-decoration: none;
   font-weight: 600;
   text-transform: uppercase;
@@ -133,7 +133,7 @@ body {
   left: -10px;
   right: -10px;
   bottom: -6px;
-  border: 2px solid var(--color-white-muted);
+  border: 2px solid var(--color-navy);
   border-radius: var(--radius-sm);
   pointer-events: none;
   z-index: -1;
@@ -146,7 +146,7 @@ body {
 @media (max-width: 768px) {
   .navbar-nav ul {
     flex-direction: column;
-    background-color: var(--color-navy-alpha);
+    background-color: var(--color-white);
     position: absolute;
     top: var(--navbar-height);
     left: 0;
@@ -155,6 +155,7 @@ body {
     display: none;
     padding: 1rem 2rem;
     box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   }
 
   .navbar-nav ul.show {
@@ -170,7 +171,7 @@ body {
     display: block;
     cursor: pointer;
     font-size: 1.5rem;
-    color: var(--color-white);
+    color: var(--color-navy);
     z-index: 10000;
     margin-left: auto;
     background: none;

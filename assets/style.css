@@ -17,9 +17,9 @@
   --color-white-muted:  rgba(255, 255, 255, 0.67);
   --color-text-dark:    #1a1a1a;
 
-  --topbar-height:      32px;
+  --topbar-height:      40px;
   --navbar-height:      64px;
-  --header-total:       96px;
+  --header-total:       104px;
 
   --font-base: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
@@ -609,7 +609,7 @@ ol.blog-list {
 
 .topbar-email {
   color: var(--color-white);
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   text-decoration: none;
   transition: color 0.2s ease;
 }

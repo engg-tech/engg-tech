@@ -90,20 +90,6 @@ schema: |
               onfocus="this.style.borderColor='#FF6A00'" onblur="this.style.borderColor='#d0dae6'"/>
           </div>
 
-          <div>
-            <label for="service" style="display:block;font-weight:600;color:#0A2540;margin-bottom:0.3rem;">Service Needed <span style="color:#888;font-weight:400;">(optional)</span></label>
-            <select id="service" name="service"
-              style="width:100%;padding:10px 14px;border:1.5px solid #d0dae6;border-radius:6px;font-size:1rem;box-sizing:border-box;outline:none;background:#fff;transition:border-color 0.2s;"
-              onfocus="this.style.borderColor='#FF6A00'" onblur="this.style.borderColor='#d0dae6'">
-              <option value="">— Select a service —</option>
-              <option value="PU Grouting / Waterproofing">PU Grouting / Waterproofing</option>
-              <option value="Epoxy Grouting">Epoxy Grouting</option>
-              <option value="Fire Sprinkler System">Fire Sprinkler System</option>
-              <option value="Fire Alarm System">Fire Alarm System</option>
-              <option value="M&E Works">M&amp;E Works</option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
 
           <div>
             <label for="message" style="display:block;font-weight:600;color:#0A2540;margin-bottom:0.3rem;">Message <span style="color:#FF6A00;">*</span></label>
@@ -138,7 +124,6 @@ schema: |
           const name    = document.getElementById('name').value.trim();
           const email   = document.getElementById('email').value.trim();
           const phone   = document.getElementById('phone').value.trim();
-          const service = document.getElementById('service').value;
           const message = document.getElementById('message').value.trim();
 
           // Button loading state
@@ -151,7 +136,6 @@ schema: |
             formData.append('name', name);
             formData.append('email', email);
             formData.append('phone', phone);
-            formData.append('service', service);
             formData.append('message', message);
 
             await fetch('https://script.google.com/macros/s/AKfycby4XuwZWYK0MphbQbjrmO7M_9dUUrDb9MgZRMOHMAklwFzt3MNJUuohaBipWwMkYbud/exec', {

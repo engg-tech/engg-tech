@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </svg>
       </a>
 
-      <a href="https://www.linkedin.com/company/enggtech/"
+      <a href="https://www.linkedin.com/company/enggtechofficial/"
    target="_blank"
    rel="noopener noreferrer"
    class="footer-social-icon"

@@ -115,4 +115,16 @@ ogDescription: "Practical guides on fire protection, electrical, plumbing, renov
 </ul>
 <!-- BLOG-LIST-END -->
 
+<!-- AUTO NUMBERING — outside generator block so it is never overwritten -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const links = document.querySelectorAll(".blog-list li a");
+  links.forEach((link, index) => {
+    if (!/^\d+\.\s/.test(link.textContent)) {
+      link.textContent = (index + 1) + ". " + link.textContent.trim();
+    }
+  });
+});
+</script>
+
 </div>

@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const fab = document.createElement('div');
   fab.innerHTML = '<style>'
     + '.fab-stack{position:fixed;bottom:24px;right:24px;z-index:9998;display:flex;flex-direction:column;gap:12px;align-items:flex-end;}'
-    + '.fab-btn{display:flex;align-items:center;justify-content:center;gap:10px;border:none;cursor:pointer;border-radius:50%;padding:0;width:52px;height:52px;overflow:hidden;white-space:nowrap;transition:width 0.3s ease,height 0.3s ease,border-radius 0.3s ease,padding 0.3s ease,box-shadow 0.2s ease;box-shadow:0 4px 16px rgba(0,0,0,0.2);}'
+    + '.fab-btn{display:flex;align-items:center;justify-content:center;gap:10px;border:none;cursor:pointer;border-radius:50px;padding:0;width:52px;height:52px;white-space:nowrap;transition:width 0.3s ease,padding 0.3s ease,box-shadow 0.2s ease;box-shadow:0 4px 16px rgba(0,0,0,0.2);}'
     + '.fab-btn:hover{width:180px;height:52px;border-radius:50px;padding:0 20px;box-shadow:0 6px 20px rgba(0,0,0,0.25);justify-content:flex-start;}'
     + '.fab-label{font-size:0.95rem;font-weight:700;opacity:0;transition:opacity 0.2s ease 0.1s;color:#fff;}'
     + '.fab-btn:hover .fab-label{opacity:1;}'

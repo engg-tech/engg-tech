@@ -51,7 +51,69 @@ document.addEventListener("DOMContentLoaded", () => {
       </ul>
     </div>
 
-
   </div>
 </nav>
+  `;
 
+  const siteNav = document.getElementById("site-nav");
+  if (siteNav) siteNav.innerHTML = navHTML;
+
+  /* ACTIVE LINK */
+  const links = document.querySelectorAll("#navbarMenu .nav-link");
+  let path = window.location.pathname.toLowerCase()
+    .replace(/index\.html$/, "").replace(/\.html$/, "").replace(/\/$/, "");
+  if (path === "") path = "/";
+
+  links.forEach(a => {
+    const url = new URL(a.href);
+    let href = url.pathname.toLowerCase()
+      .replace(/index\.html$/, "").replace(/\.html$/, "").replace(/\/$/, "");
+    if (href === "") href = "/";
+    if (path === "/" && href === "/") { a.classList.add("active"); return; }
+    if (href.startsWith("/blog") && path.startsWith("/blog")) { a.classList.add("active"); return; }
+    if (href !== "/" && path.startsWith(href)) a.classList.add("active");
+  });
+
+  /* MOBILE MENU TOGGLE */
+  const toggle = document.querySelector(".menu-toggle");
+  const menu   = document.getElementById("navbarMenu");
+
+  if (toggle && menu) {
+    toggle.addEventListener("click", () => {
+      const isExpanded = toggle.getAttribute("aria-expanded") === "true";
+      toggle.setAttribute("aria-expanded", String(!isExpanded));
+      menu.classList.toggle("show");
+    });
+
+    menu.querySelectorAll(".nav-link").forEach(link => {
+      link.addEventListener("click", () => {
+        if (link.closest(".has-submenu") && window.innerWidth <= 768) return;
+        menu.classList.remove("show");
+        toggle.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!toggle.contains(e.target) && !menu.contains(e.target)) {
+        menu.classList.remove("show");
+        toggle.setAttribute("aria-expanded", "false");
+      }
+    });
+  }
+
+  /* MOBILE SUBMENU TAP TO EXPAND */
+  document.querySelectorAll(".has-submenu > .nav-link, .has-submenu > a").forEach(link => {
+    link.addEventListener("click", (e) => {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        const parentLi = link.parentElement;
+        const isOpen = parentLi.classList.contains("open");
+        parentLi.parentElement.querySelectorAll(".has-submenu.open").forEach(el => {
+          if (el !== parentLi) el.classList.remove("open");
+        });
+        parentLi.classList.toggle("open", !isOpen);
+      }
+    });
+  });
+
+});

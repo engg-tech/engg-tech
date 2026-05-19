@@ -134,7 +134,6 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
     <div>
       <p style="margin:0;font-weight:700;color:#0A2540;font-size:0.95rem;">WhatsApp Us</p>
-      <p style="margin:0;font-size:0.75rem;color:#25D366;">● We'll reach out to you</p>
     </div>
   </div>
 
@@ -162,7 +161,6 @@ document.addEventListener("DOMContentLoaded", () => {
   </button>
 
   <p style="margin:0;font-size:0.75rem;color:#888;text-align:center;">
-    We'll WhatsApp you within 1 business day
   </p>
 </div>
 
@@ -185,14 +183,15 @@ async function submitWaCallback() {
   btn.style.background = '#888';
 
   try {
-    const formData = new FormData();
-    formData.append('type', 'whatsapp_callback');
-    formData.append('phone', phone);
+    const params = new URLSearchParams();
+    params.append('type', 'whatsapp_callback');
+    params.append('phone', phone);
 
     await fetch('https://script.google.com/macros/s/AKfycby4XuwZWYK0MphbQbjrmO7M_9dUUrDb9MgZRMOHMAklwFzt3MNJUuohaBipWwMkYbud/exec', {
       method: 'POST',
       mode: 'no-cors',
-      body: formData
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: params.toString()
     });
 
     status.style.display = 'block';

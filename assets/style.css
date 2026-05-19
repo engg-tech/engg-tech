@@ -773,3 +773,22 @@ ol.blog-list {
   padding: 0;
   margin: 0;
 }
+
+/* Warranty badge positioning */
+.warranty-badge-img {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 110px;
+  height: 110px;
+}
+
+@media (max-width: 768px) {
+  .warranty-badge-img {
+    position: static;
+    display: block;
+    margin: 1rem auto 0;
+    width: 110px;
+    height: 110px;
+  }
+}

@@ -522,7 +522,7 @@ ol.blog-list {
 .page-header__title {
   font-size: 1.5rem;
   font-weight: 700;
-  margin: 1rem 0 0.5rem;
+  margin: 0.25rem 0 0.5rem;
 }
 
 .page-header__badges {

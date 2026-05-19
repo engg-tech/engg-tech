@@ -141,28 +141,14 @@ document.addEventListener("DOMContentLoaded", () => {
     Leave your WhatsApp number and we will contact you shortly.
   </p>
 
-  <div style="display:flex;gap:8px;">
-    <div style="display:flex;align-items:center;border:1.5px solid #d0dae6;border-radius:6px;overflow:hidden;width:80px;flex-shrink:0;"
-         id="waCodeWrap">
-      <span style="padding:10px 7px;background:#f5f5f5;color:#0A2540;font-weight:700;font-size:1rem;border-right:1.5px solid #d0dae6;">+</span>
-      <input type="tel" id="waCode"
-             
-             maxlength="4"
-             onkeypress="return /[0-9]/.test(event.key)"
-             onpaste="setTimeout(()=>{this.value=this.value.replace(/[^0-9]/g,'')},0)"
-             style="width:100%;padding:10px 6px;border:none;font-size:1rem;outline:none;box-sizing:border-box;"
-             onfocus="document.getElementById('waCodeWrap').style.borderColor='#25D366'"
-             onblur="document.getElementById('waCodeWrap').style.borderColor='#d0dae6'"/>
-    </div>
-    <input type="tel" id="waPhone"
-           placeholder="Phone number"
-           onkeypress="return /[0-9]/.test(event.key)"
-           onpaste="setTimeout(()=>{this.value=this.value.replace(/[^0-9]/g,'')},0)"
-           style="width:100%;padding:10px 12px;border:1.5px solid #d0dae6;
-                  border-radius:6px;font-size:1rem;box-sizing:border-box;outline:none;"
-           onfocus="this.style.borderColor='#25D366'"
-           onblur="this.style.borderColor='#d0dae6'"/>
-  </div>
+  <input type="tel" id="waPhone"
+         placeholder="Phone number"
+         onkeypress="return /[0-9+\s\-().]/.test(event.key)"
+         onpaste="setTimeout(()=>{this.value=this.value.replace(/[^0-9+\s\-().]/g,'')},0)"
+         style="width:100%;padding:10px 12px;border:1.5px solid #d0dae6;
+                border-radius:6px;font-size:1rem;box-sizing:border-box;outline:none;"
+         onfocus="this.style.borderColor='#25D366'"
+         onblur="this.style.borderColor='#d0dae6'"/>
 
   <div id="waStatus" style="display:none;font-size:0.85rem;font-weight:600;text-align:center;padding:0.4rem;border-radius:6px;"></div>
 
@@ -188,18 +174,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* WhatsApp Us Submit */
   window.submitWaCallback = async function() {
-    const code   = document.getElementById('waCode').value.trim();
     const phone  = document.getElementById('waPhone').value.trim();
     const status = document.getElementById('waStatus');
     const btn    = document.getElementById('waSubmitBtn');
 
-    if (!code) {
-      status.style.display = 'block';
-      status.style.background = '#fde8e8';
-      status.style.color = '#c0392b';
-      status.textContent = 'Please enter your country code.';
-      return;
-    }
     if (!phone) {
       status.style.display = 'block';
       status.style.background = '#fde8e8';
@@ -232,7 +210,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const formData = new FormData();
     formData.append('name', 'WhatsApp Callback Request');
     formData.append('email', 'whatsapp@engg-tech.com');
-    formData.append('phone', '+' + code + ' ' + phone);
+    formData.append('phone', phone);
     formData.append('message', 'WHATSAPP CALLBACK REQUEST from website button.');
 
     await fetch('https://script.google.com/macros/s/AKfycby4XuwZWYK0MphbQbjrmO7M_9dUUrDb9MgZRMOHMAklwFzt3MNJUuohaBipWwMkYbud/exec', {
@@ -246,7 +224,6 @@ document.addEventListener("DOMContentLoaded", () => {
     status.style.color = '#1a7a3a';
     status.textContent = '✅ Received! We will be in touch shortly.';
     document.getElementById('waPhone').value = '';
-    document.getElementById('waCode').value = '';
 
     btn.textContent = 'Send My Number';
     btn.disabled = false;

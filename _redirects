@@ -1,3 +1,7 @@
+# Specific combined www + sg fix
+https://www.engg-tech.com/sg/services/index.html https://engg-tech.com/services/ 301!
+https://www.engg-tech.com/sg/services/ https://engg-tech.com/services/ 301!
+
 # =========================
 # REMOVE /INDEX.HTML 
 # =========================
@@ -23,3 +27,94 @@
 http://www.engg-tech.com/* https://engg-tech.com/:splat 301!
 http://engg-tech.com/* https://engg-tech.com/:splat 301!
 https://www.engg-tech.com/* https://engg-tech.com/:splat 301!
+
+# =========================
+# FIX MISSING TRAILING SLASH
+# =========================
+/about-us https://engg-tech.com/about-us/ 301!
+/contact-us https://engg-tech.com/contact-us/ 301!
+/projects https://engg-tech.com/projects/ 301!
+/privacy-policy https://engg-tech.com/privacy-policy/ 301!
+/services/general-construction https://engg-tech.com/services/ 301!
+/home https://engg-tech.com/ 301!
+/about https://engg-tech.com/about-us/ 301!
+/carousell https://engg-tech.com/ 301!
+/carousell/ https://engg-tech.com/ 301!
+/engg-tech.com/ https://engg-tech.com/ 301!
+
+# =========================
+# OLD DELETED BLOG POSTS → BLOG INDEX
+# =========================
+/blog/fire-alarm-singapore https://engg-tech.com/blog/ 301!
+/blog/fire-alarm-singapore.html https://engg-tech.com/blog/ 301!
+/blog/it-support https://engg-tech.com/blog/ 301!
+/blog/it-support.html https://engg-tech.com/blog/ 301!
+/blog/renovation-services https://engg-tech.com/blog/ 301!
+/blog/renovation-services.html https://engg-tech.com/blog/ 301!
+/blog/general-construction https://engg-tech.com/blog/ 301!
+/blog/general-construction.html https://engg-tech.com/blog/ 301!
+/blog/electrical-installations https://engg-tech.com/blog/ 301!
+/blog/mechanical-electrical https://engg-tech.com/blog/ 301!
+/blog/mechanical-electrical.html https://engg-tech.com/blog/ 301!
+/blog/plumbing-services https://engg-tech.com/blog/ 301!
+/blog/plumbing-services.html https://engg-tech.com/blog/ 301!
+/blog/business-incorporation https://engg-tech.com/blog/ 301!
+/blog/business-incorporation.html https://engg-tech.com/blog/ 301!
+/blog/custom-business-solutions https://engg-tech.com/blog/ 301!
+/blog/custom-business-solutions.html https://engg-tech.com/blog/ 301!
+/blog/website-design-cost-singapore https://engg-tech.com/blog/ 301!
+/blog/website-design-cost-singapore.html https://engg-tech.com/blog/ 301!
+/blog/hacking-renovation.html https://engg-tech.com/blog/ 301!
+/blog/hacking-in-construction https://engg-tech.com/blog/ 301!
+/blog/wall-painting-singapore.html https://engg-tech.com/blog/ 301!
+/blog/wall-plaster-singapore.html https://engg-tech.com/blog/ 301!
+/blog/power-trip-singapore https://engg-tech.com/blog/ 301!
+/blog/power-trip-singapore.html https://engg-tech.com/blog/ 301!
+/blog/sprinkler-system-singapore https://engg-tech.com/services/ 301!
+/blog/fire-hose-reel-cabinet-singapore https://engg-tech.com/services/ 301!
+/blog/fire-alarm-panel-singapore https://engg-tech.com/services/ 301!
+/blog/fire-hydrant-singapore https://engg-tech.com/services/ 301!
+/blog/co2-fire-extinguisher-singapore.html https://engg-tech.com/services/ 301!
+/blog/class-ab-fire-extinguisher.html https://engg-tech.com/services/ 301!
+/blog/core-trade-electrical-wiring-installation https://engg-tech.com/services/ 301!
+/blog/powerpoint-electrical https://engg-tech.com/services/ 301!
+/blog/aircon-fan-coil-singapore.html https://engg-tech.com/blog/ 301!
+/blog/joven-instant-water-heater-singapore.html https://engg-tech.com/blog/ 301!
+/blog/service-ac-central-singapore https://engg-tech.com/blog/ 301!
+/blog/service-ac-central-singapore.html https://engg-tech.com/blog/ 301!
+/blog/door-hinge-sliding-door-repair-singapore.html https://engg-tech.com/blog/ 301!
+/blog/ceiling-fan-installation-singapore.html https://engg-tech.com/blog/ 301!
+/blog/hdb-toilet-door-lock-replacement.html https://engg-tech.com/blog/ 301!
+/blog/laminate-flooring-care-and-maintenance.html https://engg-tech.com/blog/ 301!
+/blog/pearl-cow-carpet-grass-singapore.html https://engg-tech.com/blog/ 301!
+/blog/48-pandan-road.html https://engg-tech.com/blog/ 301!
+/blog/18-siglap-link-singapore.html https://engg-tech.com/blog/ 301!
+/blog/fortune-centre-singapore.html https://engg-tech.com/blog/ 301!
+/blog/design-operation-architects.html https://engg-tech.com/blog/ 301!
+/blog/edwm.html https://engg-tech.com/blog/ 301!
+/blog/self-contained-breathing-apparatus.html https://engg-tech.com/blog/self-contained-breathing-apparatus/ 301!
+/blog/bmg-sports-table-tennis.html https://engg-tech.com/blog/ 301!
+/blog/storage-heater-vs-instant-heater-singapore.html https://engg-tech.com/blog/ 301!
+/blog/brother-dcp-j100-cartridge-price.html https://engg-tech.com/blog/ 301!
+/blog/refrigerator-repair-singapore.html https://engg-tech.com/blog/ 301!
+/blog/sell-iphone.html https://engg-tech.com/blog/ 301!
+/blog/iphone-12-pro-max-price-singapore.html https://engg-tech.com/blog/ 301!
+/blog/iphone-14-pro-price-singapore.html https://engg-tech.com/blog/ 301!
+/blog/cheapest-mlbb-diamonds.html https://engg-tech.com/blog/ 301!
+/blog/customized-polo-t-shirts.html https://engg-tech.com/blog/ 301!
+/blog/dri-fit-t-shirt-printing.html https://engg-tech.com/blog/ 301!
+/blog/dri-fit-t-shirt-printing-singapore.html https://engg-tech.com/blog/ 301!
+/blog/baby-belling-oven.html https://engg-tech.com/blog/ 301!
+/blog/singapore-property-launch-guide.html https://engg-tech.com/blog/ 301!
+/blog/singapore-property-highlights.html https://engg-tech.com/blog/ 301!
+/blog/singapore-market-guide.html https://engg-tech.com/blog/ 301!
+/blog/huat-pals-2023-highlights.html https://engg-tech.com/blog/ 301!
+/blog/audit-and-assurance-singapore.html https://engg-tech.com/blog/ 301!
+/blog/payroll-and-tax-services-singapore.html https://engg-tech.com/blog/ 301!
+/blog/business-valuation-services.html https://engg-tech.com/blog/ 301!
+/blog/best-agency-business-singapore.html https://engg-tech.com/blog/ 301!
+/blog/risk-advisory-vs-internal-audit.html https://engg-tech.com/blog/ 301!
+/blog/it-companies-singapore.html https://engg-tech.com/blog/ 301!
+/blog/it-infrastructure-setup https://engg-tech.com/blog/ 301!
+/sg/blog/it-infrastructure-setup https://engg-tech.com/blog/ 301!
+/sg/about https://engg-tech.com/about-us/ 301!

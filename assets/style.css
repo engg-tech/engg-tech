@@ -793,16 +793,19 @@ ol.blog-list {
   }
 }
 
-/* Submenu category label — same layout as submenu links, not clickable */
+/* Waterproofing category — identical to submenu links */
 .submenu-category-label {
   display: block;
   padding: 0.5rem 1.1rem;
-  color: #999;
-  font-size: 0.78rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  cursor: default;
+  color: var(--color-navy);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
   white-space: nowrap;
-  border-bottom: 1px solid #f0f0f0;
+  transition: color 0.2s ease, background 0.2s ease;
+  cursor: default;
+}
+.submenu-category-label:hover {
+  color: var(--color-orange);
+  background: #fff5ef;
 }

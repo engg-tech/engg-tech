@@ -38,6 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <li class="has-submenu">
               <a href="https://engg-tech.com/services/waterproofing/">Waterproofing ›</a>
               <ul class="submenu" role="list">
+                <li><a href="https://engg-tech.com/services/waterproofing/">All Waterproofing Services</a></li>
                 <li><a href="https://engg-tech.com/services/epoxy-grouting-singapore/">Epoxy Grout</a></li>
                 <li><a href="https://engg-tech.com/services/pu-grouting-singapore/">PU Grout</a></li>
               </ul>

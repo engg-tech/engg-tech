@@ -165,9 +165,10 @@ document.addEventListener("DOMContentLoaded", () => {
 </div>
 
 <script>
-function submitWaCallback() {
+async function submitWaCallback() {
   const phone  = document.getElementById('waPhone').value.trim();
   const status = document.getElementById('waStatus');
+  const btn    = document.getElementById('waSubmitBtn');
 
   if (!phone) {
     status.style.display = 'block';
@@ -177,32 +178,21 @@ function submitWaCallback() {
     return;
   }
 
-  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby4XuwZWYK0MphbQbjrmO7M_9dUUrDb9MgZRMOHMAklwFzt3MNJUuohaBipWwMkYbud/exec';
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  btn.style.background = '#888';
 
-  const iframe = document.createElement('iframe');
-  iframe.name = 'wa-iframe';
-  iframe.style.display = 'none';
-  document.body.appendChild(iframe);
+  const formData = new FormData();
+  formData.append('name', 'WhatsApp Callback Request');
+  formData.append('email', 'whatsapp@engg-tech.com');
+  formData.append('phone', phone);
+  formData.append('message', 'WHATSAPP CALLBACK REQUEST from website button.');
 
-  const form = document.createElement('form');
-  form.method = 'POST';
-  form.action = SCRIPT_URL;
-  form.target = 'wa-iframe';
-
-  const typeInput = document.createElement('input');
-  typeInput.type = 'hidden';
-  typeInput.name = 'type';
-  typeInput.value = 'whatsapp_callback';
-  form.appendChild(typeInput);
-
-  const phoneInput = document.createElement('input');
-  phoneInput.type = 'hidden';
-  phoneInput.name = 'phone';
-  phoneInput.value = phone;
-  form.appendChild(phoneInput);
-
-  document.body.appendChild(form);
-  form.submit();
+  await fetch('https://script.google.com/macros/s/AKfycby4XuwZWYK0MphbQbjrmO7M_9dUUrDb9MgZRMOHMAklwFzt3MNJUuohaBipWwMkYbud/exec', {
+    method: 'POST',
+    mode: 'no-cors',
+    body: formData
+  });
 
   status.style.display = 'block';
   status.style.background = '#e6f4ea';
@@ -210,11 +200,13 @@ function submitWaCallback() {
   status.textContent = '✅ Received! We will be in touch shortly.';
   document.getElementById('waPhone').value = '';
 
+  btn.textContent = 'Send My Number';
+  btn.disabled = false;
+  btn.style.background = '#25D366';
+
   setTimeout(() => {
     document.getElementById('wa-popup').style.display = 'none';
     status.style.display = 'none';
-    document.body.removeChild(form);
-    document.body.removeChild(iframe);
   }, 3000);
 }
 </script>

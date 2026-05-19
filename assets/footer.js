@@ -146,7 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
          id="waCodeWrap">
       <span style="padding:10px 7px;background:#f5f5f5;color:#0A2540;font-weight:700;font-size:1rem;border-right:1.5px solid #d0dae6;">+</span>
       <input type="tel" id="waCode"
-             placeholder="65"
+             
              maxlength="4"
              onkeypress="return /[0-9]/.test(event.key)"
              onpaste="setTimeout(()=>{this.value=this.value.replace(/[^0-9]/g,'')},0)"

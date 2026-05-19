@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
     </p>
 
     <input type="tel" id="cmbPhone"
-           placeholder="+65 XXXX XXXX"
+           placeholder="e.g. 91234567 or +65 91234567"
            style="width:100%;padding:11px 14px;border:1.5px solid #d0dae6;
                   border-radius:6px;font-size:1rem;box-sizing:border-box;outline:none;
                   margin-bottom:0.75rem;"

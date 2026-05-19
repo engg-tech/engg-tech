@@ -83,13 +83,28 @@ document.addEventListener("DOMContentLoaded", () => {
     <p style="margin:0 0 1.25rem;color:#555;font-size:0.9rem;">
     </p>
 
+    <div style="display:flex;gap:8px;margin-bottom:0.75rem;">
+    <div style="display:flex;align-items:center;border:1.5px solid #d0dae6;border-radius:6px;overflow:hidden;width:90px;flex-shrink:0;"
+         id="cmbCodeWrap">
+      <span style="padding:11px 8px;background:#f5f5f5;color:#0A2540;font-weight:700;font-size:1rem;border-right:1.5px solid #d0dae6;">+</span>
+      <input type="tel" id="cmbCode"
+             placeholder="65"
+             maxlength="4"
+             onkeypress="return /[0-9]/.test(event.key)"
+             onpaste="setTimeout(()=>{this.value=this.value.replace(/[^0-9]/g,'')},0)"
+             style="width:100%;padding:11px 6px;border:none;font-size:1rem;outline:none;box-sizing:border-box;"
+             onfocus="document.getElementById('cmbCodeWrap').style.borderColor='#FF6A00'"
+             onblur="document.getElementById('cmbCodeWrap').style.borderColor='#d0dae6'"/>
+    </div>
     <input type="tel" id="cmbPhone"
            placeholder="Phone number"
+           onkeypress="return /[0-9]/.test(event.key)"
+           onpaste="setTimeout(()=>{this.value=this.value.replace(/[^0-9]/g,'')},0)"
            style="width:100%;padding:11px 14px;border:1.5px solid #d0dae6;
-                  border-radius:6px;font-size:1rem;box-sizing:border-box;outline:none;
-                  margin-bottom:0.75rem;"
+                  border-radius:6px;font-size:1rem;box-sizing:border-box;outline:none;"
            onfocus="this.style.borderColor='#FF6A00'"
            onblur="this.style.borderColor='#d0dae6'"/>
+  </div>
 
     <div id="cmbStatus" style="display:none;font-size:0.85rem;font-weight:600;
                                 text-align:center;padding:0.5rem;border-radius:6px;
@@ -116,15 +131,40 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* Call Me Back Submit */
   window.submitCallBack = async function() {
+    const code   = document.getElementById('cmbCode').value.trim();
     const phone  = document.getElementById('cmbPhone').value.trim();
     const status = document.getElementById('cmbStatus');
     const btn    = document.getElementById('cmbSubmitBtn');
 
+    if (!code) {
+      status.style.display = 'block';
+      status.style.background = '#fde8e8';
+      status.style.color = '#c0392b';
+      status.textContent = 'Please enter your country code.';
+      return;
+    }
     if (!phone) {
       status.style.display = 'block';
       status.style.background = '#fde8e8';
       status.style.color = '#c0392b';
       status.textContent = 'Please enter your phone number.';
+      return;
+    }
+
+    // Phone validation
+    const digits = phone.replace(/[^0-9]/g, '');
+    if (digits.length < 7) {
+      status.style.display = 'block';
+      status.style.background = '#fde8e8';
+      status.style.color = '#c0392b';
+      status.textContent = 'Minimum 7 digits required.';
+      return;
+    }
+    if (digits.length > 15) {
+      status.style.display = 'block';
+      status.style.background = '#fde8e8';
+      status.style.color = '#c0392b';
+      status.textContent = 'Maximum 15 digits allowed.';
       return;
     }
 
@@ -135,7 +175,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const formData = new FormData();
     formData.append('name', 'Call Back Request');
     formData.append('email', 'callback@engg-tech.com');
-    formData.append('phone', phone);
+    formData.append('phone', '+' + code + ' ' + phone);
     formData.append('message', 'CALL BACK REQUEST from website button.');
 
     await fetch('https://script.google.com/macros/s/AKfycby4XuwZWYK0MphbQbjrmO7M_9dUUrDb9MgZRMOHMAklwFzt3MNJUuohaBipWwMkYbud/exec', {
@@ -149,6 +189,7 @@ document.addEventListener("DOMContentLoaded", () => {
     status.style.color = '#1a7a3a';
     status.textContent = '✅ Received! We will be in touch shortly.';
     document.getElementById('cmbPhone').value = '';
+    document.getElementById('cmbCode').value = '';
 
     btn.textContent = 'Request Call Back';
     btn.disabled = false;

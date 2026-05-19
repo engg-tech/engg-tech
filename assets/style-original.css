@@ -809,16 +809,3 @@ ol.blog-list {
   color: var(--color-orange);
   background: #fff5ef;
 }
-
-/* Call Me Back — mobile center navbar */
-@media (max-width: 768px) {
-  #callbackMobileBtn {
-    display: flex !important;
-  }
-  #callbackNavBtn {
-    display: none !important;
-  }
-  .navbar-container {
-    position: relative;
-  }
-}

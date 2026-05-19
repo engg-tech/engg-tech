@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <button onclick="document.getElementById('cmb-popup').style.display='flex'"
                   style="background:#FF6A00;color:#fff;border:none;padding:10px 18px;
                          border-radius:6px;font-size:1rem;font-weight:700;cursor:pointer;
-                         width:100%;margin-top:0.5rem;display:flex;align-items:center;gap:8px;">
+                         display:inline-flex;align-items:center;gap:8px;margin-top:0.5rem;">
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
             Call Me Back
           </button>

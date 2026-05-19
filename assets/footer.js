@@ -165,51 +165,57 @@ document.addEventListener("DOMContentLoaded", () => {
 </div>
 
 <script>
-async function submitWaCallback() {
+function submitWaCallback() {
   const phone  = document.getElementById('waPhone').value.trim();
   const status = document.getElementById('waStatus');
-  const btn    = document.getElementById('waSubmitBtn');
 
   if (!phone) {
     status.style.display = 'block';
     status.style.background = '#fde8e8';
     status.style.color = '#c0392b';
-    status.textContent = 'Please enter your WhatsApp number.';
+    status.textContent = 'Please enter your phone number.';
     return;
   }
 
-  btn.textContent = 'Sending...';
-  btn.disabled = true;
-  btn.style.background = '#888';
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby4XuwZWYK0MphbQbjrmO7M_9dUUrDb9MgZRMOHMAklwFzt3MNJUuohaBipWwMkYbud/exec';
 
-  try {
-    const params = new URLSearchParams();
-    params.append('type', 'whatsapp_callback');
-    params.append('phone', phone);
+  const iframe = document.createElement('iframe');
+  iframe.name = 'wa-iframe';
+  iframe.style.display = 'none';
+  document.body.appendChild(iframe);
 
-    await fetch('https://script.google.com/macros/s/AKfycby4XuwZWYK0MphbQbjrmO7M_9dUUrDb9MgZRMOHMAklwFzt3MNJUuohaBipWwMkYbud/exec', {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: params.toString()
-    });
+  const form = document.createElement('form');
+  form.method = 'POST';
+  form.action = SCRIPT_URL;
+  form.target = 'wa-iframe';
 
-    status.style.display = 'block';
-    status.style.background = '#e6f4ea';
-    status.style.color = '#1a7a3a';
-    status.textContent = '✅ Received! We will WhatsApp you shortly.';
-    document.getElementById('waPhone').value = '';
+  const typeInput = document.createElement('input');
+  typeInput.type = 'hidden';
+  typeInput.name = 'type';
+  typeInput.value = 'whatsapp_callback';
+  form.appendChild(typeInput);
 
-  } catch (err) {
-    status.style.display = 'block';
-    status.style.background = '#fde8e8';
-    status.style.color = '#c0392b';
-    status.textContent = 'Something went wrong. Please try again.';
-  }
+  const phoneInput = document.createElement('input');
+  phoneInput.type = 'hidden';
+  phoneInput.name = 'phone';
+  phoneInput.value = phone;
+  form.appendChild(phoneInput);
 
-  btn.textContent = 'Send My Number';
-  btn.disabled = false;
-  btn.style.background = '#25D366';
+  document.body.appendChild(form);
+  form.submit();
+
+  status.style.display = 'block';
+  status.style.background = '#e6f4ea';
+  status.style.color = '#1a7a3a';
+  status.textContent = '✅ Received! We will be in touch shortly.';
+  document.getElementById('waPhone').value = '';
+
+  setTimeout(() => {
+    document.getElementById('wa-popup').style.display = 'none';
+    status.style.display = 'none';
+    document.body.removeChild(form);
+    document.body.removeChild(iframe);
+  }, 3000);
 }
 </script>
   `;

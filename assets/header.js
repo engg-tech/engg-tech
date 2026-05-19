@@ -109,10 +109,9 @@ document.addEventListener("DOMContentLoaded", () => {
 </div>
 
 <script>
-async function submitCallBack() {
+function submitCallBack() {
   const phone  = document.getElementById('cmbPhone').value.trim();
   const status = document.getElementById('cmbStatus');
-  const btn    = document.getElementById('cmbSubmitBtn');
 
   if (!phone) {
     status.style.display = 'block';
@@ -122,43 +121,47 @@ async function submitCallBack() {
     return;
   }
 
-  btn.textContent = 'Sending...';
-  btn.disabled = true;
-  btn.style.background = '#888';
+  // Use hidden iframe form to bypass CORS
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby4XuwZWYK0MphbQbjrmO7M_9dUUrDb9MgZRMOHMAklwFzt3MNJUuohaBipWwMkYbud/exec';
 
-  try {
-    const params = new URLSearchParams();
-    params.append('type', 'call_back');
-    params.append('phone', phone);
+  const iframe = document.createElement('iframe');
+  iframe.name = 'cmb-iframe';
+  iframe.style.display = 'none';
+  document.body.appendChild(iframe);
 
-    await fetch('https://script.google.com/macros/s/AKfycby4XuwZWYK0MphbQbjrmO7M_9dUUrDb9MgZRMOHMAklwFzt3MNJUuohaBipWwMkYbud/exec', {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: params.toString()
-    });
+  const form = document.createElement('form');
+  form.method = 'POST';
+  form.action = SCRIPT_URL;
+  form.target = 'cmb-iframe';
 
-    status.style.display = 'block';
-    status.style.background = '#e6f4ea';
-    status.style.color = '#1a7a3a';
-    status.textContent = '✅ Received! We will call you back shortly.';
-    document.getElementById('cmbPhone').value = '';
+  const typeInput = document.createElement('input');
+  typeInput.type = 'hidden';
+  typeInput.name = 'type';
+  typeInput.value = 'call_back';
+  form.appendChild(typeInput);
 
-    setTimeout(() => {
-      document.getElementById('cmb-popup').style.display = 'none';
-      status.style.display = 'none';
-    }, 3000);
+  const phoneInput = document.createElement('input');
+  phoneInput.type = 'hidden';
+  phoneInput.name = 'phone';
+  phoneInput.value = phone;
+  form.appendChild(phoneInput);
 
-  } catch (err) {
-    status.style.display = 'block';
-    status.style.background = '#fde8e8';
-    status.style.color = '#c0392b';
-    status.textContent = 'Something went wrong. Please try again.';
-  }
+  document.body.appendChild(form);
+  form.submit();
 
-  btn.textContent = 'Request Call Back';
-  btn.disabled = false;
-  btn.style.background = '#FF6A00';
+  // Show success immediately
+  status.style.display = 'block';
+  status.style.background = '#e6f4ea';
+  status.style.color = '#1a7a3a';
+  status.textContent = '✅ Received! We will be in touch shortly.';
+  document.getElementById('cmbPhone').value = '';
+
+  setTimeout(() => {
+    document.getElementById('cmb-popup').style.display = 'none';
+    status.style.display = 'none';
+    document.body.removeChild(form);
+    document.body.removeChild(iframe);
+  }, 3000);
 }
 </script>
   `;

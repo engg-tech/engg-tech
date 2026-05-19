@@ -1,16 +1,18 @@
-# Specific combined www + sg fix
-https://www.engg-tech.com/sg/services/index.html /services/ 301!
+# =========================
+# FORCE HTTPS + NON-WWW (must be first)
+# =========================
+https://www.engg-tech.com/sg/services/index.html https://engg-tech.com/services/ 301!
 https://www.engg-tech.com/sg/services/ https://engg-tech.com/services/ 301!
+http://www.engg-tech.com/* https://engg-tech.com/:splat 301!
+http://engg-tech.com/* https://engg-tech.com/:splat 301!
+https://www.engg-tech.com/* https://engg-tech.com/:splat 301!
 
 # =========================
-# REMOVE /INDEX.HTML 
+# REMOVE /INDEX.HTML
 # =========================
-/index.html / 301!
 /blog/index.html /blog/ 301!
 /blog/*/index.html /blog/:splat/ 301!
 /services/index.html /services/ 301!
-
-# ARTICLES
 /articles/index.html /articles/ 301!
 /articles/*/index.html /articles/:splat/ 301!
 
@@ -18,32 +20,24 @@ https://www.engg-tech.com/sg/services/ https://engg-tech.com/services/ 301!
 # FIX OLD /SG PATHS
 # =========================
 /sg/services/index.html /services/ 301!
+/sg/blog/it-infrastructure-setup /blog/ 301!
+/sg/about /about-us/ 301!
+/sg/about/ /about-us/ 301!
+/sg/services/ /services/ 301!
 /sg/ / 301!
-/sg/* /:splat 301!
-
-# =========================
-# FORCE HTTPS + NON-WWW
-# =========================
-http://www.engg-tech.com/* https://engg-tech.com/:splat 301!
-http://engg-tech.com/* https://engg-tech.com/:splat 301!
-https://www.engg-tech.com/* https://engg-tech.com/:splat 301!
 
 # =========================
 # FIX MISSING TRAILING SLASH
 # =========================
-/about-us /about-us/ 301!
-/contact-us /contact-us/ 301!
-/projects /projects/ 301!
-/privacy-policy /privacy-policy/ 301!
-/services/general-construction /services/ 301!
-/home / 301!
 /about /about-us/ 301!
+/home / 301!
 /carousell / 301!
 /carousell/ / 301!
 /engg-tech.com/ / 301!
+/services/general-construction /services/ 301!
 
 # =========================
-# OLD DELETED BLOG POSTS → BLOG INDEX
+# OLD DELETED BLOG POSTS
 # =========================
 /blog/fire-alarm-singapore /blog/ 301!
 /blog/fire-alarm-singapore.html /blog/ 301!
@@ -116,5 +110,3 @@ https://www.engg-tech.com/* https://engg-tech.com/:splat 301!
 /blog/risk-advisory-vs-internal-audit.html /blog/ 301!
 /blog/it-companies-singapore.html /blog/ 301!
 /blog/it-infrastructure-setup /blog/ 301!
-/sg/blog/it-infrastructure-setup /blog/ 301!
-/sg/about /about-us/ 301!

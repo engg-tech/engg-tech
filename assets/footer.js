@@ -164,55 +164,56 @@ document.addEventListener("DOMContentLoaded", () => {
   </p>
 </div>
 
-<script>
-async function submitWaCallback() {
-  const phone  = document.getElementById('waPhone').value.trim();
-  const status = document.getElementById('waStatus');
-  const btn    = document.getElementById('waSubmitBtn');
 
-  if (!phone) {
-    status.style.display = 'block';
-    status.style.background = '#fde8e8';
-    status.style.color = '#c0392b';
-    status.textContent = 'Please enter your phone number.';
-    return;
-  }
-
-  btn.textContent = 'Sending...';
-  btn.disabled = true;
-  btn.style.background = '#888';
-
-  const formData = new FormData();
-  formData.append('name', 'WhatsApp Callback Request');
-  formData.append('email', 'whatsapp@engg-tech.com');
-  formData.append('phone', phone);
-  formData.append('message', 'WHATSAPP CALLBACK REQUEST from website button.');
-
-  await fetch('https://script.google.com/macros/s/AKfycby4XuwZWYK0MphbQbjrmO7M_9dUUrDb9MgZRMOHMAklwFzt3MNJUuohaBipWwMkYbud/exec', {
-    method: 'POST',
-    mode: 'no-cors',
-    body: formData
-  });
-
-  status.style.display = 'block';
-  status.style.background = '#e6f4ea';
-  status.style.color = '#1a7a3a';
-  status.textContent = '✅ Received! We will be in touch shortly.';
-  document.getElementById('waPhone').value = '';
-
-  btn.textContent = 'Send My Number';
-  btn.disabled = false;
-  btn.style.background = '#25D366';
-
-  setTimeout(() => {
-    document.getElementById('wa-popup').style.display = 'none';
-    status.style.display = 'none';
-  }, 3000);
-}
-</script>
   `;
 
   const siteFooter = document.getElementById("site-footer");
   if (siteFooter) siteFooter.innerHTML = footerHTML;
+
+  /* WhatsApp Us Submit */
+  window.submitWaCallback = async function() {
+    const phone  = document.getElementById('waPhone').value.trim();
+    const status = document.getElementById('waStatus');
+    const btn    = document.getElementById('waSubmitBtn');
+
+    if (!phone) {
+      status.style.display = 'block';
+      status.style.background = '#fde8e8';
+      status.style.color = '#c0392b';
+      status.textContent = 'Please enter your phone number.';
+      return;
+    }
+
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+    btn.style.background = '#888';
+
+    const formData = new FormData();
+    formData.append('name', 'WhatsApp Callback Request');
+    formData.append('email', 'whatsapp@engg-tech.com');
+    formData.append('phone', phone);
+    formData.append('message', 'WHATSAPP CALLBACK REQUEST from website button.');
+
+    await fetch('https://script.google.com/macros/s/AKfycby4XuwZWYK0MphbQbjrmO7M_9dUUrDb9MgZRMOHMAklwFzt3MNJUuohaBipWwMkYbud/exec', {
+      method: 'POST',
+      mode: 'no-cors',
+      body: formData
+    });
+
+    status.style.display = 'block';
+    status.style.background = '#e6f4ea';
+    status.style.color = '#1a7a3a';
+    status.textContent = '✅ Received! We will be in touch shortly.';
+    document.getElementById('waPhone').value = '';
+
+    btn.textContent = 'Send My Number';
+    btn.disabled = false;
+    btn.style.background = '#25D366';
+
+    setTimeout(() => {
+      document.getElementById('wa-popup').style.display = 'none';
+      status.style.display = 'none';
+    }, 3000);
+  };
 
 });

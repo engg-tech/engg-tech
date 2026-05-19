@@ -108,56 +108,57 @@ document.addEventListener("DOMContentLoaded", () => {
   </div>
 </div>
 
-<script>
-async function submitCallBack() {
-  const phone  = document.getElementById('cmbPhone').value.trim();
-  const status = document.getElementById('cmbStatus');
-  const btn    = document.getElementById('cmbSubmitBtn');
 
-  if (!phone) {
-    status.style.display = 'block';
-    status.style.background = '#fde8e8';
-    status.style.color = '#c0392b';
-    status.textContent = 'Please enter your phone number.';
-    return;
-  }
-
-  btn.textContent = 'Sending...';
-  btn.disabled = true;
-  btn.style.background = '#888';
-
-  const formData = new FormData();
-  formData.append('name', 'Call Back Request');
-  formData.append('email', 'callback@engg-tech.com');
-  formData.append('phone', phone);
-  formData.append('message', 'CALL BACK REQUEST from website button.');
-
-  await fetch('https://script.google.com/macros/s/AKfycby4XuwZWYK0MphbQbjrmO7M_9dUUrDb9MgZRMOHMAklwFzt3MNJUuohaBipWwMkYbud/exec', {
-    method: 'POST',
-    mode: 'no-cors',
-    body: formData
-  });
-
-  status.style.display = 'block';
-  status.style.background = '#e6f4ea';
-  status.style.color = '#1a7a3a';
-  status.textContent = '✅ Received! We will be in touch shortly.';
-  document.getElementById('cmbPhone').value = '';
-
-  btn.textContent = 'Request Call Back';
-  btn.disabled = false;
-  btn.style.background = '#FF6A00';
-
-  setTimeout(() => {
-    document.getElementById('cmb-popup').style.display = 'none';
-    status.style.display = 'none';
-  }, 3000);
-}
-</script>
   `;
 
   const siteNav = document.getElementById("site-nav");
   if (siteNav) siteNav.innerHTML = navHTML;
+
+  /* Call Me Back Submit */
+  window.submitCallBack = async function() {
+    const phone  = document.getElementById('cmbPhone').value.trim();
+    const status = document.getElementById('cmbStatus');
+    const btn    = document.getElementById('cmbSubmitBtn');
+
+    if (!phone) {
+      status.style.display = 'block';
+      status.style.background = '#fde8e8';
+      status.style.color = '#c0392b';
+      status.textContent = 'Please enter your phone number.';
+      return;
+    }
+
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+    btn.style.background = '#888';
+
+    const formData = new FormData();
+    formData.append('name', 'Call Back Request');
+    formData.append('email', 'callback@engg-tech.com');
+    formData.append('phone', phone);
+    formData.append('message', 'CALL BACK REQUEST from website button.');
+
+    await fetch('https://script.google.com/macros/s/AKfycby4XuwZWYK0MphbQbjrmO7M_9dUUrDb9MgZRMOHMAklwFzt3MNJUuohaBipWwMkYbud/exec', {
+      method: 'POST',
+      mode: 'no-cors',
+      body: formData
+    });
+
+    status.style.display = 'block';
+    status.style.background = '#e6f4ea';
+    status.style.color = '#1a7a3a';
+    status.textContent = '✅ Received! We will be in touch shortly.';
+    document.getElementById('cmbPhone').value = '';
+
+    btn.textContent = 'Request Call Back';
+    btn.disabled = false;
+    btn.style.background = '#FF6A00';
+
+    setTimeout(() => {
+      document.getElementById('cmb-popup').style.display = 'none';
+      status.style.display = 'none';
+    }, 3000);
+  };
 
   /* ACTIVE LINK */
   const links = document.querySelectorAll("#navbarMenu .nav-link");

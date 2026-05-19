@@ -752,3 +752,24 @@ ol.blog-list {
     padding: 0 1rem;
   }
 }
+
+/* Call Me Back — hide navbar button on mobile, show in menu */
+@media (max-width: 768px) {
+  #callbackNavBtn {
+    display: none;
+  }
+}
+
+/* Call Me Back mobile menu item — hide on desktop */
+@media (min-width: 769px) {
+  .cmb-mobile-item {
+    display: none;
+  }
+}
+
+/* Call Me Back mobile menu item styling */
+.cmb-mobile-item {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}

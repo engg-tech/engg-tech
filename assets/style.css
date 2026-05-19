@@ -476,7 +476,7 @@ ol.blog-list {
 
 /* Main content area — replaces inline padding on page divs */
 .page-content {
-  padding: 2rem 1.5rem;
+  padding: 1rem 1.5rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
   box-sizing: border-box;
@@ -495,7 +495,7 @@ ol.blog-list {
 ======================================================= */
 .page-header {
   text-align: center;
-  padding: 2rem 1.5rem;
+  padding: 2rem 1.5rem 1rem;
   max-width: 1200px;
   margin: 0 auto;
   box-sizing: border-box;

@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <a class="nav-link" href="https://engg-tech.com/services/">Services</a>
           <ul class="submenu" role="list">
             <li class="has-submenu">
-              <span style="cursor:pointer;font-weight:600;text-transform:uppercase;color:#0A2540;font-size:inherit;">Waterproofing ›</span>
+              <span class="submenu-category-label">Waterproofing</span>
               <ul class="submenu" role="list">
                 <li><a href="https://engg-tech.com/services/epoxy-grouting-singapore/">Epoxy Grout</a></li>
                 <li><a href="https://engg-tech.com/services/pu-grouting-singapore/">PU Grout</a></li>

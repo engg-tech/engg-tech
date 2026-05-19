@@ -36,9 +36,8 @@ document.addEventListener("DOMContentLoaded", () => {
           <a class="nav-link" href="https://engg-tech.com/services/">Services</a>
           <ul class="submenu" role="list">
             <li class="has-submenu">
-              <a href="https://engg-tech.com/services/waterproofing/">Waterproofing ›</a>
+              <span style="cursor:pointer;font-weight:600;text-transform:uppercase;color:#0A2540;font-size:inherit;">Waterproofing ›</span>
               <ul class="submenu" role="list">
-                <li><a href="https://engg-tech.com/services/waterproofing/">All Waterproofing Services</a></li>
                 <li><a href="https://engg-tech.com/services/epoxy-grouting-singapore/">Epoxy Grout</a></li>
                 <li><a href="https://engg-tech.com/services/pu-grouting-singapore/">PU Grout</a></li>
               </ul>
@@ -123,7 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* MOBILE SUBMENU TAP TO EXPAND */
-  document.querySelectorAll(".has-submenu > .nav-link, .has-submenu > a").forEach(link => {
+  document.querySelectorAll(".has-submenu > .nav-link, .has-submenu > a, .has-submenu > span").forEach(link => {
     link.addEventListener("click", (e) => {
       if (window.innerWidth <= 768) {
         e.preventDefault();

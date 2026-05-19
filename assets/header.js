@@ -94,6 +94,19 @@ document.addEventListener("DOMContentLoaded", () => {
     if (href !== "/" && path.startsWith(href)) a.classList.add("active");
   });
 
+  /* SUBMENU ACTIVE LINKS */
+  const submenuLinks = document.querySelectorAll(".submenu a");
+  submenuLinks.forEach(a => {
+    const url = new URL(a.href);
+    let href = url.pathname.toLowerCase()
+      .replace(/index\.html$/, "").replace(/\.html$/, "").replace(/\/$/, "");
+    if (href === "") href = "/";
+    if (href !== "/" && path.startsWith(href)) {
+      a.style.color = "var(--color-orange)";
+      a.style.fontWeight = "700";
+    }
+  });
+
   /* MOBILE MENU TOGGLE */
   const toggle = document.querySelector(".menu-toggle");
   const menu   = document.getElementById("navbarMenu");

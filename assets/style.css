@@ -779,16 +779,16 @@ ol.blog-list {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
 }
 
 @media (max-width: 768px) {
   .warranty-badge-img {
-    position: static;
-    display: block;
-    margin: 1rem auto 0;
-    width: 150px;
-    height: 150px;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 80px;
+    height: 80px;
   }
 }

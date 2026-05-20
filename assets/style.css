@@ -770,7 +770,7 @@ ol.blog-list { list-style: decimal; }
    Homepage Hero — background image on home page only
 ======================================================= */
 #page-top .page-header {
-  background-image: url('/assets/images/waterproofing-fire-protection-singapore.jpg');
+  background-image: url('/assets/images/waterproofing-fire-protection-singapore.jpeg');
   background-size: cover;
   background-position: center;
   position: relative;
@@ -798,8 +798,8 @@ ol.blog-list { list-style: decimal; }
   position: static;
   display: block;
   margin: 1rem auto 0;
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   z-index: 2;
 }
 

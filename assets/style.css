@@ -853,3 +853,41 @@ ol.blog-list { list-style: decimal; }
 }
 
 
+
+
+/* =======================================================
+   CMB Nav Buttons (formerly inline styles in header.js)
+======================================================= */
+.cmb-mobile-btn {
+  display: none;
+  background: #FF6A00;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  align-items: center;
+  gap: 6px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: background 0.2s;
+}
+.cmb-mobile-btn:hover { background: #0A2540; }
+
+.cmb-nav-btn {
+  background: #FF6A00;
+  color: #fff;
+  border: none;
+  padding: 9px 18px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+.cmb-nav-btn:hover { background: #0A2540; }

@@ -1027,3 +1027,18 @@ ol.blog-list { list-style: decimal; }
   color: #0A2540;
   font-weight: 600;
 }
+
+
+/* CTA Button — homepage Get a Free Quote */
+.cta-btn {
+  display: inline-block;
+  background: #FF6A00;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.05rem;
+  padding: 14px 32px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.cta-btn:hover { background: #0A2540; }

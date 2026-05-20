@@ -37,140 +37,112 @@ schema: |
 ---
 
 <noscript>
-  <div role="alert" style="background-color:#f4623a;color:#ffffff;padding:1rem;text-align:center;font-weight:600;font-size:1rem;">
+  <div role="alert" class="noscript-alert">
     ⚠️ JavaScript is disabled. Some features of Engg-Tech.com may not work as expected. Please enable JavaScript for full functionality.
   </div>
 </noscript>
 
-<!-- Engg-Tech Navbar -->
-<!-- Content section -->
-<div style="padding-left:1.5rem;padding-right:1.5rem;box-sizing:border-box;">
+<div class="page-wrap">
   <section>
 
-      <h1 style="font-size:2rem;">Contact Us</h1>
+    <h1 class="page-h1">Contact Us</h1>
 
-      <p>
-        Contact Engg-Tech for fire sprinkler installation, fire alarm systems, and M&amp;E contractor services in Singapore. Our team provides fast response and reliable project support.
-      </p>
+    <p>
+      Contact Engg-Tech for fire sprinkler installation, fire alarm systems, and M&amp;E contractor services in Singapore. Our team provides fast response and reliable project support.
+    </p>
 
-      <p>
-        Learn more about our <a href="https://engg-tech.com/services/">services</a>, including
-        <a href="https://engg-tech.com/services/pu-grouting-singapore/">PU grouting</a> and
-        <a href="https://engg-tech.com/services/epoxy-grouting-singapore/">epoxy grouting</a>,
-        or view our completed works on our <a href="https://engg-tech.com/projects/">projects page</a>.
-        Read useful guides on our <a href="https://engg-tech.com/blog/">blog</a>.
-      </p>
+    <p>
+      Learn more about our <a href="https://engg-tech.com/services/">services</a>, including
+      <a href="https://engg-tech.com/services/pu-grouting-singapore/">PU grouting</a> and
+      <a href="https://engg-tech.com/services/epoxy-grouting-singapore/">epoxy grouting</a>,
+      or view our completed works on our <a href="https://engg-tech.com/projects/">projects page</a>.
+      Read useful guides on our <a href="https://engg-tech.com/blog/">blog</a>.
+    </p>
 
-      <!-- Contact Form -->
-      <div style="max-width:600px;margin:2.5rem auto;padding:2rem;background:#ffffff;border-radius:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+    <div class="contact-card">
 
-        <h2 style="margin-top:0;margin-bottom:0.5rem;font-size:1.6rem;color:#0A2540;">Send Us an Enquiry</h2>
-        <p style="color:#666;margin-bottom:1.5rem;font-size:0.95rem;">We will get back to you within 1 business day.</p>
+      <h2 class="contact-card__title">Send Us an Enquiry</h2>
+      <p class="contact-card__subtitle">We will get back to you within 1 business day.</p>
 
-        <form id="contactForm" style="display:flex;flex-direction:column;gap:1.1rem;">
+      <form id="contactForm" class="contact-form">
 
-          <div>
-            <label for="name" style="display:block;font-weight:600;color:#0A2540;margin-bottom:0.3rem;">Name <span style="color:#FF6A00;">*</span></label>
-            <input type="text" id="name" name="name" required placeholder="Your full name"
-              style="width:100%;padding:10px 14px;border:1.5px solid #d0dae6;border-radius:6px;font-size:1rem;box-sizing:border-box;outline:none;transition:border-color 0.2s;"
-              onfocus="this.style.borderColor='#FF6A00'" onblur="this.style.borderColor='#d0dae6'"/>
-          </div>
+        <div>
+          <label for="name" class="contact-form__label">Name <span class="contact-form__required">*</span></label>
+          <input type="text" id="name" name="name" required placeholder="Your full name" class="contact-form__input"/>
+        </div>
 
-          <div>
-            <label for="email" style="display:block;font-weight:600;color:#0A2540;margin-bottom:0.3rem;">Email <span style="color:#FF6A00;">*</span></label>
-            <input type="email" id="email" name="email" required placeholder="your@email.com"
-              style="width:100%;padding:10px 14px;border:1.5px solid #d0dae6;border-radius:6px;font-size:1rem;box-sizing:border-box;outline:none;transition:border-color 0.2s;"
-              onfocus="this.style.borderColor='#FF6A00'" onblur="this.style.borderColor='#d0dae6'"/>
-          </div>
+        <div>
+          <label for="email" class="contact-form__label">Email <span class="contact-form__required">*</span></label>
+          <input type="email" id="email" name="email" required placeholder="your@email.com" class="contact-form__input"/>
+        </div>
 
-          <div>
-            <label for="phone" style="display:block;font-weight:600;color:#0A2540;margin-bottom:0.3rem;">Phone <span style="color:#888;font-weight:400;">(optional)</span></label>
-            <input type="tel" id="phone" name="phone" placeholder="+65 XXXX XXXX"
-              style="width:100%;padding:10px 14px;border:1.5px solid #d0dae6;border-radius:6px;font-size:1rem;box-sizing:border-box;outline:none;transition:border-color 0.2s;"
-              onfocus="this.style.borderColor='#FF6A00'" onblur="this.style.borderColor='#d0dae6'"/>
-          </div>
+        <div>
+          <label for="phone" class="contact-form__label">Phone <span class="contact-form__optional">(optional)</span></label>
+          <input type="tel" id="phone" name="phone" placeholder="+65 XXXX XXXX" class="contact-form__input"/>
+        </div>
 
+        <div>
+          <label for="message" class="contact-form__label">Message <span class="contact-form__required">*</span></label>
+          <textarea id="message" name="message" required rows="5" placeholder="Tell us about your project or enquiry..." class="contact-form__textarea"></textarea>
+        </div>
 
-          <div>
-            <label for="message" style="display:block;font-weight:600;color:#0A2540;margin-bottom:0.3rem;">Message <span style="color:#FF6A00;">*</span></label>
-            <textarea id="message" name="message" required rows="5" placeholder="Tell us about your project or enquiry..."
-              style="width:100%;padding:10px 14px;border:1.5px solid #d0dae6;border-radius:6px;font-size:1rem;box-sizing:border-box;outline:none;resize:vertical;transition:border-color 0.2s;font-family:inherit;"
-              onfocus="this.style.borderColor='#FF6A00'" onblur="this.style.borderColor='#d0dae6'"></textarea>
-          </div>
+        <div id="formStatus" class="contact-form__status"></div>
 
-          <div id="formStatus" style="display:none;padding:0.75rem 1rem;border-radius:6px;font-weight:600;text-align:center;"></div>
+        <button type="submit" id="submitBtn" class="contact-form__submit">Send Enquiry</button>
 
-          <button type="submit" id="submitBtn"
-            style="background:#FF6A00;color:#fff;border:none;padding:14px 28px;border-radius:6px;font-size:1.05rem;font-weight:700;cursor:pointer;transition:background 0.2s;width:100%;"
-            onmouseover="this.style.background='#0A2540'" onmouseout="this.style.background='#FF6A00'">
-            Send Enquiry
-          </button>
+        <p class="contact-form__note">
+          Or email us directly at <a href="mailto:info@engg-tech.com">info@engg-tech.com</a>
+        </p>
 
-          <p style="text-align:center;color:#888;font-size:0.85rem;margin:0;">
-            Or email us directly at <a href="mailto:info@engg-tech.com" style="color:#0A2540;font-weight:600;">info@engg-tech.com</a>
-          </p>
+      </form>
+    </div>
 
-        </form>
-      </div>
+    <script>
+      document.getElementById('contactForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
 
-      <script>
-        document.getElementById('contactForm').addEventListener('submit', async function(e) {
-          e.preventDefault();
+        const btn    = document.getElementById('submitBtn');
+        const status = document.getElementById('formStatus');
+        const name    = document.getElementById('name').value.trim();
+        const email   = document.getElementById('email').value.trim();
+        const phone   = document.getElementById('phone').value.trim();
+        const message = document.getElementById('message').value.trim();
 
-          const btn = document.getElementById('submitBtn');
-          const status = document.getElementById('formStatus');
+        btn.textContent = 'Sending...';
+        btn.disabled = true;
+        btn.style.background = '#888';
 
-          // Get values
-          const name    = document.getElementById('name').value.trim();
-          const email   = document.getElementById('email').value.trim();
-          const phone   = document.getElementById('phone').value.trim();
-          const message = document.getElementById('message').value.trim();
+        try {
+          const formData = new FormData();
+          formData.append('name', name);
+          formData.append('email', email);
+          formData.append('phone', phone);
+          formData.append('message', message);
 
-          // Button loading state
-          btn.textContent = 'Sending...';
-          btn.disabled = true;
-          btn.style.background = '#888';
+          await fetch('https://script.google.com/macros/s/AKfycby4XuwZWYK0MphbQbjrmO7M_9dUUrDb9MgZRMOHMAklwFzt3MNJUuohaBipWwMkYbud/exec', {
+            method: 'POST',
+            mode: 'no-cors',
+            body: formData
+          });
 
-          try {
-            const formData = new FormData();
-            formData.append('name', name);
-            formData.append('email', email);
-            formData.append('phone', phone);
-            formData.append('message', message);
+          status.style.display = 'block';
+          status.style.background = '#e6f4ea';
+          status.style.color = '#1a7a3a';
+          status.textContent = '✅ Message sent! We will get back to you within 1 business day.';
+          document.getElementById('contactForm').reset();
 
-            await fetch('https://script.google.com/macros/s/AKfycby4XuwZWYK0MphbQbjrmO7M_9dUUrDb9MgZRMOHMAklwFzt3MNJUuohaBipWwMkYbud/exec', {
-              method: 'POST',
-              mode: 'no-cors',
-              body: formData
-            });
+        } catch (err) {
+          status.style.display = 'block';
+          status.style.background = '#fde8e8';
+          status.style.color = '#c0392b';
+          status.textContent = '❌ Something went wrong. Please email us directly at info@engg-tech.com';
+        }
 
-            // no-cors mode always succeeds if request sent
-            if (true) {
-              status.style.display = 'block';
-              status.style.background = '#e6f4ea';
-              status.style.color = '#1a7a3a';
-              status.textContent = '✅ Message sent! We will get back to you within 1 business day.';
-              document.getElementById('contactForm').reset();
-            } else {
-              throw new Error('Server error');
-            }
-
-          } catch (err) {
-            status.style.display = 'block';
-            status.style.background = '#fde8e8';
-            status.style.color = '#c0392b';
-            status.textContent = '❌ Something went wrong. Please email us directly at info@engg-tech.com';
-          }
-
-          btn.textContent = 'Send Enquiry';
-          btn.disabled = false;
-          btn.style.background = '#FF6A00';
-        });
-      </script>
+        btn.textContent = 'Send Enquiry';
+        btn.disabled = false;
+        btn.style.background = '#FF6A00';
+      });
+    </script>
 
   </section>
 </div>
-<!-- Content section END -->
-
-<!-- Global Ads & Analytics -->
-<!-- FOOTER -->

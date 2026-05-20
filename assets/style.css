@@ -823,4 +823,12 @@ ol.blog-list { list-style: decimal; }
   .cmb-mobile-item { display: none; }
 }
 
-.cmb-mobile-item { list-style: none; padding: 0; margin: 0; }
+.brand-short { display: none; }
+.brand-full { display: inline; }
+
+@media (max-width: 768px) {
+  .brand-full { display: none; }
+  .brand-short { display: inline; }
+}
+
+

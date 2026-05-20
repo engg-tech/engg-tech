@@ -1042,3 +1042,115 @@ ol.blog-list { list-style: decimal; }
   transition: background 0.2s;
 }
 .cta-btn:hover { background: #0A2540; }
+
+
+/* =======================================================
+   Hero Banner
+======================================================= */
+.hero-banner {
+  position: relative;
+  width: 100%;
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-align: center;
+}
+
+.hero-banner__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+
+.hero-banner__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 37, 64, 0.72);
+  z-index: 1;
+}
+
+.hero-banner__content {
+  position: relative;
+  z-index: 2;
+  padding: 3rem 1.5rem;
+  max-width: 780px;
+  width: 100%;
+}
+
+.hero-banner__title {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 4.5vw, 46px);
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1.12;
+  margin: 0 0 1rem;
+}
+
+.hero-banner__sub {
+  font-size: clamp(14px, 2vw, 17px);
+  color: rgba(255, 255, 255, 0.82);
+  margin: 0 0 1.5rem;
+  line-height: 1.6;
+}
+
+.hero-banner__badges {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.hero-banner__badges img {
+  border-radius: 4px;
+  background: rgba(255,255,255,0.92);
+  padding: 4px;
+}
+
+.hero-banner__cta {
+  display: inline-block;
+  background: #FF6A00;
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 800;
+  padding: 15px 36px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.2s;
+  letter-spacing: 0.3px;
+}
+.hero-banner__cta:hover { background: #fff; color: #FF6A00; }
+
+.hero-banner__trust {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px 20px;
+  margin-top: 1.25rem;
+}
+
+.hero-banner__trust span {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+@media (max-width: 768px) {
+  .hero-banner { min-height: 380px; }
+  .hero-banner__content { padding: 2rem 1rem; }
+  .hero-banner__badges img { width: 80px; height: 40px; }
+}
+
+/* Warranty badge in Why Choose Us section */
+.warranty-badge-section {
+  display: block;
+  margin: 1.25rem 0 0;
+  border-radius: 50%;
+}

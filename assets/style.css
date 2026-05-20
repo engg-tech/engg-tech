@@ -791,6 +791,7 @@ ol.blog-list { list-style: decimal; }
 }
 
 #page-top .page-header .warranty-badge-img {
+  mix-blend-mode: multiply;
   position: absolute;
   top: 1rem;
   right: 1rem;
@@ -801,6 +802,7 @@ ol.blog-list { list-style: decimal; }
 
 @media (max-width: 768px) {
   #page-top .page-header .warranty-badge-img {
+  mix-blend-mode: multiply;
     width: 80px;
     height: 80px;
     top: 0.5rem;

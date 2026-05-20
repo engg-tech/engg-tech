@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const isHomepage = window.location.pathname === "/" || window.location.pathname === "/index.html";
 
   const brandHTML = isHomepage
-    ? `<a class="navbar-brand" href="https://engg-tech.com/" style="display:flex;align-items:center;gap:8px;"><img src="/assets/favicon/logo-180.png" alt="Engg-Tech Pte. Ltd. logo" width="36" height="36" style="display:block;"><span>Engg-Tech</span></a>`
+    ? `<a class="navbar-brand" href="https://engg-tech.com/">Engg-Tech Pte. Ltd.</a>`
     : `<a class="navbar-brand" href="https://engg-tech.com/" aria-label="Engg-Tech Home">
         <img src="/assets/favicon/logo-180.png" alt="Engg-Tech Pte. Ltd. logo" width="48" height="48" fetchpriority="high" style="display:block;">
       </a>`;

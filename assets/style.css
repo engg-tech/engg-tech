@@ -774,15 +774,7 @@ ol.blog-list { list-style: decimal; }
 }
 
 #page-top .page-header::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to right,
-    rgba(10,37,64,0.55) 0%,
-    rgba(10,37,64,0.35) 60%,
-    rgba(10,37,64,0.15) 100%
-  );
+  display: none;
 }
 
 #page-top .page-header > * {
@@ -819,10 +811,16 @@ ol.blog-list { list-style: decimal; }
 
 
 #page-top .page-header .page-header__title,
-#page-top .page-header .page-header__name,
-#page-top .page-header .service-item,
+#page-top .page-header .page-header__name {
+  color: #0A2540;
+}
+
+#page-top .page-header .service-item {
+  color: #FF6A00;
+}
+
 #page-top .page-header p {
-  color: #fff;
+  color: #0A2540;
 }
 
 #page-top .page-header .service-arrow {

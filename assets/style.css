@@ -827,7 +827,14 @@ ol.blog-list { list-style: decimal; }
 
 #page-top .page-header .service-item {
   color: #FF6A00;
-  text-shadow: 0 1px 6px rgba(255,255,255,0.9);
+  text-shadow: 0 0 8px rgba(255,255,255,1), 0 0 16px rgba(255,255,255,1), 0 0 24px rgba(255,255,255,0.9);
+  font-weight: 700;
+}
+
+#page-top .page-header p {
+  color: #0A2540;
+  text-shadow: 0 0 8px rgba(255,255,255,1), 0 0 16px rgba(255,255,255,1);
+  font-weight: 600;
 }
 
 #page-top .page-header p {

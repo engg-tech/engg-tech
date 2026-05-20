@@ -243,10 +243,12 @@ li:not(.has-submenu) > .nav-link.active:not(.navbar-brand)::after {
   }
 
   li:not(.has-submenu) > .nav-link.active:not(.navbar-brand)::after {
-    top: 6px;
-    left: -0.5rem;
-    right: -0.5rem;
-    bottom: 6px;
+    top: 4px;
+    left: -8px;
+    right: auto;
+    bottom: 4px;
+    width: max-content;
+    padding-right: 16px;
     border-radius: 4px;
   }
 

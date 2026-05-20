@@ -78,13 +78,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  /* CMB POPUP TRIGGERS */
-  const cmbPopup = document.getElementById("cmb-popup");
-  ["callbackMobileBtn", "callbackNavBtn"].forEach(id => {
-    const btn = document.getElementById(id);
-    if (btn && cmbPopup) {
-      btn.addEventListener("click", () => { cmbPopup.style.display = "flex"; });
-    }
-  });
+
 
 });

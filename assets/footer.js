@@ -66,6 +66,14 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("fab-cmb-btn").addEventListener("click", () => {
     document.getElementById("cmb-popup").style.display = "flex";
   });
+
+  /* WIRE UP NAV CMB BUTTONS (popup now exists in DOM) */
+  ["callbackMobileBtn", "callbackNavBtn"].forEach(id => {
+    const btn = document.getElementById(id);
+    if (btn) btn.addEventListener("click", () => {
+      document.getElementById("cmb-popup").style.display = "flex";
+    });
+  });
   document.getElementById("wa-popup-close").addEventListener("click", () => {
     document.getElementById("wa-popup").style.display = "none";
   });

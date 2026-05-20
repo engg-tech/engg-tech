@@ -1154,3 +1154,39 @@ ol.blog-list { list-style: decimal; }
   margin: 1.25rem 0 0;
   border-radius: 50%;
 }
+
+
+/* Hero badge pill */
+.hero-banner__badge {
+  display: inline-block;
+  background: #FF6A00;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: 5px 16px;
+  border-radius: 4px;
+  margin-bottom: 1.25rem;
+}
+
+/* Hero chips row */
+.hero-banner__chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 1rem;
+}
+
+.hero-chip {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 4px;
+  padding: 5px 14px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.85);
+}
+
+/* Remove old badges block */
+.hero-banner__badges { display: none; }

@@ -767,96 +767,18 @@ ol.blog-list { list-style: decimal; }
 
 
 /* =======================================================
-   Homepage Hero — background image on home page only
+   Homepage — warranty badge position
 ======================================================= */
-#page-top .page-header {
-  background-image: url('/assets/images/waterproofing-fire-protection-singapore.jpeg');
-  background-size: cover;
-  background-position: center;
-  position: relative;
-}
-
-#page-top .page-header::before {
-  display: none;
-}
-
-#page-top .page-header::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(255,255,255,0.2);
-  pointer-events: none;
-  z-index: 0;
-}
-
-#page-top .page-header > * {
-  position: relative;
-  z-index: 1;
-}
-
 #page-top .page-header .warranty-badge-img {
   position: static;
   display: block;
   margin: 1rem auto 0;
-  width: 80px;
-  height: 80px;
-  z-index: 2;
-}
-
-@media (max-width: 768px) {
-  #page-top .page-header .warranty-badge-img {
-    width: 80px;
-    height: 80px;
-  }
+  width: 120px;
+  height: 120px;
 }
 
 #page-top .page-header .page-header__logo {
   display: none;
-}
-
-#page-top .page-header .page-header__badges img {
-  position: relative;
-  z-index: 2;
-}
-
-
-#page-top .page-header .page-header__title,
-#page-top .page-header .page-header__name {
-  color: #0A2540;
-  text-shadow: none;
-}
-
-#page-top .page-header .service-item {
-  color: #FF6A00;
-  text-shadow: none;
-  font-weight: 700;
-}
-
-#page-top .page-header p {
-  color: #0A2540;
-  text-shadow: none;
-  font-weight: 600;
-}
-
-/* Text content block — frosted white pill behind all text */
-#page-top .page-header .page-header__title,
-#page-top .page-header .page-header__name,
-#page-top .page-header .service-item,
-#page-top .page-header p {
-  background: rgba(255,255,255,0.78);
-  display: inline;
-  padding: 2px 8px;
-  border-radius: 4px;
-  box-decoration-break: clone;
-  -webkit-box-decoration-break: clone;
-}
-
-#page-top .page-header p {
-  color: #0A2540;
-}
-
-#page-top .page-header .service-arrow {
-  color: var(--color-orange);
 }
 
 .submenu-category-label {

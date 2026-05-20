@@ -150,10 +150,10 @@ a:hover { color: var(--color-orange-dark); }
 .navbar-brand {
   color: var(--color-navy);
   font-family: var(--font-display);
-  font-weight: 900;
-  font-size: 1.5rem;
+  font-weight: 700;
+  font-size: 1.3rem;
   text-decoration: none;
-  letter-spacing: -0.5px;
+  letter-spacing: 0;
 }
 
 .navbar-nav ul {
@@ -779,9 +779,9 @@ ol.blog-list { list-style: decimal; }
   inset: 0;
   background: linear-gradient(
     to right,
-    rgba(10,37,64,0.88) 0%,
-    rgba(10,37,64,0.65) 60%,
-    rgba(10,37,64,0.4) 100%
+    rgba(10,37,64,0.55) 0%,
+    rgba(10,37,64,0.35) 60%,
+    rgba(10,37,64,0.15) 100%
   );
 }
 
@@ -810,7 +810,8 @@ ol.blog-list { list-style: decimal; }
   }
 }
 
-#page-top .page-header .page-header__logo {
+#page-top .page-header .page-header__logo,
+#page-top .page-header .page-header__badges img {
   mix-blend-mode: multiply;
   position: relative;
   z-index: 2;

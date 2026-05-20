@@ -813,8 +813,7 @@ ol.blog-list { list-style: decimal; }
 }
 
 #page-top .page-header .page-header__logo {
-  position: relative;
-  z-index: 2;
+  display: none;
 }
 
 #page-top .page-header .page-header__badges img {

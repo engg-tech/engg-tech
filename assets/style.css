@@ -822,19 +822,32 @@ ol.blog-list { list-style: decimal; }
 #page-top .page-header .page-header__title,
 #page-top .page-header .page-header__name {
   color: #0A2540;
-  text-shadow: 0 1px 8px rgba(255,255,255,0.9), 0 0 20px rgba(255,255,255,0.8);
+  text-shadow: none;
 }
 
 #page-top .page-header .service-item {
   color: #FF6A00;
-  text-shadow: 0 0 8px rgba(255,255,255,1), 0 0 16px rgba(255,255,255,1), 0 0 24px rgba(255,255,255,0.9);
+  text-shadow: none;
   font-weight: 700;
 }
 
 #page-top .page-header p {
   color: #0A2540;
-  text-shadow: 0 0 8px rgba(255,255,255,1), 0 0 16px rgba(255,255,255,1);
+  text-shadow: none;
   font-weight: 600;
+}
+
+/* Text content block — frosted white pill behind all text */
+#page-top .page-header .page-header__title,
+#page-top .page-header .page-header__name,
+#page-top .page-header .service-item,
+#page-top .page-header p {
+  background: rgba(255,255,255,0.78);
+  display: inline;
+  padding: 2px 8px;
+  border-radius: 4px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
 }
 
 #page-top .page-header p {

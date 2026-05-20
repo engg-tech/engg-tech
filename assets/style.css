@@ -764,8 +764,43 @@ ol.blog-list { list-style: decimal; }
 
 
 /* =======================================================
-   Submenu Category Label
+   Homepage Hero — background image on home page only
 ======================================================= */
+#page-top .page-header {
+  background-image: url('/assets/images/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+#page-top .page-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(10,37,64,0.88) 0%,
+    rgba(10,37,64,0.65) 60%,
+    rgba(10,37,64,0.4) 100%
+  );
+}
+
+#page-top .page-header > * {
+  position: relative;
+  z-index: 1;
+}
+
+#page-top .page-header .page-header__title,
+#page-top .page-header .page-header__name,
+#page-top .page-header .service-item,
+#page-top .page-header p {
+  color: #fff;
+}
+
+#page-top .page-header .service-arrow {
+  color: var(--color-orange);
+}
+
 .submenu-category-label {
   display: block;
   padding: 0.5rem 1.1rem;

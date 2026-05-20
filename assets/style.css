@@ -767,7 +767,7 @@ ol.blog-list { list-style: decimal; }
    Homepage Hero — background image on home page only
 ======================================================= */
 #page-top .page-header {
-  background-image: url('/assets/images/your-hero-photo.jpg');
+  background-image: url('/assets/images/hero-bg.jpg');
   background-size: cover;
   background-position: center;
   position: relative;

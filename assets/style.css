@@ -243,13 +243,11 @@ li:not(.has-submenu) > .nav-link.active:not(.navbar-brand)::after {
   }
 
   li:not(.has-submenu) > .nav-link.active:not(.navbar-brand)::after {
-    top: 4px;
-    left: -8px;
-    right: auto;
-    bottom: 4px;
-    width: max-content;
-    padding-right: 16px;
-    border-radius: 4px;
+    display: none;
+  }
+
+  .nav-link.active {
+    color: var(--color-orange);
   }
 
   .menu-toggle {

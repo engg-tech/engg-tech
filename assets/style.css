@@ -687,7 +687,7 @@ ol.blog-list { list-style: decimal; }
   min-width: 40px;
   min-height: 40px;
   flex-shrink: 0;
-  border-radius: 0;
+  border-radius: 50%;
   background: transparent;
   border: 2px solid rgba(255,106,0,0.6);
   color: var(--color-orange);

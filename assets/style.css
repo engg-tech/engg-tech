@@ -190,14 +190,11 @@ a:hover { color: var(--color-orange-dark); }
   border-radius: var(--radius-sm);
 }
 
-li:not(.has-submenu) > .nav-link.active:not(.navbar-brand)::after {
-  content: '';
-  position: absolute;
-  top: -4px; left: -8px; right: -8px; bottom: -4px;
-  border: 2px solid var(--color-navy);
-  border-radius: var(--radius-sm);
-  pointer-events: none;
-  z-index: -1;
+li:not(.has-submenu) > .nav-link.active:not(.navbar-brand) {
+  color: var(--color-orange);
+}
+.has-submenu > .nav-link.active {
+  color: var(--color-orange);
 }
 
 
@@ -240,10 +237,6 @@ li:not(.has-submenu) > .nav-link.active:not(.navbar-brand)::after {
     text-align: left;
     width: 100%;
     position: relative;
-  }
-
-  li:not(.has-submenu) > .nav-link.active:not(.navbar-brand)::after {
-    display: none;
   }
 
   .nav-link.active {

@@ -826,7 +826,6 @@ ol.blog-list { list-style: decimal; }
 }
 .submenu-category-label:hover {
   color: var(--color-orange);
-  background: #fff5ef;
 }
 
 

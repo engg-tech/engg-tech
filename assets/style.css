@@ -584,7 +584,7 @@ ol.blog-list { list-style: decimal; }
   letter-spacing: -0.3px;
 }
 
-.enggtech-footer p { color: rgba(255,255,255,0.7); font-size: 0.9rem; }
+.enggtech-footer p { color: rgba(255,255,255,0.85); font-size: 0.9rem; }
 
 .enggtech-footer a {
   color: rgba(255,255,255,0.85);
@@ -658,12 +658,12 @@ ol.blog-list { list-style: decimal; }
 .footer-bottom {
   text-align: center;
   font-size: 0.82rem;
-  color: rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.7);
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.footer-bottom a { color: rgba(255,255,255,0.5); }
+.footer-bottom a { color: rgba(255,255,255,0.85); text-decoration: underline; text-underline-offset: 3px; }
 .footer-bottom a:hover { color: var(--color-orange); }
 
 .disclaimer {

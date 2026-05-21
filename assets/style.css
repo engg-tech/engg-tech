@@ -584,7 +584,7 @@ ol.blog-list { list-style: decimal; }
   letter-spacing: -0.3px;
 }
 
-.enggtech-footer p { color: rgba(255,255,255,0.85); font-size: 0.9rem; }
+.enggtech-footer p { color: rgba(255,255,255,0.7); font-size: 0.9rem; }
 
 .enggtech-footer a {
   color: rgba(255,255,255,0.85);
@@ -658,12 +658,12 @@ ol.blog-list { list-style: decimal; }
 .footer-bottom {
   text-align: center;
   font-size: 0.82rem;
-  color: rgba(255,255,255,0.7);
+  color: rgba(255,255,255,0.4);
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.footer-bottom a { color: rgba(255,255,255,0.85); text-decoration: underline; text-underline-offset: 3px; }
+.footer-bottom a { color: rgba(255,255,255,0.5); }
 .footer-bottom a:hover { color: var(--color-orange); }
 
 .disclaimer {
@@ -860,7 +860,7 @@ ol.blog-list { list-style: decimal; }
 ======================================================= */
 .cmb-mobile-btn {
   display: none;
-  background: #D95800;
+  background: #FF6A00;
   color: #fff;
   border: none;
   padding: 8px 16px;
@@ -1116,7 +1116,7 @@ ol.blog-list { list-style: decimal; }
 
 .hero-banner__cta {
   display: inline-block;
-  background: #D95800;
+  background: #FF6A00;
   color: #fff;
   font-family: var(--font-display);
   font-size: 1.15rem;
@@ -1159,7 +1159,7 @@ ol.blog-list { list-style: decimal; }
 /* Hero badge pill */
 .hero-banner__badge {
   display: inline-block;
-  background: #D95800;
+  background: #FF6A00;
   color: #fff;
   font-size: 12px;
   font-weight: 700;

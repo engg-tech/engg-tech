@@ -330,7 +330,6 @@ li:not(.has-submenu) > .nav-link.active:not(.navbar-brand)::after {
 
 .submenu a:hover {
   color: var(--color-orange);
-  background: rgba(255,106,0,0.06);
 }
 
 .submenu a:focus-visible {

@@ -566,6 +566,7 @@ ol.blog-list { list-style: decimal; }
   color: var(--color-white);
   padding: 3.5rem 1.5rem 2rem;
   font-family: var(--font-base);
+  border-top: 3px solid var(--color-orange);
 }
 
 .enggtech-footer h2 {

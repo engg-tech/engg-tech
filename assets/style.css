@@ -860,7 +860,7 @@ ol.blog-list { list-style: decimal; }
 ======================================================= */
 .cmb-mobile-btn {
   display: none;
-  background: #FF6A00;
+  background: #D95800;
   color: #fff;
   border: none;
   padding: 8px 16px;
@@ -1116,7 +1116,7 @@ ol.blog-list { list-style: decimal; }
 
 .hero-banner__cta {
   display: inline-block;
-  background: #FF6A00;
+  background: #D95800;
   color: #fff;
   font-family: var(--font-display);
   font-size: 1.15rem;
@@ -1159,7 +1159,7 @@ ol.blog-list { list-style: decimal; }
 /* Hero badge pill */
 .hero-banner__badge {
   display: inline-block;
-  background: #FF6A00;
+  background: #D95800;
   color: #fff;
   font-size: 12px;
   font-weight: 700;

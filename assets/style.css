@@ -182,7 +182,6 @@ a:hover { color: var(--color-orange-dark); }
 
 .nav-link:hover {
   color: var(--color-orange);
-  background: rgba(255,106,0,0.06);
 }
 
 .nav-link:focus-visible {

@@ -614,9 +614,6 @@ ol.blog-list { list-style: decimal; }
   font-size: 1.4rem;
   margin-bottom: 0.75rem;
   color: var(--color-white);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
 }
 
 .enggtech-footer a.footer-btn {

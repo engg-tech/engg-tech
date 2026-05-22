@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+
+  <url>
+    <loc>https://engg-tech.com/services/pu-grouting-singapore/</loc>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/Ed1AlfDqRAg/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>PU Grouting Singapore Water Leakage Repair Before After | Engg-Tech</video:title>
+      <video:description>Water leaking through your walls? Engg-Tech stops it for good using PU injection grouting waterproofing. No hacking required. Fast, clean and guaranteed results for HDB, condo and commercial properties in Singapore.</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=Ed1AlfDqRAg</video:content_loc>
+      <video:player_loc>https://www.youtube.com/embed/Ed1AlfDqRAg</video:player_loc>
+      <video:publication_date>2026-05-22</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+  </url>
+
+</urlset>

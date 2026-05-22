@@ -39,6 +39,25 @@ function urlBlock(loc, priority, changefreq, lastmod) {
   </url>`;
 }
 
+function urlBlockWithVideo(loc, priority, changefreq, lastmod, video) {
+  return `
+  <url>
+    <loc>${loc}</loc>
+    <lastmod>${lastmod}</lastmod>
+    <changefreq>${changefreq}</changefreq>
+    <priority>${priority}</priority>
+    <video:video>
+      <video:thumbnail_loc>${video.thumbnail}</video:thumbnail_loc>
+      <video:title>${video.title}</video:title>
+      <video:description>${video.description}</video:description>
+      <video:content_loc>${video.contentUrl}</video:content_loc>
+      <video:player_loc>${video.playerUrl}</video:player_loc>
+      <video:publication_date>${video.date}</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+  </url>`;
+}
+
 // ===============================
 // STATIC PAGES
 // ===============================
@@ -60,7 +79,19 @@ const staticPages = [
 staticPages.forEach(({ url, file, priority, freq }) => {
   const filePath = path.join(__dirname, file);
   const lastmod = getGitLastMod(filePath);
-  urls.push(urlBlock(`${SITE_URL}${url}`, priority, freq, lastmod));
+
+  if (url === "/services/pu-grouting-singapore/") {
+    urls.push(urlBlockWithVideo(`${SITE_URL}${url}`, priority, freq, lastmod, {
+      thumbnail: "https://img.youtube.com/vi/Ed1AlfDqRAg/maxresdefault.jpg",
+      title: "PU Grouting Singapore Water Leakage Repair Before After | Engg-Tech",
+      description: "Water leaking through your walls? Engg-Tech stops it for good using PU injection grouting waterproofing. No hacking required. Fast, clean and guaranteed results for HDB, condo and commercial properties in Singapore.",
+      contentUrl: "https://www.youtube.com/watch?v=Ed1AlfDqRAg",
+      playerUrl: "https://www.youtube.com/embed/Ed1AlfDqRAg",
+      date: "2026-05-22"
+    }));
+  } else {
+    urls.push(urlBlock(`${SITE_URL}${url}`, priority, freq, lastmod));
+  }
 });
 
 // ===============================
@@ -97,7 +128,8 @@ if (fs.existsSync(ARTICLES_DIR)) {
 // SITEMAP OUTPUT
 // ===============================
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
 ${urls.join("")}
 </urlset>
 `;

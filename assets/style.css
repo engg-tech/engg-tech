@@ -742,9 +742,9 @@ ol.blog-list { list-style: decimal; }
   .portfolio-table td { display: block; padding: 2px 14px; border: none; }
   .portfolio-table td:first-child { font-size: 15px; padding-top: 4px; }
   .portfolio-table td:last-child { display: block; }
-  .portfolio-table td:nth-child(1)::before { content: "Project: "; font-weight: 700; color: var(--color-navy); }
-  .portfolio-table td:nth-child(2)::before { content: "Services: "; font-weight: 700; color: var(--color-navy); }
-  .portfolio-table td:nth-child(3)::before { content: "Status: "; font-weight: 700; color: var(--color-navy); }
+  .portfolio-table td:nth-child(1)::before { content: "Project: "; font-weight: 700; color: #FF6A00; }
+  .portfolio-table td:nth-child(2)::before { content: "Services: "; font-weight: 700; color: #FF6A00; }
+  .portfolio-table td:nth-child(3)::before { content: "Status: "; font-weight: 700; color: #FF6A00; }
 }
 
 

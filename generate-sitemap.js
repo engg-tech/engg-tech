@@ -74,6 +74,7 @@ const staticPages = [
   { url: "/articles/",                           file: "articles/index.html",                           priority: "0.6", freq: "weekly"  },
   { url: "/contact-us/",                         file: "contact-us/index.html",                         priority: "0.6", freq: "monthly" },
   { url: "/privacy-policy/",                     file: "privacy-policy/index.html",                     priority: "0.3", freq: "yearly"  },
+  { url: "/videos/pu-grouting-singapore-water-leakage-repair/", file: "videos/pu-grouting-singapore-water-leakage-repair/index.html", priority: "0.7", freq: "monthly" },
 ];
 
 staticPages.forEach(({ url, file, priority, freq }) => {
@@ -131,7 +132,7 @@ const videoSitemap = `<?xml version="1.0" encoding="UTF-8"?>
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
 
   <url>
-    <loc>https://engg-tech.com/services/pu-grouting-singapore/</loc>
+    <loc>https://engg-tech.com/videos/pu-grouting-singapore-water-leakage-repair/</loc>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/Ed1AlfDqRAg/maxresdefault.jpg</video:thumbnail_loc>
       <video:title>PU Grouting Singapore Water Leakage Repair Before After | Engg-Tech</video:title>

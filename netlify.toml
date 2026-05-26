@@ -46,3 +46,9 @@
   for = "/**/index.html"
   [headers.values]
     Cache-Control = "no-cache, no-store, must-revalidate"
+
+# XML sitemaps — always fresh
+[[headers]]
+  for = "/*.xml"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"

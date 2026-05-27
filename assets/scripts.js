@@ -36,13 +36,10 @@ gaScript.onload = () => {
  * GOOGLE ADSENSE
  **********************/
 
-// Get current page path
+// Only show ads on homepage
 const currentPath = window.location.pathname.toLowerCase();
 
-// Pages where ads should NOT load
-const isExcludedPage =
-
-  currentPath.startsWith('/lp/');
+const isExcludedPage = currentPath !== '/';
 
 // Only load AdSense if NOT excluded
 if (!isExcludedPage) {

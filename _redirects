@@ -1,24 +1,16 @@
-# =========================
 # FORCE HTTPS + NON-WWW
-# =========================
 http://www.engg-tech.com/* https://engg-tech.com/:splat 301!
 http://engg-tech.com/* https://engg-tech.com/:splat 301!
 https://www.engg-tech.com/* https://engg-tech.com/:splat 301!
 
-# =========================
 # CLEAN URLS
-# =========================
 /services/index.html /services/ 301!
 /about /about-us/ 301!
 /home / 301!
-/sg/ / 301!
-/sg/about/ /about-us/ 301!
-/sg/services/ /services/ 301!
 /engg-tech.com/ / 301!
 
-# =========================
 # REMOVED PAGES → HOMEPAGE
-# =========================
+/sg/* / 301!
 /blog/* / 301!
 /articles/* / 301!
 /videos/* / 301!

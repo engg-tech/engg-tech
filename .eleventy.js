@@ -2,6 +2,7 @@ module.exports = function(eleventyConfig) {
 
   // Pass through static assets unchanged
   eleventyConfig.addPassthroughCopy("assets");
+  eleventyConfig.addPassthroughCopy("lp/images");	
   eleventyConfig.addPassthroughCopy("robots.txt");
   eleventyConfig.addPassthroughCopy("ads.txt");
   eleventyConfig.addPassthroughCopy("_redirects");

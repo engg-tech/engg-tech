@@ -1279,3 +1279,14 @@ ol.blog-list { list-style: decimal; }
   .reviews-section { padding: 2rem 1rem; }
   .reviews-grid { grid-template-columns: 1fr; }
 }
+
+/* =========================
+   FAB BUTTONS
+   ========================= */
+.fab-stack{position:fixed;bottom:24px;right:24px;z-index:9998;display:flex;flex-direction:column;gap:12px;align-items:flex-end;}
+.fab-btn{display:flex;align-items:center;justify-content:center;gap:0;border:none;cursor:pointer;border-radius:50px;padding:0;width:56px;height:56px;white-space:nowrap;transition:width 0.3s ease,gap 0.3s ease,padding 0.3s ease,box-shadow 0.2s ease;box-shadow:0 4px 16px rgba(0,0,0,0.2);}
+.fab-btn:hover{width:185px;height:56px;border-radius:50px;padding:0 18px;gap:10px;box-shadow:0 6px 20px rgba(0,0,0,0.25);justify-content:flex-start;}
+.fab-label{font-size:0.95rem;font-weight:700;opacity:0;max-width:0;overflow:hidden;transition:opacity 0.2s ease 0.1s,max-width 0.3s ease;color:#fff;}
+.fab-btn:hover .fab-label{opacity:1;max-width:150px;}
+.fab-wa{background:#25D366;}
+.fab-cmb{background:#FF6A00;}

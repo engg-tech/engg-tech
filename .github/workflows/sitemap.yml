@@ -1,4 +1,4 @@
-name: Auto Sitemap + Blog Index (Engg-Tech)
+name: Auto Sitemap (Engg-Tech)
 
 on:
   push:
@@ -16,38 +16,20 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Full git history so git log dates are accurate
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 18
 
-      # -------------------------------
-      # Generate Blog Index
-      # -------------------------------
-      - name: Generate Blog Index
-        run: node generate-blog-index.js
-
-      # -------------------------------
-      # Generate Articles Index
-      # -------------------------------
-      - name: Generate Articles Index
-        run: node generate-articles-index.js
-
-      # -------------------------------
-      # Generate Sitemap
-      # -------------------------------
       - name: Generate Sitemap
         run: node generate-sitemap.js
 
-      # -------------------------------
-      # Commit & Push (only if changed)
-      # -------------------------------
       - name: Commit changes
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          git add blog/index.html articles/index.html sitemap.xml video-sitemap.xml
-          git diff --cached --quiet || git commit -m "Auto update blog index and sitemap"
+          git add sitemap.xml
+          git diff --cached --quiet || git commit -m "Auto update sitemap"
           git push

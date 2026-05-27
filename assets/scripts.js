@@ -42,18 +42,7 @@ const currentPath = window.location.pathname.toLowerCase();
 // Pages where ads should NOT load
 const isExcludedPage =
 
-  // Homepage only
-  currentPath === '/' ||
-
-  // Main pages + all subpages
-  currentPath.startsWith('/about-us/') ||
-  currentPath.startsWith('/services/') ||
-  currentPath.startsWith('/projects/') ||
-  currentPath === '/blog/' ||
-  currentPath === '/articles/' ||
-  currentPath.startsWith('/contact-us/') ||
-  currentPath.startsWith('/lp/') ||
-  currentPath.startsWith('/privacy-policy/');
+  currentPath.startsWith('/lp/');
 
 // Only load AdSense if NOT excluded
 if (!isExcludedPage) {

@@ -9,11 +9,11 @@ https://www.engg-tech.com/* https://engg-tech.com/:splat 301!
 /home / 301!
 /engg-tech.com/ / 301!
 
-# REMOVED PAGES → HOMEPAGE
-/sg/* / 301!
-/blog/* / 301!
-/articles/* / 301!
-/videos/* / 301!
-/services/pu-grouting-singapore/ / 301!
-/services/epoxy-grouting-singapore/ / 301!
-/services/general-construction/ / 301!
+# REMOVED PAGES → 410 GONE
+/sg/* /410 410
+/blog/* /410 410
+/articles/* /410 410
+/videos/* /410 410
+/services/pu-grouting-singapore/ /410 410
+/services/epoxy-grouting-singapore/ /410 410
+/services/general-construction/ /410 410

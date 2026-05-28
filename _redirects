@@ -4,6 +4,7 @@ http://engg-tech.com/* https://engg-tech.com/:splat 301!
 https://www.engg-tech.com/* https://engg-tech.com/:splat 301!
 
 # CLEAN URLS
+/index.html / 301!
 /services/index.html /services/ 301!
 /about /about-us/ 301!
 /home / 301!

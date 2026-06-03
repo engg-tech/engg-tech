@@ -36,7 +36,6 @@ const staticPages = [
   { url: "/services/",      file: "services/index.html",     priority: "0.9", freq: "weekly"  },
   { url: "/projects/",      file: "projects/index.html",     priority: "0.8", freq: "monthly" },
   { url: "/contact-us/",    file: "contact-us/index.html",   priority: "0.7", freq: "monthly" },
-  { url: "/privacy-policy/",file: "privacy-policy/index.html", priority: "0.3", freq: "yearly" },
 ];
 
 let urls = [];

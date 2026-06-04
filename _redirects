@@ -9,12 +9,8 @@ https://www.engg-tech.com/* https://engg-tech.com/:splat 301!
 /home / 301!
 /engg-tech.com/ / 301!
 
-# MISSING TRAILING SLASH — pages that exist
+# OLD URL ALIASES
 /about /about-us/ 301!
-/about-us /about-us/ 301!
-/contact-us /contact-us/ 301!
-/privacy-policy /privacy-policy/ 301!
-/projects /projects/ 301!
 
 # REMOVED PAGES → 410 GONE
 /assets/footer.html /410 410

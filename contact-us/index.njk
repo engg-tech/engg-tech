@@ -85,6 +85,12 @@ schema: |
           <textarea id="message" name="message" required rows="5" placeholder="Tell us about your project or enquiry..." class="contact-form__textarea"></textarea>
         </div>
 
+        <!-- Honeypot: hidden from humans, bots fill it in -->
+        <div style="display:none" aria-hidden="true">
+          <label for="website">Leave this blank</label>
+          <input type="text" id="website" name="website" tabindex="-1" autocomplete="off"/>
+        </div>
+
         <div id="formStatus" class="contact-form__status"></div>
 
         <button type="submit" id="submitBtn" class="contact-form__submit">Send Enquiry</button>
@@ -100,12 +106,16 @@ schema: |
       document.getElementById('contactForm').addEventListener('submit', async function(e) {
         e.preventDefault();
 
-        const btn    = document.getElementById('submitBtn');
-        const status = document.getElementById('formStatus');
-        const name    = document.getElementById('name').value.trim();
-        const email   = document.getElementById('email').value.trim();
-        const phone   = document.getElementById('phone').value.trim();
-        const message = document.getElementById('message').value.trim();
+        const btn      = document.getElementById('submitBtn');
+        const status   = document.getElementById('formStatus');
+        const honeypot = document.getElementById('website').value;
+        const name     = document.getElementById('name').value.trim();
+        const email    = document.getElementById('email').value.trim();
+        const phone    = document.getElementById('phone').value.trim();
+        const message  = document.getElementById('message').value.trim();
+
+        // Honeypot check — bots fill this in, humans don't
+        if (honeypot) return;
 
         btn.textContent = 'Sending...';
         btn.disabled = true;

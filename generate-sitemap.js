@@ -31,11 +31,11 @@ function urlBlock(loc, priority, changefreq, lastmod) {
 }
 
 const staticPages = [
-  { url: "/",               file: "index.html",              priority: "1.0", freq: "weekly"  },
-  { url: "/about-us/",      file: "about-us/index.html",     priority: "0.8", freq: "monthly" },
-  { url: "/services/",      file: "services/index.html",     priority: "0.9", freq: "weekly"  },
-  { url: "/projects/",      file: "projects/index.html",     priority: "0.8", freq: "monthly" },
-  { url: "/contact-us/",    file: "contact-us/index.html",   priority: "0.7", freq: "monthly" },
+  { url: "/",               file: "index.njk",              priority: "1.0", freq: "weekly"  },
+  { url: "/about-us/",      file: "about-us/index.njk",     priority: "0.8", freq: "monthly" },
+  { url: "/services/",      file: "services/index.njk",     priority: "0.9", freq: "weekly"  },
+  { url: "/projects/",      file: "projects/index.njk",     priority: "0.8", freq: "monthly" },
+  { url: "/contact-us/",    file: "contact-us/index.njk",   priority: "0.7", freq: "monthly" },
 ];
 
 let urls = [];

@@ -1008,7 +1008,7 @@ ol.blog-list { list-style: decimal; }
   text-decoration: none;
   transition: background 0.2s;
 }
-.cta-btn:hover { background: #0A2540; }
+.cta-btn:hover { background: #0A2540; color: #fff; }
 
 
 /* =======================================================

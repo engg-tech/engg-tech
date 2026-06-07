@@ -1353,7 +1353,7 @@ ol.blog-list { list-style: decimal; }
 }
 
 .accordion-btn:focus { outline: none; }
-.accordion-btn:focus-visible { outline: 2px solid var(--color-navy); outline-offset: 2px; border-radius: 4px; width: fit-content; }
+.accordion-btn:focus-visible { outline: 2px solid var(--color-navy); outline-offset: 6px; border-radius: 4px; width: fit-content; }
 
 .accordion-icon {
   font-size: 1.3rem;

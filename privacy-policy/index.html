@@ -4,108 +4,89 @@
 
 <meta charset="utf-8"/>
 
-<!-- Preconnect hints -->
 <link rel="preconnect" href="https://www.googletagmanager.com">
-<link rel="preconnect" href="https://pagead2.googlesyndication.com">
 
-<!-- Self-hosted fonts — preload critical weights to eliminate 3-hop Google Fonts chain -->
 <link rel="preload" href="/assets/fonts/barlow-condensed-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/barlow-condensed-latin-900-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/dm-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/fonts/fonts.css">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 
-<!-- SEO -->
-<meta name="robots" content="{{ robots if robots else 'index, follow' }}"/>
-{% if description %}<meta name="description" content="{{ description }}"/>{% endif %}
+<meta name="robots" content="noindex, follow"/>
+<meta name="description" content="Privacy policy for Engg-Tech Pte. Ltd. website. Learn how we collect, use and protect your personal information in Singapore."/>
 <meta name="author" content="Engg-Tech Pte. Ltd."/>
 
-<!-- Title -->
-<title>{{ title }}</title>
+<title>Privacy Policy | Engg-Tech Singapore</title>
 
-<!-- Canonical -->
-<link rel="canonical" href="{{ canonical if canonical else 'https://engg-tech.com/' }}"/>
+<link rel="canonical" href="https://engg-tech.com/privacy-policy/"/>
 
-<!-- Open Graph -->
-<meta property="og:type" content="{{ ogType if ogType else 'website' }}">
-<meta property="og:url" content="{{ canonical if canonical else 'https://engg-tech.com/' }}">
-<meta property="og:title" content="{{ ogTitle if ogTitle else title }}">
-<meta property="og:description" content="{{ ogDescription if ogDescription else description }}">
-<meta property="og:image" content="{{ ogImage if ogImage else 'https://engg-tech.com/assets/engg-tech-open-graph-banner.jpg' }}">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://engg-tech.com/privacy-policy/">
+<meta property="og:title" content="Privacy Policy | Engg-Tech Singapore">
+<meta property="og:description" content="Privacy policy for Engg-Tech Pte. Ltd. website.">
+<meta property="og:image" content="https://engg-tech.com/assets/engg-tech-open-graph-banner.jpg">
 <meta property="og:locale" content="en_SG">
 <meta property="og:site_name" content="Engg-Tech Singapore">
 
-<!-- Hreflang -->
-<link rel="alternate" hreflang="en-SG" href="{{ canonical if canonical else 'https://engg-tech.com/' }}"/>
-<link rel="alternate" hreflang="x-default" href="{{ canonical if canonical else 'https://engg-tech.com/' }}"/>
-
-<!-- Theme -->
 <meta name="theme-color" content="#ffffff"/>
 <meta name="color-scheme" content="light"/>
 <meta name="format-detection" content="telephone=no"/>
 
-<!-- Favicon -->
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/logo-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon/logo-192.png">
 <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon/logo-512.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/logo-180.png">
 <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
 
-<!-- Web App Manifest -->
 <link rel="manifest" href="/manifest.json">
-
-<!-- CSS — single source of truth -->
 <link rel="stylesheet" href="/assets/style.css"/>
 
-<!-- Sitemap -->
-<link rel="sitemap" type="application/xml" href="https://engg-tech.com/sitemap.xml"/>
-
-{% if schema %}
-<script type="application/ld+json">{{ schema | safe }}</script>
-{% endif %}
-{% if schema2 %}
-<script type="application/ld+json">{{ schema2 | safe }}</script>
-{% endif %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Privacy Policy | Engg-Tech Singapore",
+  "description": "Privacy policy for Engg-Tech Pte. Ltd. website. Learn how we collect, use and protect your personal information in Singapore.",
+  "url": "https://engg-tech.com/privacy-policy/",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Engg-Tech Pte. Ltd.",
+    "url": "https://engg-tech.com/",
+    "logo": "https://engg-tech.com/assets/favicon/logo-512.png"
+  }
+}
+</script>
 
 </head>
 
 <body id="page-top">
 
-<!-- Skip to main content — accessibility -->
 <a class="skip-link" href="#main-content">Skip to main content</a>
 
-<!-- TOPBAR — static -->
+<!-- TOPBAR -->
 <div class="topbar">
   <div class="topbar-container">
     <a href="mailto:info@engg-tech.com" class="topbar-email">info@engg-tech.com</a>
   </div>
 </div>
 
-<!-- NAVIGATION — static -->
+<!-- NAVIGATION -->
 <nav class="navbar-custom" aria-label="Main Navigation">
   <div class="navbar-container">
 
-    <a class="navbar-brand" href="https://engg-tech.com/" id="nav-brand" aria-label="Engg-Tech Home">
-      <span class="brand-full">Engg-Tech Pte. Ltd.</span>
-      <span class="brand-short">Engg-Tech</span>
+    <a class="navbar-brand" href="/" aria-label="Engg-Tech Home">
+      <img src="/assets/favicon/logo-180.png" alt="Engg-Tech Pte. Ltd. logo" width="48" height="48" fetchpriority="high" style="display:block;">
     </a>
-
-    <button id="callbackMobileBtn" class="cmb-mobile-btn" aria-label="Call Me Back">
-      <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="white" style="vertical-align:middle;" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
-      Call Me Back
-    </button>
 
     <button class="menu-toggle" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation menu">&#9776;</button>
 
     <div class="navbar-nav">
       <ul id="navbarMenu" role="list">
-        <li><a class="nav-link" href="https://engg-tech.com/">Home</a></li>
-        <li><a class="nav-link" href="https://engg-tech.com/about-us/">About</a></li>
-        <li><a class="nav-link" href="https://engg-tech.com/services/">Services</a></li>
-        <li><a class="nav-link" href="https://engg-tech.com/projects/">Projects</a></li>
-<li><a class="nav-link" href="https://engg-tech.com/contact-us/">Contact</a></li>
+        <li><a class="nav-link" href="/">Home</a></li>
+        <li><a class="nav-link" href="/#about">About</a></li>
+        <li><a class="nav-link" href="/#services">Services</a></li>
+        <li><a class="nav-link" href="/#projects">Projects</a></li>
+        <li><a class="nav-link" href="/#contact">Contact</a></li>
       </ul>
     </div>
 
@@ -116,17 +97,51 @@
   </div>
 </nav>
 
-<main id="main-content">
+<main id="main-content" style="padding-left:1.5rem;padding-right:1.5rem;box-sizing:border-box;">
+  <section>
+    <h1 style="font-size:2rem;">Privacy Policy</h1>
+    <p>Effective Date: 27 May 2026</p>
 
-<!-- PAGE CONTENT -->
-{{ content | safe }}
+    <p>Engg-Tech Pte. Ltd. ("we", "our", "us") respects your privacy and is committed to protecting your personal data in accordance with Singapore's <strong>Personal Data Protection Act 2012 (PDPA)</strong> and applicable standards, including Google AdSense requirements.</p>
 
+    <h2>1. Information We Collect</h2>
+    <ul>
+      <li>Details you provide via contact forms (name, email, phone number, message).</li>
+      <li>Technical data such as IP address, browser/device type, and pages visited.</li>
+      <li>Information collected through cookies, including third-party cookies from Google.</li>
+    </ul>
+
+    <h2>2. How We Use Your Information</h2>
+    <ul>
+      <li>Respond to enquiries and provide services.</li>
+      <li>Improve site performance and user experience.</li>
+      <li>Display relevant advertisements via Google AdSense and/or other ad networks.</li>
+    </ul>
+
+    <h2>3. Google AdSense and Cookies</h2>
+    <p>We use Google AdSense to display advertisements. Google may use cookies to serve ads based on your prior visits to this or other websites. Google's advertising cookies enable it and its partners to serve ads based on your browsing.</p>
+    <p>You can opt out of personalised advertising in the <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener">Google Ads Settings</a>. You can also opt out of third-party vendors' use of cookies at <a href="https://www.aboutads.info" target="_blank" rel="noopener">www.aboutads.info</a>.</p>
+
+    <h2>4. Data Sharing</h2>
+    <p>We do not sell your personal information. We may share limited data with trusted service providers who assist our operations, subject to confidentiality obligations.</p>
+
+    <h2>5. Your Rights</h2>
+    <p>Under the PDPA, you may request access to, correction of, or deletion of your personal data. Contact us using the details below.</p>
+
+    <h2>6. Third-Party Links</h2>
+    <p>Our website may link to third-party sites. Their privacy practices are not governed by us; please review their policies.</p>
+
+    <h2>7. Changes to This Policy</h2>
+    <p>We may update this page from time to time. The "Effective Date" will reflect the latest version.</p>
+
+    <h2>8. Contact Us</h2>
+    <p><strong>Engg-Tech Pte. Ltd.</strong><br>
+      Email: <a href="mailto:admin@engg-tech.com">admin@engg-tech.com</a><br>
+      Website: <a href="https://engg-tech.com">https://engg-tech.com</a></p>
+  </section>
 </main>
 
-<!-- ADS / ANALYTICS -->
-<div id="site-ad"></div>
-
-<!-- FOOTER — static -->
+<!-- FOOTER -->
 <footer class="enggtech-footer">
   <div class="footer-inner">
     <div class="footer-column">
@@ -146,65 +161,37 @@
       <h2 class="footer-heading">Contact Us</h2>
       <p>Email us today for trusted support in Singapore</p>
       <p><a href="mailto:info@engg-tech.com">info@engg-tech.com</a></p>
-      <a class="footer-btn" href="https://engg-tech.com/contact-us/">Request with Online Form</a>
+      <a class="footer-btn" href="/#contact">Request with Online Form</a>
     </div>
   </div>
   <hr class="footer-divider">
   <div class="footer-bottom">
     <p>&copy; 2015&ndash;<span id="footer-year">2026</span> Engg-Tech Pte. Ltd. All rights reserved.</p>
-    <p><a href="https://engg-tech.com/privacy-policy/">Privacy Policy</a> | <a href="https://engg-tech.com/sitemap.xml">Sitemap</a></p>
-    <p>Designed &amp; Maintained by <a href="https://engg-tech.com/">Engg-Tech Singapore</a></p>
-    <p><em>Last updated: <span id="footer-date">May 2026</span></em></p>
+    <p><a href="/privacy-policy/">Privacy Policy</a> | <a href="/sitemap.xml">Sitemap</a></p>
+    <p>Designed &amp; Maintained by <a href="/">Engg-Tech Singapore</a></p>
+    <p><em>Last updated: <span id="footer-date">June 2026</span></em></p>
     <small class="disclaimer">Disclaimer: This page may contain sponsored ads.</small>
   </div>
 </footer>
 
-<!-- SCRIPTS — inlined for performance -->
+<noscript>
+  <div role="alert" class="noscript-alert">
+    ⚠️ JavaScript is disabled. Some features of Engg-Tech.com may not work as expected. Please enable JavaScript for full functionality.
+  </div>
+</noscript>
+
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-
-  /* HOMEPAGE: swap text brand to logo image on non-homepage */
-  const brand = document.getElementById("nav-brand");
-  if (brand) {
-    const isHomepage = window.location.pathname === "/" || window.location.pathname === "/index.html";
-    if (!isHomepage) {
-      brand.innerHTML = `<img src="/assets/favicon/logo-180.png" alt="Engg-Tech Pte. Ltd. logo" width="48" height="48" fetchpriority="high" style="display:block;">`;
-    }
-  }
-
-  /* ACTIVE NAV LINK */
-  let path = window.location.pathname.toLowerCase()
-    .replace(/index\.html$/, "").replace(/\.html$/, "").replace(/\/$/, "");
-  if (path === "") path = "/";
-
-  document.querySelectorAll("#navbarMenu .nav-link").forEach(a => {
-    const url = new URL(a.href);
-    let href = url.pathname.toLowerCase()
-      .replace(/index\.html$/, "").replace(/\.html$/, "").replace(/\/$/, "");
-    if (href === "") href = "/";
-    if (path === "/" && href === "/") { a.classList.add("active"); return; }
-    if (href !== "/" && path.startsWith(href)) a.classList.add("active");
-  });
 
   /* MOBILE MENU TOGGLE */
   const toggle = document.querySelector(".menu-toggle");
   const menu   = document.getElementById("navbarMenu");
-
   if (toggle && menu) {
     toggle.addEventListener("click", () => {
       const isExpanded = toggle.getAttribute("aria-expanded") === "true";
       toggle.setAttribute("aria-expanded", String(!isExpanded));
       menu.classList.toggle("show");
     });
-
-    menu.querySelectorAll(".nav-link").forEach(link => {
-      link.addEventListener("click", () => {
-        if (link.closest(".has-submenu") && window.innerWidth <= 768) return;
-        menu.classList.remove("show");
-        toggle.setAttribute("aria-expanded", "false");
-      });
-    });
-
     document.addEventListener("click", (e) => {
       if (!toggle.contains(e.target) && !menu.contains(e.target)) {
         menu.classList.remove("show");
@@ -213,24 +200,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* MOBILE SUBMENU TAP TO EXPAND */
-  document.querySelectorAll(".has-submenu > .nav-link, .has-submenu > a, .has-submenu > span").forEach(link => {
-    link.addEventListener("click", (e) => {
-      if (window.innerWidth <= 768) {
-        e.preventDefault();
-        const parentLi = link.parentElement;
-        const isOpen = parentLi.classList.contains("open");
-        parentLi.parentElement.querySelectorAll(".has-submenu.open").forEach(el => {
-          if (el !== parentLi) el.classList.remove("open");
-        });
-        parentLi.classList.toggle("open", !isOpen);
-      }
-    });
-  });
-
-  /* UPDATE DYNAMIC YEAR / DATE in static footer */
-  const now = new Date();
-  const year = now.getFullYear();
+  /* FOOTER DYNAMIC YEAR / DATE */
+  const now    = new Date();
+  const year   = now.getFullYear();
   const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
   const yearEl = document.getElementById("footer-year");
   const dateEl = document.getElementById("footer-date");
@@ -278,30 +250,12 @@ document.addEventListener("DOMContentLoaded", () => {
   fabContainer.innerHTML = fabHTML;
   document.body.appendChild(fabContainer);
 
-  /* WIRE UP FAB BUTTON EVENTS */
-  document.getElementById("fab-wa-btn").addEventListener("click", () => {
-    document.getElementById("wa-popup").style.display = "flex";
-  });
-  document.getElementById("fab-cmb-btn").addEventListener("click", () => {
-    document.getElementById("cmb-popup").style.display = "flex";
-  });
+  document.getElementById("fab-wa-btn").addEventListener("click", () => { document.getElementById("wa-popup").style.display = "flex"; });
+  document.getElementById("fab-cmb-btn").addEventListener("click", () => { document.getElementById("cmb-popup").style.display = "flex"; });
+  document.getElementById("callbackNavBtn").addEventListener("click", () => { document.getElementById("cmb-popup").style.display = "flex"; });
+  document.getElementById("wa-popup-close").addEventListener("click", () => { document.getElementById("wa-popup").style.display = "none"; });
+  document.getElementById("cmb-popup-close").addEventListener("click", () => { document.getElementById("cmb-popup").style.display = "none"; });
 
-  /* WIRE UP NAV CMB BUTTONS */
-  ["callbackMobileBtn", "callbackNavBtn"].forEach(id => {
-    const btn = document.getElementById(id);
-    if (btn) btn.addEventListener("click", () => {
-      document.getElementById("cmb-popup").style.display = "flex";
-    });
-  });
-
-  document.getElementById("wa-popup-close").addEventListener("click", () => {
-    document.getElementById("wa-popup").style.display = "none";
-  });
-  document.getElementById("cmb-popup-close").addEventListener("click", () => {
-    document.getElementById("cmb-popup").style.display = "none";
-  });
-
-  /* PHONE VALIDATION */
   function validatePhone(phone) {
     const digits = phone.replace(/[^0-9]/g, "");
     if (!phone) return "Please enter your phone number.";
@@ -309,17 +263,14 @@ document.addEventListener("DOMContentLoaded", () => {
     if (digits.length > 15) return "Maximum 15 digits allowed.";
     return null;
   }
-
   function showStatus(el, msg, isError) {
     el.style.display = "block";
     el.style.background = isError ? "#fde8e8" : "#e6f4ea";
     el.style.color = isError ? "#c0392b" : "#1a7a3a";
     el.textContent = msg;
   }
-
   const FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycby4XuwZWYK0MphbQbjrmO7M_9dUUrDb9MgZRMOHMAklwFzt3MNJUuohaBipWwMkYbud/exec";
 
-  /* WHATSAPP SUBMIT */
   document.getElementById("waSubmitBtn").addEventListener("click", async () => {
     const phone = document.getElementById("waPhone").value.trim();
     const status = document.getElementById("waStatus");
@@ -328,10 +279,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (err) { showStatus(status, err, true); return; }
     btn.textContent = "Sending..."; btn.disabled = true; btn.style.background = "#888";
     const fd = new FormData();
-    fd.append("name", "WhatsApp Callback Request");
-    fd.append("email", "whatsapp@engg-tech.com");
-    fd.append("phone", phone);
-    fd.append("message", "WHATSAPP CALLBACK REQUEST from website button.");
+    fd.append("name", "WhatsApp Callback Request"); fd.append("email", "whatsapp@engg-tech.com"); fd.append("phone", phone); fd.append("message", "WHATSAPP CALLBACK REQUEST from website button.");
     await fetch(FORM_ENDPOINT, { method: "POST", mode: "no-cors", body: fd });
     showStatus(status, "Received! We will be in touch shortly.", false);
     document.getElementById("waPhone").value = "";
@@ -339,7 +287,6 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => { document.getElementById("wa-popup").style.display = "none"; status.style.display = "none"; }, 3000);
   });
 
-  /* CALL ME BACK SUBMIT */
   document.getElementById("cmbSubmitBtn").addEventListener("click", async () => {
     const phone = document.getElementById("cmbPhone").value.trim();
     const status = document.getElementById("cmbStatus");
@@ -348,10 +295,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (err) { showStatus(status, err, true); return; }
     btn.textContent = "Sending..."; btn.disabled = true; btn.style.background = "#888";
     const fd = new FormData();
-    fd.append("name", "Call Back Request");
-    fd.append("email", "callback@engg-tech.com");
-    fd.append("phone", phone);
-    fd.append("message", "CALL BACK REQUEST from website button.");
+    fd.append("name", "Call Back Request"); fd.append("email", "callback@engg-tech.com"); fd.append("phone", phone); fd.append("message", "CALL BACK REQUEST from website button.");
     await fetch(FORM_ENDPOINT, { method: "POST", mode: "no-cors", body: fd });
     showStatus(status, "Received! We will be in touch shortly.", false);
     document.getElementById("cmbPhone").value = "";
@@ -363,65 +307,17 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 
 <script>
-/**********************
- * GOOGLE ANALYTICS
- **********************/
 const gaScript = document.createElement("script");
 gaScript.async = true;
 gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-F3P37PXXYN";
 document.head.appendChild(gaScript);
-
 window.dataLayer = window.dataLayer || [];
 function gtag() { dataLayer.push(arguments); }
-
 gaScript.onload = () => {
   gtag('js', new Date());
   gtag('config', 'G-F3P37PXXYN');
   gtag('config', 'AW-18141886702');
 };
-
-/**********************
- * GOOGLE ADSENSE
- **********************/
-const currentPath = window.location.pathname.toLowerCase();
-const isExcludedPage = currentPath !== '/';
-
-if (!isExcludedPage) {
-  const adsenseScript = document.createElement("script");
-  adsenseScript.async = true;
-  adsenseScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9719299059942736";
-  adsenseScript.crossOrigin = "anonymous";
-  document.head.appendChild(adsenseScript);
-
-  adsenseScript.onload = () => {
-    const adContainer = document.getElementById("site-ad");
-    if (!adContainer) return;
-    adContainer.innerHTML = `
-      <ins class="adsbygoogle"
-           style="display:block; text-align:center;"
-           data-ad-client="ca-pub-9719299059942736"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-    `;
-    try {
-      (adsbygoogle = window.adsbygoogle || []).push({});
-    } catch (e) {
-      console.warn("AdSense push failed:", e);
-    }
-  };
-}
-
-/********************************
- * GOOGLE ADS CONVERSION TRACKING
- ********************************/
-function gtag_report_conversion(url) {
-  gtag('event', 'conversion', {
-    'send_to': 'AW-18141886702/doDbCKvPhqwcEO7x3MpD'
-  });
-  setTimeout(function () {
-    window.open(url, '_blank');
-  }, 500);
-}
 </script>
 
 </body>

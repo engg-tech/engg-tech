@@ -1295,3 +1295,29 @@ ol.blog-list { list-style: decimal; }
 .fab-btn:hover .fab-label{opacity:1;max-width:150px;}
 .fab-wa{background:#25D366;}
 .fab-cmb{background:#FF6A00;}
+
+/* =======================================================
+   Single Page — Section Blocks
+======================================================= */
+.section-block {
+  padding: 3rem 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.section-block--alt {
+  background: var(--color-off-white);
+}
+
+.section-heading {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 4vw, 40px);
+  font-weight: 900;
+  color: var(--color-navy);
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .section-block { padding: 2rem 0; }
+  .section-heading { padding-left: 1rem; }
+}

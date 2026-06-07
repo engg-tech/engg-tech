@@ -8,17 +8,17 @@ https://www.engg-tech.com/* https://engg-tech.com/:splat 301!
 /home / 301!
 /engg-tech.com/ / 301!
 
-# OLD SEPARATE PAGES → redirect to homepage anchors
-/about-us/ /#about 301!
-/about-us /about-us/ 301!
-/about /#about 301!
-/services/ /#services 301!
-/services /services/ 301!
-/projects/ /#projects 301!
-/projects /projects/ 301!
-/contact-us/ /#contact 301!
-/contact-us /contact-us/ 301!
-/contact /#contact 301!
+# OLD SEPARATE PAGES → redirect to homepage
+/about-us/ / 301!
+/about-us / 301!
+/about / 301!
+/services/ / 301!
+/services / 301!
+/projects/ / 301!
+/projects / 301!
+/contact-us/ / 301!
+/contact-us / 301!
+/contact / 301!
 
 # REMOVED PAGES → 410 GONE
 /assets/footer.html /410 410

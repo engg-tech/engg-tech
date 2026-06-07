@@ -1,5 +1,5 @@
 [build]
-  publish = "."
+  publish = "_site"
 
 [[headers]]
   for = "/*"
@@ -9,7 +9,6 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
 
-# JS + CSS — always check for fresh version
 [[headers]]
   for = "/assets/*.css"
   [headers.values]
@@ -20,19 +19,16 @@
   [headers.values]
     Cache-Control = "no-cache, must-revalidate"
 
-# Favicons — cache 7 days
 [[headers]]
   for = "/assets/favicon/*"
   [headers.values]
     Cache-Control = "public, max-age=604800"
 
-# Images — cache 7 days
 [[headers]]
   for = "/assets/images/*"
   [headers.values]
     Cache-Control = "public, max-age=604800"
 
-# HTML — always fresh
 [[headers]]
   for = "/*.html"
   [headers.values]
@@ -43,7 +39,6 @@
   [headers.values]
     Cache-Control = "no-cache, no-store, must-revalidate"
 
-# XML sitemaps — always fresh
 [[headers]]
   for = "/*.xml"
   [headers.values]

@@ -1363,6 +1363,7 @@ ol.blog-list { list-style: decimal; }
 
 .accordion-btn[aria-expanded="true"] .accordion-icon {
   transform: rotate(180deg);
+  stroke: #fff;
 }
 
 .accordion-panel {

@@ -1319,3 +1319,51 @@ ol.blog-list { list-style: decimal; }
 @media (max-width: 768px) {
   .section-block { padding: 2rem 0; }
 }
+
+/* =======================================================
+   Accordion
+======================================================= */
+.accordion { margin-top: 1rem; }
+
+.accordion-item {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.accordion-btn {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  text-align: left;
+}
+
+.accordion-btn:hover { color: var(--color-orange); }
+
+.accordion-icon {
+  font-size: 1.3rem;
+  color: var(--color-orange);
+  font-weight: 900;
+  transition: transform 0.25s ease;
+  display: inline-block;
+}
+
+.accordion-btn[aria-expanded="true"] .accordion-icon {
+  transform: rotate(90deg);
+}
+
+.accordion-panel {
+  display: none;
+  padding: 0 0 1rem 0;
+}
+
+.accordion-btn[aria-expanded="true"] + .accordion-panel {
+  display: block;
+}

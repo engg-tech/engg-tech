@@ -186,8 +186,8 @@
   <div class="navbar-container">
 
     <a class="navbar-brand" href="#page-top" id="nav-brand" aria-label="Engg-Tech Home">
-      <span class="brand-text-full">Engg-Tech Pte. Ltd.</span>
-      <span class="brand-text-short">Engg-Tech</span>
+      <span class="brand-full">Engg-Tech Pte. Ltd.</span>
+      <span class="brand-short">Engg-Tech</span>
       <img class="brand-logo-img" src="/assets/favicon/logo-180.png" alt="Engg-Tech Pte. Ltd. logo" width="48" height="48" style="display:none;">
     </a>
 
@@ -629,8 +629,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* NAV BRAND — scroll-based swap: text at top, logo after scrolling */
   const brand        = document.getElementById("nav-brand");
-  const brandFull    = brand ? brand.querySelector(".brand-text-full") : null;
-  const brandShort   = brand ? brand.querySelector(".brand-text-short") : null;
+  const brandFull    = brand ? brand.querySelector(".brand-full") : null;
+  const brandShort   = brand ? brand.querySelector(".brand-short") : null;
   const brandLogo    = brand ? brand.querySelector(".brand-logo-img") : null;
   const SCROLL_THRESHOLD = 300; // px — roughly past the hero
 

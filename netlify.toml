@@ -1,4 +1,5 @@
 [build]
+  command = "mkdir -p _site && cp -r assets lp privacy-policy _redirects ads.txt manifest.json robots.txt sitemap.xml index.html _site/"
   publish = "_site"
 
 [[headers]]

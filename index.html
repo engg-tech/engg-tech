@@ -357,6 +357,7 @@
 
   <!-- Before/After Slider Section -->
   <div class="page-content" style="padding-top: 0;">
+    <h2>Our Work</h2>
     <div class="ba-tabs">
       <button class="ba-tab active" onclick="baSwitch(0)">Fire Protection</button>
       <button class="ba-tab" onclick="baSwitch(1)">Waterproofing</button>
@@ -843,17 +844,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* BEFORE/AFTER SLIDER */
   const baServices = [
-    { before: '/assets/images/fire-before.jpg', after: '/assets/images/fire-after.jpg' },
-    { before: '/assets/images/waterproofing-before.jpg', after: '/assets/images/waterproofing-after.jpg' },
-    { before: '/assets/images/electrical-before.jpg', after: '/assets/images/electrical-after.jpg' },
-    { before: '/assets/images/plumbing-before.jpg', after: '/assets/images/plumbing-after.jpg' },
-    { before: '/assets/images/construction-before.jpg', after: '/assets/images/construction-after.jpg' }
+    { before: '/assets/images/fire-before.jpg', after: '/assets/images/fire-after.jpg', beforeAlt: 'Commercial building before fire protection system installation Singapore', afterAlt: 'Fire sprinkler and alarm system installed in commercial building Singapore' },
+    { before: '/assets/images/waterproofing-before.jpg', after: '/assets/images/waterproofing-after.jpg', beforeAlt: 'HDB ceiling with water leakage stains before waterproofing repair Singapore', afterAlt: 'Clean HDB ceiling after PU grouting waterproofing repair Singapore' },
+    { before: '/assets/images/electrical-before.jpg', after: '/assets/images/electrical-after.jpg', beforeAlt: 'Old damaged electrical wiring before rewiring works Singapore', afterAlt: 'New DB board and neat electrical wiring installation Singapore' },
+    { before: '/assets/images/plumbing-before.jpg', after: '/assets/images/plumbing-after.jpg', beforeAlt: 'Corroded rusty pipes before plumbing replacement Singapore', afterAlt: 'New clean PVC pipes after professional plumbing installation Singapore' },
+    { before: '/assets/images/construction-before.jpg', after: '/assets/images/construction-after.jpg', beforeAlt: 'Old worn interior space before renovation works Singapore', afterAlt: 'Renovated interior space with fresh paint and new flooring Singapore' }
   ];
 
   window.baSwitch = function(idx) {
     document.querySelectorAll('.ba-tab').forEach((t, i) => t.classList.toggle('active', i === idx));
-    document.getElementById('ba-before-img').src = baServices[idx].before;
-    document.getElementById('ba-after-img').src = baServices[idx].after;
+    const s = baServices[idx];
+    const beforeImg = document.getElementById('ba-before-img');
+    const afterImg = document.getElementById('ba-after-img');
+    beforeImg.src = s.before;
+    beforeImg.alt = s.beforeAlt;
+    afterImg.src = s.after;
+    afterImg.alt = s.afterAlt;
     document.getElementById('ba-divider').style.left = '50%';
     document.getElementById('ba-after').style.clipPath = 'inset(0 0 0 50%)';
   };

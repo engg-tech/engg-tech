@@ -356,14 +356,13 @@
   </div>
 
   <!-- Before/After Slider Section -->
-  <div class="page-content" style="padding-top: 0;">
-    <h2>Our Work</h2>
-    <div class="ba-tabs">
-      <button class="ba-tab active" onclick="baSwitch(0)">Fire Protection</button>
-      <button class="ba-tab" onclick="baSwitch(1)">Waterproofing</button>
-      <button class="ba-tab" onclick="baSwitch(2)">Electrical</button>
-      <button class="ba-tab" onclick="baSwitch(3)">Plumbing</button>
-      <button class="ba-tab" onclick="baSwitch(4)">General Construction</button>
+  <section class="page-content" id="our-work" style="padding-top: 0;">
+    <div class="ba-tabs" role="tablist">
+      <button class="ba-tab active" onclick="baSwitch(0)" role="tab" aria-selected="true" aria-controls="ba-slider">Fire Protection</button>
+      <button class="ba-tab" onclick="baSwitch(1)" role="tab" aria-selected="false" aria-controls="ba-slider">Waterproofing</button>
+      <button class="ba-tab" onclick="baSwitch(2)" role="tab" aria-selected="false" aria-controls="ba-slider">Electrical</button>
+      <button class="ba-tab" onclick="baSwitch(3)" role="tab" aria-selected="false" aria-controls="ba-slider">Plumbing</button>
+      <button class="ba-tab" onclick="baSwitch(4)" role="tab" aria-selected="false" aria-controls="ba-slider">General Construction</button>
     </div>
     <div class="ba-wrap" id="ba-slider">
       <div class="ba-before-img" id="ba-before">
@@ -376,15 +375,26 @@
       <div class="ba-label ba-label-after">AFTER</div>
       <div class="ba-divider" id="ba-divider">
         <div class="ba-handle">
-          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <polyline points="11,7 5,14 11,21" stroke="#FF6A00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
             <polyline points="17,7 23,14 17,21" stroke="#FF6A00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
       </div>
     </div>
-    <p class="ba-hint">Drag the divider to compare before and after</p>
-  </div>
+    <p class="ba-hint" id="ba-caption">Left shows before installation — slide right to see the completed fire sprinkler and alarm system works in a Singapore commercial building.</p>
+    <!-- Hidden for SEO crawlability -->
+    <div style="display:none">
+      <img src="/assets/images/waterproofing-before.jpg" alt="HDB ceiling with water leakage stains before waterproofing repair Singapore">
+      <img src="/assets/images/waterproofing-after.jpg" alt="Clean HDB ceiling after PU grouting waterproofing repair Singapore">
+      <img src="/assets/images/electrical-before.jpg" alt="Old damaged electrical wiring before rewiring works Singapore">
+      <img src="/assets/images/electrical-after.jpg" alt="New DB board and neat electrical wiring installation Singapore">
+      <img src="/assets/images/plumbing-before.jpg" alt="Corroded rusty pipes before plumbing replacement Singapore">
+      <img src="/assets/images/plumbing-after.jpg" alt="New clean PVC pipes after professional plumbing installation Singapore">
+      <img src="/assets/images/construction-before.jpg" alt="Old worn interior space before renovation works Singapore">
+      <img src="/assets/images/construction-after.jpg" alt="Renovated interior space with fresh paint and new flooring Singapore">
+    </div>
+  </section>
 
   <!-- Reviews Section -->
   <div class="reviews-section">
@@ -844,15 +854,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* BEFORE/AFTER SLIDER */
   const baServices = [
-    { before: '/assets/images/fire-before.jpg', after: '/assets/images/fire-after.jpg', beforeAlt: 'Commercial building before fire protection system installation Singapore', afterAlt: 'Fire sprinkler and alarm system installed in commercial building Singapore' },
-    { before: '/assets/images/waterproofing-before.jpg', after: '/assets/images/waterproofing-after.jpg', beforeAlt: 'HDB ceiling with water leakage stains before waterproofing repair Singapore', afterAlt: 'Clean HDB ceiling after PU grouting waterproofing repair Singapore' },
-    { before: '/assets/images/electrical-before.jpg', after: '/assets/images/electrical-after.jpg', beforeAlt: 'Old damaged electrical wiring before rewiring works Singapore', afterAlt: 'New DB board and neat electrical wiring installation Singapore' },
-    { before: '/assets/images/plumbing-before.jpg', after: '/assets/images/plumbing-after.jpg', beforeAlt: 'Corroded rusty pipes before plumbing replacement Singapore', afterAlt: 'New clean PVC pipes after professional plumbing installation Singapore' },
-    { before: '/assets/images/construction-before.jpg', after: '/assets/images/construction-after.jpg', beforeAlt: 'Old worn interior space before renovation works Singapore', afterAlt: 'Renovated interior space with fresh paint and new flooring Singapore' }
+    { before: '/assets/images/fire-before.jpg', after: '/assets/images/fire-after.jpg', beforeAlt: 'Commercial building before fire protection system installation Singapore', afterAlt: 'Fire sprinkler and alarm system installed in commercial building Singapore', caption: 'Left shows before installation — slide right to see the completed fire sprinkler and alarm system works in a Singapore commercial building.' },
+    { before: '/assets/images/waterproofing-before.jpg', after: '/assets/images/waterproofing-after.jpg', beforeAlt: 'HDB ceiling with water leakage stains before waterproofing repair Singapore', afterAlt: 'Clean HDB ceiling after PU grouting waterproofing repair Singapore', caption: 'Left shows the water damage — slide right to see the waterproofing repair results for this Singapore HDB property.' },
+    { before: '/assets/images/electrical-before.jpg', after: '/assets/images/electrical-after.jpg', beforeAlt: 'Old damaged electrical wiring before rewiring works Singapore', afterAlt: 'New DB board and neat electrical wiring installation Singapore', caption: 'Left shows old damaged wiring — slide right to see the completed electrical rewiring and DB board installation in Singapore.' },
+    { before: '/assets/images/plumbing-before.jpg', after: '/assets/images/plumbing-after.jpg', beforeAlt: 'Corroded rusty pipes before plumbing replacement Singapore', afterAlt: 'New clean PVC pipes after professional plumbing installation Singapore', caption: 'Left shows corroded pipes — slide right to see the completed pipe replacement by our Singapore plumbing team.' },
+    { before: '/assets/images/construction-before.jpg', after: '/assets/images/construction-after.jpg', beforeAlt: 'Old worn interior space before renovation works Singapore', afterAlt: 'Renovated interior space with fresh paint and new flooring Singapore', caption: 'Left shows the worn space — slide right to see the finished interior renovation and reinstatement works in Singapore.' }
   ];
 
   window.baSwitch = function(idx) {
-    document.querySelectorAll('.ba-tab').forEach((t, i) => t.classList.toggle('active', i === idx));
+    document.querySelectorAll('.ba-tab').forEach((t, i) => {
+      t.classList.toggle('active', i === idx);
+      t.setAttribute('aria-selected', i === idx ? 'true' : 'false');
+    });
     const s = baServices[idx];
     const beforeImg = document.getElementById('ba-before-img');
     const afterImg = document.getElementById('ba-after-img');
@@ -860,6 +873,7 @@ document.addEventListener("DOMContentLoaded", () => {
     beforeImg.alt = s.beforeAlt;
     afterImg.src = s.after;
     afterImg.alt = s.afterAlt;
+    document.getElementById('ba-caption').textContent = s.caption;
     document.getElementById('ba-divider').style.left = '50%';
     document.getElementById('ba-after').style.clipPath = 'inset(0 0 0 50%)';
   };

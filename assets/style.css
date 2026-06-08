@@ -1203,7 +1203,7 @@ ol.blog-list { list-style: decimal; }
 .ba-wrap { position: relative; width: 100%; overflow: hidden; border-radius: 8px; user-select: none; touch-action: none; height: 320px; }
 .ba-before-img, .ba-after-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 .ba-before-img img, .ba-after-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.ba-after-img { clip-path: inset(0 0 0 50%); }
+.ba-after-img { clip-path: inset(0 50% 0 0); }
 .ba-divider { position: absolute; top: 0; bottom: 0; left: 50%; width: 2px; background: #FF6A00; cursor: ew-resize; transform: translateX(-50%); z-index: 10; }
 .ba-handle { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 40px; height: 40px; border-radius: 50%; background: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.25); }
 .ba-label { position: absolute; top: 12px; padding: 4px 12px; border-radius: 4px; font-size: 13px; font-weight: 700; color: #fff; z-index: 5; }

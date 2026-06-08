@@ -875,7 +875,7 @@ document.addEventListener("DOMContentLoaded", () => {
     afterImg.alt = s.afterAlt;
     document.getElementById('ba-caption').textContent = s.caption;
     document.getElementById('ba-divider').style.left = '50%';
-    document.getElementById('ba-after').style.clipPath = 'inset(0 0 0 50%)';
+    document.getElementById('ba-after').style.clipPath = 'inset(0 50% 0 0)';
   };
 
   const baSlider = document.getElementById('ba-slider');
@@ -887,7 +887,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const rect = baSlider.getBoundingClientRect();
     let pct = Math.max(0, Math.min(100, ((x - rect.left) / rect.width) * 100));
     baDivider.style.left = pct + '%';
-    baAfter.style.clipPath = 'inset(0 0 0 ' + pct + '%)';
+    baAfter.style.clipPath = 'inset(0 ' + (100 - pct) + '% 0 0)';
   }
 
   if (baDivider) {

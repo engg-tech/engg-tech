@@ -894,9 +894,9 @@ document.addEventListener("DOMContentLoaded", () => {
     baDivider.addEventListener('mousedown', () => baDragging = true);
     window.addEventListener('mouseup', () => baDragging = false);
     window.addEventListener('mousemove', e => { if (baDragging) baSetPos(e.clientX); });
-    baDivider.addEventListener('touchstart', e => { baDragging = true; }, { passive: true });
+    baDivider.addEventListener('touchstart', e => { baDragging = true; e.preventDefault(); }, { passive: false });
     window.addEventListener('touchend', () => baDragging = false);
-    window.addEventListener('touchmove', e => { if (baDragging) { e.preventDefault(); baSetPos(e.touches[0].clientX); } }, { passive: false });
+    window.addEventListener('touchmove', e => { if (baDragging) baSetPos(e.touches[0].clientX); }, { passive: true });
   }
 
 });

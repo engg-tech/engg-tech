@@ -355,6 +355,37 @@
 
   </div>
 
+  <!-- Before/After Slider Section -->
+  <div class="page-content" style="padding-top: 0;">
+    <h2>Our Work</h2>
+    <div class="ba-tabs">
+      <button class="ba-tab active" onclick="baSwitch(0)">Fire Protection</button>
+      <button class="ba-tab" onclick="baSwitch(1)">Waterproofing</button>
+      <button class="ba-tab" onclick="baSwitch(2)">Electrical</button>
+      <button class="ba-tab" onclick="baSwitch(3)">Plumbing</button>
+      <button class="ba-tab" onclick="baSwitch(4)">General Construction</button>
+    </div>
+    <div class="ba-wrap" id="ba-slider">
+      <div class="ba-before-img" id="ba-before">
+        <img id="ba-before-img" src="/assets/images/fire-before.jpg" alt="Before" loading="lazy">
+      </div>
+      <div class="ba-after-img" id="ba-after">
+        <img id="ba-after-img" src="/assets/images/fire-after.jpg" alt="After" loading="lazy">
+      </div>
+      <div class="ba-label ba-label-before">BEFORE</div>
+      <div class="ba-label ba-label-after">AFTER</div>
+      <div class="ba-divider" id="ba-divider">
+        <div class="ba-handle">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="11,7 5,14 11,21" stroke="#FF6A00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <polyline points="17,7 23,14 17,21" stroke="#FF6A00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <p class="ba-hint">Drag the divider to compare before and after</p>
+  </div>
+
   <!-- Reviews Section -->
   <div class="reviews-section">
     <div class="reviews-inner">
@@ -810,6 +841,44 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     btn.textContent = "Send Enquiry"; btn.disabled = false; btn.style.background = "#FF6A00";
   });
+
+  /* BEFORE/AFTER SLIDER */
+  const baServices = [
+    { before: '/assets/images/fire-before.jpg', after: '/assets/images/fire-after.jpg' },
+    { before: '/assets/images/waterproofing-before.jpg', after: '/assets/images/waterproofing-after.jpg' },
+    { before: '/assets/images/electrical-before.jpg', after: '/assets/images/electrical-after.jpg' },
+    { before: '/assets/images/plumbing-before.jpg', after: '/assets/images/plumbing-after.jpg' },
+    { before: '/assets/images/construction-before.jpg', after: '/assets/images/construction-after.jpg' }
+  ];
+
+  window.baSwitch = function(idx) {
+    document.querySelectorAll('.ba-tab').forEach((t, i) => t.classList.toggle('active', i === idx));
+    document.getElementById('ba-before-img').src = baServices[idx].before;
+    document.getElementById('ba-after-img').src = baServices[idx].after;
+    document.getElementById('ba-divider').style.left = '50%';
+    document.getElementById('ba-after').style.clipPath = 'inset(0 0 0 50%)';
+  };
+
+  const baSlider = document.getElementById('ba-slider');
+  const baDivider = document.getElementById('ba-divider');
+  const baAfter = document.getElementById('ba-after');
+  let baDragging = false;
+
+  function baSetPos(x) {
+    const rect = baSlider.getBoundingClientRect();
+    let pct = Math.max(0, Math.min(100, ((x - rect.left) / rect.width) * 100));
+    baDivider.style.left = pct + '%';
+    baAfter.style.clipPath = 'inset(0 0 0 ' + pct + '%)';
+  }
+
+  if (baDivider) {
+    baDivider.addEventListener('mousedown', () => baDragging = true);
+    window.addEventListener('mouseup', () => baDragging = false);
+    window.addEventListener('mousemove', e => { if (baDragging) baSetPos(e.clientX); });
+    baDivider.addEventListener('touchstart', e => { baDragging = true; e.preventDefault(); }, { passive: false });
+    window.addEventListener('touchend', () => baDragging = false);
+    window.addEventListener('touchmove', e => { if (baDragging) baSetPos(e.touches[0].clientX); }, { passive: true });
+  }
 
 });
 </script>

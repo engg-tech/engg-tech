@@ -21,8 +21,8 @@ https://www.engg-tech.com/* https://engg-tech.com/:splat 301!
 /contact / 301!
 
 # REMOVED PAGES → 410 GONE
-/privacy-policy/ / 301!
-/privacy-policy / 301!
+/privacy-policy/ /410.html 410
+/privacy-policy /410.html 410
 /assets/footer.html /410.html 410
 /sg/* /410.html 410
 /blog/* /410.html 410

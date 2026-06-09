@@ -127,7 +127,7 @@
     <p>Our website may link to third-party sites. Their privacy practices are not governed by us; please review their policies.</p>
 
     <h2>6. Changes to This Policy</h2>
-    <p>We may update this page from time to time. The "Effective Date" will reflect the latest version.</p>
+    <p>We may update this page from time to time. Please check back periodically for the latest version.</p>
 
     <h2>7. Contact Us</h2>
     <p><strong>Engg-Tech Pte. Ltd.</strong><br>
@@ -164,7 +164,7 @@
     <p>&copy; 2015&ndash;<span id="footer-year">2026</span> Engg-Tech Pte. Ltd. All rights reserved.</p>
     <p><a href="/privacy-policy/">Privacy Policy</a> | <a href="/sitemap.xml">Sitemap</a></p>
     <p>Designed &amp; Maintained by <a href="/">Engg-Tech Singapore</a></p>
-    <p><em>Last updated: <span id="footer-date">June 2026</span></em></p>
+    <p><em>Last updated: June 2026</em></p>
   </div>
 </footer>
 
@@ -199,9 +199,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const year   = now.getFullYear();
   const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
   const yearEl = document.getElementById("footer-year");
-  const dateEl = document.getElementById("footer-date");
   if (yearEl) yearEl.textContent = year;
-  if (dateEl) dateEl.textContent = months[now.getMonth()] + " " + year;
 
   /* FAB BUTTONS + POPUPS */
   const fabHTML = `

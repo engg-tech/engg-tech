@@ -1392,6 +1392,10 @@ ol.blog-list { list-style: decimal; }
   stroke: #fff;
 }
 
+.accordion-btn[aria-expanded="true"] h3 {
+  color: #fff;
+}
+
 .accordion-panel {
   display: none;
   background: #fff;

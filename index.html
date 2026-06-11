@@ -350,7 +350,7 @@ body:has(#landing-overlay:not(.hidden)) .call-fab{display:none!important}
         <label>Message <span class="req">*</span></label>
         <textarea name="message" required rows="4" placeholder="Tell us about your IT requirements..."></textarea>
       </div>
-      <button type="submit" class="modal-submit">Send Enquiry</button>
+      <button type="submit" class="modal-submit" onclick="gtag('event', 'it_form_submit', {'event_category': 'IT Services', 'event_label': 'IT Enquiry Form Submitted'})">Send Enquiry</button>
       <p class="modal-note">Or email us directly at <a href="mailto:info@engg-tech.com">info@engg-tech.com</a></p>
     </form>
   </div>
@@ -359,6 +359,10 @@ body:has(#landing-overlay:not(.hidden)) .call-fab{display:none!important}
 <script>
 function showMainSite(){
   document.getElementById('landing-overlay').classList.add('hidden');
+  gtag('event', 'landing_learn_more', {
+    'event_category': 'Landing Page',
+    'event_label': 'Construction - Learn More Clicked'
+  });
 }
 </script>
 

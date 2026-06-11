@@ -357,6 +357,7 @@ function showMain(){
 }
 function openModal(){ document.getElementById('it-modal').classList.remove('hidden'); }
 function closeModal(){ document.getElementById('it-modal').classList.add('hidden'); }
+document.getElementById('it-modal').addEventListener('click', function(e){ if(e.target===this) closeModal(); });
 </script>
 
 <!-- Skip to main content -->

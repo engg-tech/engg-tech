@@ -241,7 +241,126 @@
 
 </head>
 
+<style>
+/* === LANDING OVERLAY === */
+#landing-overlay{position:fixed;inset:0;z-index:99999;display:block}
+#landing-overlay.hidden{display:none}
+.lo-split{display:flex;flex-direction:row;height:100vh;width:100vw;overflow:hidden}
+.lo-panel{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:48px 40px;position:relative;overflow:hidden;cursor:default}
+.lo-panel-construction{background:#F7F8FA;border-right:3px solid #FF6A00}
+.lo-panel-it{background:#ffffff}
+.lo-label{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:14px;padding:4px 12px;border-radius:99px;color:#FF6A00;background:rgba(255,106,0,0.08)}
+.lo-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(36px,4.5vw,58px);font-weight:900;line-height:1.05;margin-bottom:20px;text-align:center;color:#0A2540}
+.lo-services{list-style:none;margin-bottom:32px;text-align:center}
+.lo-services li{font-size:14px;padding:5px 0;display:flex;align-items:center;justify-content:center;gap:8px;color:#3D5269}
+.lo-services li::before{content:'›';color:#FF6A00;font-size:18px;font-weight:700;line-height:1}
+.lo-btn{display:inline-block;padding:12px 32px;border-radius:8px;font-size:15px;font-weight:600;text-decoration:none;border:none;cursor:pointer;transition:background 0.2s;font-family:'DM Sans',sans-serif}
+.lo-btn-construction{background:#FF6A00;color:#fff}
+.lo-btn-construction:hover{background:#0A2540}
+.lo-btn-it{background:#0A2540;color:#fff}
+.lo-btn-it:hover{background:#FF6A00}
+/* Modal */
+#it-modal{position:fixed;inset:0;z-index:999999;background:rgba(10,37,64,0.6);display:flex;align-items:center;justify-content:center;padding:20px}
+#it-modal.hidden{display:none}
+.modal-card{background:#fff;border-radius:10px;box-shadow:0 4px 20px rgba(0,0,0,0.15);padding:2rem;width:100%;max-width:520px;position:relative;max-height:90vh;overflow-y:auto}
+.modal-close{position:absolute;top:12px;right:12px;background:#f4f4f4;border:none;font-size:16px;width:32px;height:32px;border-radius:50%;cursor:pointer}
+.modal-close:hover{background:#e0e0e0}
+.modal-title{font-family:'Barlow Condensed',sans-serif;font-size:1.6rem;color:#0A2540;margin-bottom:0.3rem}
+.modal-sub{color:#666;font-size:0.95rem;margin-bottom:1.5rem}
+.modal-form{display:flex;flex-direction:column;gap:1.1rem}
+.modal-form label{display:block;font-weight:600;color:#0A2540;margin-bottom:0.3rem;font-size:0.95rem}
+.modal-form .req{color:#FF6A00}
+.modal-form .opt{color:#888;font-weight:400}
+.modal-form input,.modal-form textarea{width:100%;padding:10px 14px;border:1.5px solid #d0dae6;border-radius:6px;font-size:1rem;outline:none;transition:border-color 0.2s;font-family:'DM Sans',sans-serif;box-sizing:border-box}
+.modal-form input:focus,.modal-form textarea:focus{border-color:#FF6A00}
+.modal-form textarea{resize:vertical}
+.modal-submit{background:#FF6A00;color:#fff;border:none;padding:14px 28px;border-radius:6px;font-size:1.05rem;font-weight:700;cursor:pointer;width:100%;transition:background 0.2s;font-family:'DM Sans',sans-serif}
+.modal-submit:hover{background:#0A2540}
+.modal-note{text-align:center;color:#888;font-size:0.85rem;margin:0}
+.modal-note a{color:#0A2540;font-weight:600}
+@media(max-width:700px){
+  .lo-panel{padding:32px 24px}
+}
+/* Hide floating buttons when landing visible */
+#landing-overlay:not(.hidden) ~ * .whatsapp-fab,
+#landing-overlay:not(.hidden) ~ * .call-fab,
+body:has(#landing-overlay:not(.hidden)) .whatsapp-fab,
+body:has(#landing-overlay:not(.hidden)) .call-fab{display:none!important}
+</style>
+
 <body id="page-top">
+
+<!-- LANDING OVERLAY -->
+<div id="landing-overlay">
+  <div class="lo-split">
+
+    <!-- IT Panel -->
+    <div class="lo-panel lo-panel-it">
+      <div class="lo-label">New</div>
+      <h2 class="lo-title">IT<br>Services</h2>
+      <ul class="lo-services">
+        <li>Hardware Support</li>
+        <li>Email & Office 365</li>
+        <li>IT Maintenance</li>
+        <li>Network & WiFi</li>
+        <li>IT Security</li>
+      </ul>
+      <button class="lo-btn lo-btn-it" onclick="document.getElementById('it-modal').classList.remove('hidden')">Get in Touch</button>
+    </div>
+
+    <!-- Construction Panel -->
+    <div class="lo-panel lo-panel-construction">
+      <div class="lo-label">Since 2015</div>
+      <h2 class="lo-title">Construction<br>Services</h2>
+      <ul class="lo-services">
+        <li>Fire Protection Systems</li>
+        <li>Waterproofing</li>
+        <li>Electrical Works</li>
+        <li>Plumbing</li>
+        <li>General Construction</li>
+      </ul>
+      <button class="lo-btn lo-btn-construction" onclick="showMainSite()">Learn More</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- IT CONTACT MODAL -->
+<div id="it-modal" class="hidden">
+  <div class="modal-card">
+    <button class="modal-close" onclick="document.getElementById('it-modal').classList.add('hidden')">✕</button>
+    <h3 class="modal-title">Send Us an Enquiry</h3>
+    <p class="modal-sub">We will get back to you within 1 business day.</p>
+    <form class="modal-form" action="https://formsubmit.co/info@engg-tech.com" method="POST">
+      <input type="hidden" name="_subject" value="IT Services Enquiry — Engg-Tech">
+      <input type="hidden" name="_captcha" value="false">
+      <div>
+        <label>Name <span class="req">*</span></label>
+        <input type="text" name="name" required placeholder="Your full name"/>
+      </div>
+      <div>
+        <label>Email <span class="req">*</span></label>
+        <input type="email" name="email" required placeholder="your@email.com"/>
+      </div>
+      <div>
+        <label>Phone <span class="opt">(optional)</span></label>
+        <input type="tel" name="phone" placeholder="+65 XXXX XXXX"/>
+      </div>
+      <div>
+        <label>Message <span class="req">*</span></label>
+        <textarea name="message" required rows="4" placeholder="Tell us about your IT requirements..."></textarea>
+      </div>
+      <button type="submit" class="modal-submit">Send Enquiry</button>
+      <p class="modal-note">Or email us directly at <a href="mailto:info@engg-tech.com">info@engg-tech.com</a></p>
+    </form>
+  </div>
+</div>
+
+<script>
+function showMainSite(){
+  document.getElementById('landing-overlay').classList.add('hidden');
+}
+</script>
 
 <!-- Skip to main content -->
 <a class="skip-link" href="#main-content">Skip to main content</a>

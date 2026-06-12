@@ -868,6 +868,15 @@ ol.blog-list { list-style: decimal; }
   box-sizing: border-box;
 }
 
+.page-wrap p:last-child,
+#about p:last-child {
+  margin-bottom: 0;
+}
+
+#services {
+  padding-top: 0.75rem;
+}
+
 /* Noscript alert */
 .noscript-alert {
   background-color: #f4623a;

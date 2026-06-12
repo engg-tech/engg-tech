@@ -440,47 +440,6 @@
 
   </div>
 
-  <!-- Before/After Slider Section -->
-  <section class="page-content" id="our-work" style="padding-top: 0;">
-    <div class="ba-tabs" role="tablist">
-      <button class="ba-tab active" onclick="baSwitch(0)" role="tab" aria-selected="true" aria-controls="ba-slider">Fire Protection</button>
-      <button class="ba-tab" onclick="baSwitch(1)" role="tab" aria-selected="false" aria-controls="ba-slider">Waterproofing</button>
-      <button class="ba-tab" onclick="baSwitch(2)" role="tab" aria-selected="false" aria-controls="ba-slider">Electrical</button>
-      <button class="ba-tab" onclick="baSwitch(3)" role="tab" aria-selected="false" aria-controls="ba-slider">Plumbing</button>
-      <button class="ba-tab" onclick="baSwitch(4)" role="tab" aria-selected="false" aria-controls="ba-slider">General Construction</button>
-    </div>
-    <div class="ba-wrap" id="ba-slider">
-      <div class="ba-before-img" id="ba-before">
-        <img id="ba-before-img" src="/assets/images/fire-before.jpg" alt="Commercial building before fire protection system installation Singapore" loading="lazy">
-      </div>
-      <div class="ba-after-img" id="ba-after">
-        <img id="ba-after-img" src="/assets/images/fire-after.jpg" alt="Fire sprinkler and alarm system installed in commercial building Singapore" loading="lazy">
-      </div>
-      <div class="ba-label ba-label-before">BEFORE</div>
-      <div class="ba-label ba-label-after">AFTER</div>
-      <div class="ba-divider" id="ba-divider">
-        <div class="ba-handle">
-          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <polyline points="11,7 5,14 11,21" stroke="#FF6A00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <polyline points="17,7 23,14 17,21" stroke="#FF6A00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-      </div>
-    </div>
-    <p class="ba-hint" id="ba-caption">Slide right to reveal the completed fire sprinkler and alarm system — slide left to see the before installation. Commercial building works, Singapore.</p>
-    <!-- Hidden for SEO crawlability -->
-    <div style="display:none">
-      <img src="/assets/images/waterproofing-before.jpg" alt="HDB ceiling with water leakage stains before waterproofing repair Singapore">
-      <img src="/assets/images/waterproofing-after.jpg" alt="Clean HDB ceiling after PU grouting waterproofing repair Singapore">
-      <img src="/assets/images/electrical-before.jpg" alt="Old damaged electrical wiring before rewiring works Singapore">
-      <img src="/assets/images/electrical-after.jpg" alt="New DB board and neat electrical wiring installation Singapore">
-      <img src="/assets/images/plumbing-before.jpg" alt="Corroded rusty pipes before plumbing replacement Singapore">
-      <img src="/assets/images/plumbing-after.jpg" alt="New clean PVC pipes after professional plumbing installation Singapore">
-      <img src="/assets/images/construction-before.jpg" alt="Old worn interior space before renovation works Singapore">
-      <img src="/assets/images/construction-after.jpg" alt="Renovated interior space with fresh paint and new flooring Singapore">
-    </div>
-  </section>
-
 </section>
 
 <!-- =============================================
@@ -678,53 +637,6 @@ document.addEventListener("DOMContentLoaded", () => {
       btn.setAttribute("aria-expanded", String(!expanded));
     });
   });
-
-  /* BEFORE/AFTER SLIDER */
-  const baServices = [
-    { before: '/assets/images/fire-before.jpg', after: '/assets/images/fire-after.jpg', beforeAlt: 'Commercial building before fire protection system installation Singapore', afterAlt: 'Fire sprinkler and alarm system installed in commercial building Singapore', caption: 'Slide right to reveal the completed fire sprinkler and alarm system — slide left to see the before installation. Commercial building works, Singapore.' },
-    { before: '/assets/images/waterproofing-before.jpg', after: '/assets/images/waterproofing-after.jpg', beforeAlt: 'HDB ceiling with water leakage stains before waterproofing repair Singapore', afterAlt: 'Clean HDB ceiling after PU grouting waterproofing repair Singapore', caption: 'Slide right to reveal the waterproofing repair result — slide left to see the water damage. HDB ceiling works, Singapore.' },
-    { before: '/assets/images/electrical-before.jpg', after: '/assets/images/electrical-after.jpg', beforeAlt: 'Old damaged electrical wiring before rewiring works Singapore', afterAlt: 'New DB board and neat electrical wiring installation Singapore', caption: 'Slide right to reveal the completed electrical rewiring and DB board — slide left to see the old damaged wiring. Residential works, Singapore.' },
-    { before: '/assets/images/plumbing-before.jpg', after: '/assets/images/plumbing-after.jpg', beforeAlt: 'Corroded rusty pipes before plumbing replacement Singapore', afterAlt: 'New clean PVC pipes after professional plumbing installation Singapore', caption: 'Slide right to reveal the new pipe installation — slide left to see the corroded pipes. Plumbing replacement works, Singapore.' },
-    { before: '/assets/images/construction-before.jpg', after: '/assets/images/construction-after.jpg', beforeAlt: 'Old worn interior space before renovation works Singapore', afterAlt: 'Renovated interior space with fresh paint and new flooring Singapore', caption: 'Slide right to reveal the finished renovation — slide left to see the worn space. Interior reinstatement works, Singapore.' }
-  ];
-
-  window.baSwitch = function(idx) {
-    document.querySelectorAll('.ba-tab').forEach((t, i) => {
-      t.classList.toggle('active', i === idx);
-      t.setAttribute('aria-selected', i === idx ? 'true' : 'false');
-    });
-    const s = baServices[idx];
-    const beforeImg = document.getElementById('ba-before-img');
-    const afterImg = document.getElementById('ba-after-img');
-    beforeImg.src = s.before;
-    beforeImg.alt = s.beforeAlt;
-    afterImg.src = s.after;
-    afterImg.alt = s.afterAlt;
-    document.getElementById('ba-caption').textContent = s.caption;
-    document.getElementById('ba-divider').style.left = '50%';
-    document.getElementById('ba-after').style.clipPath = 'inset(0 50% 0 0)';
-  };
-
-  const baSlider = document.getElementById('ba-slider');
-  const baDivider = document.getElementById('ba-divider');
-  const baAfter = document.getElementById('ba-after');
-  let baDragging = false;
-
-  function baSetPos(x) {
-    const rect = baSlider.getBoundingClientRect();
-    let pct = Math.max(0, Math.min(100, ((x - rect.left) / rect.width) * 100));
-    baDivider.style.left = pct + '%';
-    baAfter.style.clipPath = 'inset(0 ' + (100 - pct) + '% 0 0)';
-  }
-
-  if (baDivider) {
-    baDivider.addEventListener('mousedown', () => baDragging = true);
-    window.addEventListener('mouseup', () => baDragging = false);
-    window.addEventListener('mousemove', e => { if (baDragging) baSetPos(e.clientX); });
-    baDivider.addEventListener('touchstart', e => { baDragging = true; }, { passive: true });
-    baDivider.addEventListener('touchend', () => baDragging = false);
-    baDivider.addEventListener('touchmove', e => { if (baDragging) { e.preventDefault(); baSetPos(e.touches[0].clientX); } }, { passive: false });
-  }
 
 });
 </script>

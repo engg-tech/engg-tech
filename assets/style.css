@@ -731,25 +731,6 @@ ol.blog-list { list-style: decimal; }
 
 
 /* =======================================================
-   Projects Portfolio
-======================================================= */
-.projects-list {
-  list-style: none;
-  margin: 1rem 0 0;
-  padding: 0;
-}
-
-.project-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 0.95rem;
-  color: var(--color-navy);
-  padding: 6px 0;
-}
-
-
-/* =======================================================
    Homepage — warranty badge position
 ======================================================= */
 #page-top .page-header {

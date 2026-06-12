@@ -114,6 +114,7 @@ a:hover { color: var(--color-orange-dark); }
   text-decoration: none;
   transition: color 0.2s ease;
   letter-spacing: 0.2px;
+  padding-right: 10px;
 }
 
 .topbar-email:hover { color: var(--color-orange); }

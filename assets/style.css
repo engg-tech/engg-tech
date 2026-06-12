@@ -862,6 +862,8 @@ ol.blog-list { list-style: decimal; }
 
 /* Page wrapper */
 .page-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   box-sizing: border-box;

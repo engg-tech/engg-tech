@@ -731,26 +731,21 @@ ol.blog-list { list-style: decimal; }
 
 
 /* =======================================================
-   Projects Portfolio Page — unchanged
+   Projects Portfolio
 ======================================================= */
-.portfolio-table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 1rem; }
-.portfolio-table thead { background: var(--color-navy); }
-.portfolio-table thead th { padding: 10px 14px; color: #fff; font-weight: 600; text-align: left; font-size: 12px; text-transform: uppercase; letter-spacing: .06em; font-family: var(--font-base); }
-.portfolio-table td { padding: 10px 14px; border-bottom: 1px solid var(--color-border); vertical-align: top; color: var(--color-text-mid); font-size: 14px; }
-.portfolio-table td:first-child { color: var(--color-navy); font-weight: 500; }
-.portfolio-table tr:last-child td { border-bottom: none; }
-.portfolio-table tbody tr:nth-child(odd) { background: var(--color-off-white); }
+.projects-list {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+}
 
-@media (max-width: 600px) {
-  .portfolio-table thead { display: none; }
-  .portfolio-table tr { display: block; border-bottom: 2px solid var(--color-border); padding: 0.75rem 0; }
-  .portfolio-table tr:nth-child(odd) { background: var(--color-off-white); }
-  .portfolio-table td { display: block; padding: 2px 14px; border: none; }
-  .portfolio-table td:first-child { font-size: 15px; padding-top: 4px; }
-  .portfolio-table td:last-child { display: block; }
-  .portfolio-table td:nth-child(1)::before { content: "Project: "; font-weight: 700; color: #FF6A00; }
-  .portfolio-table td:nth-child(2)::before { content: "Services: "; font-weight: 700; color: #FF6A00; }
-  .portfolio-table td:nth-child(3)::before { content: "Status: "; font-weight: 700; color: #FF6A00; }
+.project-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  color: var(--color-navy);
+  padding: 6px 0;
 }
 
 

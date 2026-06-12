@@ -488,7 +488,7 @@
   <hr class="footer-divider">
   <div class="footer-bottom">
     <p>&copy; 2015&ndash;<span id="footer-year">2026</span> Engg-Tech Pte. Ltd. All rights reserved.</p>
-    <p><a href="#" id="privacy-policy-btn">Privacy Policy</a> | <a href="/sitemap.xml">Sitemap</a></p>
+    <p><a href="/privacy-policy.html">Privacy Policy</a> | <a href="/sitemap.xml">Sitemap</a></p>
   </div>
 </footer>
 
@@ -641,61 +641,6 @@ function gtag_report_conversion(url) {
 }
 </script>
 
-<!-- PRIVACY POLICY MODAL -->
-<div id="privacy-modal" data-nosnippet role="dialog" aria-modal="true" aria-label="Privacy Policy" style="display:none;position:fixed;inset:0;z-index:10000;background:rgba(10,37,64,0.7);padding:1.5rem;box-sizing:border-box;overflow-y:auto;">
-  <div style="background:#fff;border-radius:12px;max-width:640px;margin:2rem auto;padding:2rem 2rem 1.5rem;position:relative;box-shadow:0 12px 48px rgba(0,0,0,0.25);">
-    <button id="privacy-modal-close" aria-label="Close Privacy Policy" style="position:absolute;top:14px;right:16px;background:none;border:none;font-size:1.4rem;cursor:pointer;color:#888;line-height:1;">&#x2715;</button>
-    <h2 style="font-family:'Barlow Condensed',sans-serif;font-size:1.8rem;color:#0A2540;margin:0 0 0.25rem;">Privacy Policy</h2>
-
-    <p style="font-size:0.92rem;color:#333;margin:0 0 1rem;">Engg-Tech Pte. Ltd. (&ldquo;we&rdquo;, &ldquo;our&rdquo;, &ldquo;us&rdquo;) respects your privacy and is committed to protecting your personal data in accordance with Singapore&rsquo;s <strong>Personal Data Protection Act 2012 (PDPA)</strong> and applicable standards.</p>
-
-    <h3 style="font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;color:#0A2540;margin:1.2rem 0 0.4rem;">1. Information We Collect</h3>
-    <ul style="font-size:0.92rem;color:#333;padding-left:1.2rem;margin:0 0 1rem;">
-      <li>Details you provide via contact forms (name, email, phone number, message).</li>
-      <li>Technical data such as IP address, browser/device type, and pages visited.</li>
-      <li>Information collected through cookies, including third-party cookies from Google.</li>
-    </ul>
-
-    <h3 style="font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;color:#0A2540;margin:1.2rem 0 0.4rem;">2. How We Use Your Information</h3>
-    <ul style="font-size:0.92rem;color:#333;padding-left:1.2rem;margin:0 0 1rem;">
-      <li>Respond to enquiries and provide services.</li>
-      <li>Improve site performance and user experience.</li>
-    </ul>
-
-    <h3 style="font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;color:#0A2540;margin:1.2rem 0 0.4rem;">3. Data Sharing</h3>
-    <p style="font-size:0.92rem;color:#333;margin:0 0 1rem;">We do not sell your personal information. We may share limited data with trusted service providers who assist our operations, subject to confidentiality obligations.</p>
-
-    <h3 style="font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;color:#0A2540;margin:1.2rem 0 0.4rem;">4. Your Rights</h3>
-    <p style="font-size:0.92rem;color:#333;margin:0 0 1rem;">Under the PDPA, you may request access to, correction of, or deletion of your personal data. Contact us using the details below.</p>
-
-    <h3 style="font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;color:#0A2540;margin:1.2rem 0 0.4rem;">5. Third-Party Links</h3>
-    <p style="font-size:0.92rem;color:#333;margin:0 0 1rem;">Our website may link to third-party sites. Their privacy practices are not governed by us; please review their policies.</p>
-
-    <h3 style="font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;color:#0A2540;margin:1.2rem 0 0.4rem;">6. Changes to This Policy</h3>
-    <p style="font-size:0.92rem;color:#333;margin:0 0 1rem;">We may update this page from time to time. Please check back periodically for the latest version.</p>
-
-    <h3 style="font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;color:#0A2540;margin:1.2rem 0 0.4rem;">7. Contact Us</h3>
-    <p style="font-size:0.92rem;color:#333;margin:0 0 1.5rem;">Email: <a href="mailto:admin@engg-tech.com" style="color:#FF6A00;">admin@engg-tech.com</a></p>
-
-    <button id="privacy-modal-close-btn" style="background:#FF6A00;color:#fff;border:none;padding:10px 28px;border-radius:6px;font-size:0.95rem;font-weight:700;cursor:pointer;width:100%;transition:background 0.2s;" onmouseover="this.style.background='#0A2540'" onmouseout="this.style.background='#FF6A00'">Close</button>
-  </div>
-</div>
-
-<script>
-(function(){
-  const modal   = document.getElementById('privacy-modal');
-  const openBtn = document.getElementById('privacy-policy-btn');
-  const closeX  = document.getElementById('privacy-modal-close');
-  const closeBtn= document.getElementById('privacy-modal-close-btn');
-  function openModal(e){ e.preventDefault(); modal.style.display='block'; document.body.style.overflow='hidden'; }
-  function closeModal(){ modal.style.display='none'; document.body.style.overflow=''; }
-  openBtn.addEventListener('click', openModal);
-  closeX.addEventListener('click', closeModal);
-  closeBtn.addEventListener('click', closeModal);
-  modal.addEventListener('click', function(e){ if(e.target===modal) closeModal(); });
-  document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeModal(); });
-})();
-</script>
 
 </body>
 </html>

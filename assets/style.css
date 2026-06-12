@@ -1150,34 +1150,6 @@ ol.blog-list { list-style: decimal; }
 /* =======================================================
    Certification Strip
 ======================================================= */
-.cert-strip {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-  padding: 1.25rem 1.5rem;
-  background: #ffffff;
-  border-bottom: 1px solid var(--color-border);
-}
-
-.cert-strip img {
-  height: 60px;
-  width: auto;
-  object-fit: contain;
-  filter: grayscale(20%);
-  transition: filter 0.2s;
-}
-
-.cert-strip img:hover {
-  filter: grayscale(0%);
-}
-
-@media (max-width: 768px) {
-  .cert-strip { gap: 1.25rem; padding: 1rem; }
-  .cert-strip img { height: 44px; }
-}
-
 
 /* =======================================================
    Reviews Section

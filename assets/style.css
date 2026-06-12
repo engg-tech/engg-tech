@@ -377,7 +377,7 @@ li:not(.has-submenu) > .nav-link.active:not(.navbar-brand) {
 }
 
 .page-content {
-  padding: 2rem 1.5rem 3rem;
+  padding: 1.5rem 1.5rem 1.5rem;
   max-width: 900px;
   margin: 0 auto;
   box-sizing: border-box;
@@ -864,8 +864,7 @@ ol.blog-list { list-style: decimal; }
 .page-wrap {
   max-width: 1200px;
   margin: 0 auto;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding: 1.5rem 1.5rem;
   box-sizing: border-box;
 }
 
@@ -1173,7 +1172,7 @@ ol.blog-list { list-style: decimal; }
    Single Page — Section Blocks
 ======================================================= */
 .section-block {
-  padding: 3rem 0;
+  padding: 1.5rem 0;
 }
 
 .section-block--alt {

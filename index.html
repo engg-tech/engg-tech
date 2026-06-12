@@ -586,43 +586,10 @@
       <h3 class="contact-card__title">Send Us an Enquiry</h3>
       <p class="contact-card__subtitle">We will get back to you within 1 business day.</p>
 
-      <form id="contactForm" class="contact-form">
+      <p class="contact-form__note" style="margin-top:1rem;">
+        Email us at <a href="mailto:info@engg-tech.com">info@engg-tech.com</a>
+      </p>
 
-        <div>
-          <label for="name" class="contact-form__label">Name <span class="contact-form__required">*</span></label>
-          <input type="text" id="name" name="name" required placeholder="Your full name" class="contact-form__input"/>
-        </div>
-
-        <div>
-          <label for="email" class="contact-form__label">Email <span class="contact-form__required">*</span></label>
-          <input type="email" id="email" name="email" required placeholder="your@email.com" class="contact-form__input"/>
-        </div>
-
-        <div>
-          <label for="phone" class="contact-form__label">Phone <span class="contact-form__optional">(optional)</span></label>
-          <input type="tel" id="phone" name="phone" placeholder="+65 XXXX XXXX" class="contact-form__input"/>
-        </div>
-
-        <div>
-          <label for="message" class="contact-form__label">Message <span class="contact-form__required">*</span></label>
-          <textarea id="message" name="message" required rows="5" placeholder="Tell us about your project or enquiry..." class="contact-form__textarea"></textarea>
-        </div>
-
-        <!-- Honeypot -->
-        <div style="display:none" aria-hidden="true">
-          <label for="website">Leave this blank</label>
-          <input type="text" id="website" name="website" tabindex="-1" autocomplete="off"/>
-        </div>
-
-        <div id="formStatus" class="contact-form__status"></div>
-
-        <button type="submit" id="submitBtn" class="contact-form__submit">Send Enquiry</button>
-
-        <p class="contact-form__note">
-          Or email us directly at <a href="mailto:info@engg-tech.com">info@engg-tech.com</a>
-        </p>
-
-      </form>
     </div>
 
   </div>
@@ -775,39 +742,6 @@ document.addEventListener("DOMContentLoaded", () => {
       document.querySelectorAll(".accordion-btn").forEach(b => b.setAttribute("aria-expanded", "false"));
       btn.setAttribute("aria-expanded", String(!expanded));
     });
-  });
-
-  /* CONTACT FORM SUBMIT */
-  document.getElementById("contactForm").addEventListener("submit", async function(e) {
-    e.preventDefault();
-    const btn      = document.getElementById("submitBtn");
-    const status   = document.getElementById("formStatus");
-    const honeypot = document.getElementById("website").value;
-    const name     = document.getElementById("name").value.trim();
-    const email    = document.getElementById("email").value.trim();
-    const phone    = document.getElementById("phone").value.trim();
-    const message  = document.getElementById("message").value.trim();
-    if (honeypot) return;
-    btn.textContent = "Sending..."; btn.disabled = true; btn.style.background = "#888";
-    try {
-      const formData = new FormData();
-      formData.append("name", name);
-      formData.append("email", email);
-      formData.append("phone", phone);
-      formData.append("message", message);
-      await fetch(FORM_ENDPOINT, { method: "POST", mode: "no-cors", body: formData });
-      status.style.display = "block";
-      status.style.background = "#e6f4ea";
-      status.style.color = "#1a7a3a";
-      status.textContent = "✅ Message sent! We will get back to you within 1 business day.";
-      document.getElementById("contactForm").reset();
-    } catch (err) {
-      status.style.display = "block";
-      status.style.background = "#fde8e8";
-      status.style.color = "#c0392b";
-      status.textContent = "❌ Something went wrong. Please email us directly at info@engg-tech.com";
-    }
-    btn.textContent = "Send Enquiry"; btn.disabled = false; btn.style.background = "#FF6A00";
   });
 
   /* BEFORE/AFTER SLIDER */

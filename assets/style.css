@@ -114,6 +114,7 @@ a:hover { color: var(--color-orange-dark); }
   text-decoration: none;
   transition: color 0.2s ease;
   letter-spacing: 0.2px;
+  padding-right: 10px;
 }
 
 .topbar-email:hover { color: var(--color-orange); }
@@ -813,11 +814,6 @@ ol.blog-list { list-style: decimal; }
 
 .brand-short { display: none; }
 .brand-full { display: inline; }
-
-@media (max-width: 768px) {
-  .brand-full { display: none; }
-  .brand-short { display: inline; }
-}
 
 
 
